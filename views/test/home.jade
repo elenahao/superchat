@@ -1,0 +1,23 @@
+extends ./base
+
+block append content
+    div.container.maincont
+        div.row.usermeta
+            div.col-xs-6.headimg
+                img(src="#{user.avatar}")
+            div.col-xs-6.score
+                span 积分：#{user.score}
+            div.col-xs-6.times
+                soan 局数: #{user.times}
+        div.row.game-list
+            ul
+                li.gameitem
+                    span xxx 89分
+                    img(src="http://img4.douban.com/icon/u48880025-28.jpg")
+                    span PK
+                    img(src="http://img4.douban.com/icon/u48880025-28.jpg")
+                    span xxx
+                    span.doit 接受挑战
+    script.
+        //- var a = #{user};
+        //- console.log(a);

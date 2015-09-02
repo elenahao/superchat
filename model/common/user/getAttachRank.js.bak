@@ -1,0 +1,81 @@
+'use strict'
+
+var Q = require('q');
+var path = require('path');
+var _ = require('lodash');
+var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+
+/**
+ * 获取单个用户信息(附加rank字段) promise
+ * @param {Number} 用户uid
+ *
+ * @return {Object} 用户信息
+ */
+function _getUserAttachRank(uid) {
+    console.log('_getUserAttachRank');
+    var dfd = Q.defer();
+    if (uid == undefined) {
+        dfd.reject({
+            err: 'uid is undefined'
+        });
+    } else {
+        var _user = {};
+        Q(
+            redis.zrevrange('rank', 0, -1)
+        )
+            .then(function resolve(res) {
+                var _rank = res;
+                console.log('_rank=============='+_rank);
+                //return redis.hgetall('user:' + uid);
+                for(var i = 0; i<_rank.length; i++){
+                    console.log(i+'='+_rank[i]);
+                    redis.hgetall('user:' + _rank[i]).then(function resolve(res){
+                        console.log('hgetall');
+                        _user = res;
+                        console.log('_user='+_user);
+                        console.log('user.name='+_user.name);
+                        _.extend(_user, {
+                            lastFight: _user.lastFight ? JSON.parse(_user.lastFight) : null,
+                            achievement: JSON.parse(_user.achievement),
+                            playset: JSON.parse(_user.playset),
+                            rank : _rank[i+1]
+                        });
+                        console.log('s--------'+i);
+                        //i++;
+                        //console.log('e--------'+i);
+                        //if(){
+                            dfd.resolve(_user);
+                        //}
+                    }, function reject(err){
+                        dfd.reject({
+                            err: 'something err, user'+_rank[i]+' not found'
+                        });
+                    })
+                    i++;
+                }
+                //dfd.resolve(_user);
+            }, function reject(err) {
+                dfd.reject({
+                    err: 'user not found'
+                });
+            })
+            //.then(function resolve(res){
+            //
+            //    _user = res;
+            //    _.extend(_user, {
+            //        lastFight: _user.lastFight ? JSON.parse(_user.lastFight) : null,
+            //        achievement: JSON.parse(_user.achievement),
+            //        playset: JSON.parse(_user.playset)
+            //    });
+            //    console.log('_user'+_user);
+            //    dfd.resolve(_user);
+            //}, function reject(){
+            //
+            //});
+    } // end of if uid
+
+    return dfd.promise;
+} // end of _getUser
+
+module.exports = _getUserAttachRank;
+

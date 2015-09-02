@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        // meta
+        block meta
+            include ./pagelets/head/meta.jade
+        // 标题
+        block title
+            title Super 8
+        block stylesheet
+            include ./pagelets/head/style.jade
+        block headscript
+    body
+        block nav
+            include ./pagelets/sitenav.jade
+        block content
+
+        block footfunc
+            include ./pagelets/footfunc.jade
