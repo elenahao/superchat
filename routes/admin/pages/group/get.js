@@ -1,45 +1,64 @@
 /**
- * Created by elenahao on 15/9/1.
+ * Created by elenahao on 15/9/6.
  */
 
-'use strict';
+'use strict'
+
 var path = require('path');
 var Q = require('q');
+var request = require('request');
 var Lazy = require('lazy.js');
 var _ = require('lodash');
-var request = require('request');
 
-/* GET home page. */
-app.get(['/admin/group'], function(req, res, next) {
-    console.log('admin group...');
-    res.render('admin/wechat/group/init');
-});
+var calPage = require(path.resolve(global.gpath.app.libs + '/tools/pagecal'));
 
-// 获取指定分页和个数的组
-app.get('/admin/group/get', function(req, res) {
-    console.log("admin group get...");
-    var APPID = 'wx0c7c93d636ff9769';
-    var APPSECRET = 'd4a38c7b7804febf8c33045005713191';
-    var ACCESS_TOKEN = '';
-    request({
-        url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+APPID+'&secret='+APPSECRET,
-        method: 'GET'
-    }, function(err, res, body) {
-        if(err) console.log(err);
-        if (res.statusCode === 200) {
-            var _data = JSON.parse(body);
-            ACCESS_TOKEN = _data.access_token;//['access_token'];
-            console.log('access_token='+ACCESS_TOKEN);
-            request({
-                url: 'https://api.weixin.qq.com/cgi-bin/groups/get?access_token='+ACCESS_TOKEN,
-                method: 'GET'
-            }, function(err, res, body) {
-                if(err) console.log(err);
-                console.log('======'+body);
-                if (res.statusCode === 200) {
-                    console.log('success');
-                }
+var _nav = require(path.resolve(global.gpath.app.model + '/admin/pages/sitenav')).getSiteNav();
+
+_nav.group.isActive = true;
+
+//展示全部用户
+app.get(['/admin/group'],
+    function(req, res, next) {
+        console.log("admin group...");
+
+        function render(data) {
+            console.log('data='+JSON.stringify(data));
+            var _pageLinks = [];
+            if (data.page > 1) {
+                Lazy(calPage(data.now, data.page, 10)).each(function(value, index) {
+                    if (value != '...') {
+                        _pageLinks.push({
+                            text: value,
+                            isCurrent: value == data.now ? true : false,
+                            link: '/admin/group/?start=' + (value * data.count - data.count) + '&count=' + data.count
+                        });
+                    }
+                });
+            }
+
+            res.render("admin/group", {
+                title: "Wechat管理后台",
+                adminStaticBase: global.adminStaticBase,
+                csrf: res.locals._csrf,
+                sitenavs: _nav,//传到页面后，左侧菜单栏根据isActive点亮或变灰
+                groups: data.groups,
+                pages: _pageLinks
             });
-        }
+        } // end of render
+
+        var _start = !_.isNaN(parseInt(req.query.start)) ? req.query.start : 0;
+        var _count = !_.isNaN(parseInt(req.query.count)) ? req.query.count : 20;
+
+        request({
+            url: 'http://127.0.0.1:18080/admin/api/group/?start=' + _start + '&count=' + _count,
+            method: 'GET'
+        }, function(err, res, body) {
+            if (res.statusCode === 200) {
+                var _data = JSON.parse(body);
+                if (_data.ret == 0) {
+                    console.log('rendering ...');
+                    render(_data.data);
+                }
+            }
+        });
     });
-});

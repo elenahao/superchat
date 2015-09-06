@@ -4,12 +4,20 @@ div.gm-user
             thead
                 tr
                     th
-                        | OPENID
+                        | ID
+                    th
+                        | 组名称
+                    th
+                        | 组人数
             tbody
-                each user in users
+                each group in groups
                     tr
                         td(scope="row")
-                            | #{user.openid}
+                            | #{group.id}
+                        td
+                            | #{group.name}
+                        td
+                            | #{group.count}
     nav
         ul.pagination
             each page in pages

@@ -5,27 +5,27 @@ var path = require('path');
 var _ = require('lodash');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 
-var _getUser = function(uid) {
+var _getGroup = function(gid) {
     var dfd = Q.defer();
 
-    if (uid == undefined) {
+    if (gid == undefined) {
         dfd.reject({
-            err: 'uid is undefined'
+            err: 'gid is undefined'
         });
     } else {
         Q(
-            redis.hgetall('user:' + uid)
+            redis.hgetall('group:' + gid)
         ).then(function resolve(res) {
-            var _user = res;
-            dfd.resolve(_user);
+            var _group = res;
+            dfd.resolve(_group);
         }, function reject(err) {
             dfd.reject({
-                err: 'user not found'
+                err: 'group not found'
             });
         }); // end of Q
-    } // end of if uid
+    } // end of if qid
 
     return dfd.promise;
 };
 
-module.exports = _getUser;
+module.exports = _getGroup;
