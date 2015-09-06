@@ -50,5 +50,5 @@ app.get('/admin/api/group/add', function(req, res) {
             });
         }
     });
-    res.send('获取组成功，本次共获取：'+groups.length+'个组');
+    res.end('get group success');
 });

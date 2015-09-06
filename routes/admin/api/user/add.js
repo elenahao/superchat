@@ -55,11 +55,11 @@ app.get('/admin/api/user/add', function(req, res) {
                     if(total != count){
                         getUser(ACCESS_TOKEN, next_openid);
                     }
-                    res.send('获取用户成功，本次共获取：'+total+'个用户');
                 }
             });
         }
     });
+    res.send('get user success');
 });
 
 var getUser = function(ACCESS_TOKEN, next_openid) {
