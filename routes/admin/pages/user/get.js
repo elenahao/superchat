@@ -37,7 +37,7 @@ app.get(['/admin/user'],
             }
 
             res.render("admin/user", {
-                title: "Super8管理后台",
+                title: "Wechat管理后台",
                 adminStaticBase: global.adminStaticBase,
                 csrf: res.locals._csrf,
                 sitenavs: _nav,//传到页面后，左侧菜单栏根据isActive点亮或变灰

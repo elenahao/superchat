@@ -10,7 +10,7 @@ var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 
-// 获取指定分页和个数的用户
+// 调取微信接口获取用户的openid
 app.get('/admin/api/user/add', function(req, res) {
     console.log("admin user get...");
     var APPID = 'wx0c7c93d636ff9769';

@@ -3,6 +3,7 @@
 var Q = require('q');
 var path = require('path');
 var _ = require('lodash');
+var UDate = require(path.resolve(global.gpath.app.libs + '/tools/date'));
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 
 var _getUser = function(uid) {
@@ -17,6 +18,12 @@ var _getUser = function(uid) {
             redis.hgetall('user:' + uid)
         ).then(function resolve(res) {
             var _user = res;
+            if(_user.subscribe_time){
+                var udate = new UDate(new Date(_user.subscribe_time*1000));
+                _.extend(_user, {
+                    subscribe_time : udate.getYmd('-') + ' ' + udate.getHms()
+                });
+            }
             dfd.resolve(_user);
         }, function reject(err) {
             dfd.reject({
