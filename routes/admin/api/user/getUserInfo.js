@@ -10,26 +10,25 @@ var _ = require('lodash');
 var request = require('request');
 var http = require('http');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 // 调取微信接口获取用户的详细信息
 app.get('/admin/api/user/getInfo', function(req, res) {
     console.log("admin userInfo get...");
-    var APPID = 'wx0c7c93d636ff9769';
-    var APPSECRET = 'd4a38c7b7804febf8c33045005713191';
     var ACCESS_TOKEN = '';
-    request({
-        url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+APPID+'&secret='+APPSECRET,
-        method: 'GET'
-    }, function(err, res, body) {
-        if(err) console.log(err);
-        if (res.statusCode === 200) {
-            var _data = JSON.parse(body);
-            ACCESS_TOKEN = _data.access_token;//
-            console.log('access_token='+ACCESS_TOKEN);
+    Token.getAccessToken().then(function resolve(res) {
+        if(res.access_token){
+            console.log(res.access_token);
+            ACCESS_TOKEN = res.access_token;
             //从redis获取所有用户openid scan 每次获取100
             scan(ACCESS_TOKEN);
         }
-    });
+    },function reject(err){
+        res.status(400).send(JSON.stringify({
+            ret: -4,
+            msg: errors
+        }));
+    })
     res.send('get user success');
 });
 

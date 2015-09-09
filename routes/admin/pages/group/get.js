@@ -50,7 +50,7 @@ app.get(['/admin/group'],
         var _count = !_.isNaN(parseInt(req.query.count)) ? req.query.count : 20;
 
         request({
-            url: 'http://127.0.0.1:18080/admin/api/group/?start=' + _start + '&count=' + _count,
+            url: 'http://127.0.0.1:80/admin/api/group/?start=' + _start + '&count=' + _count,
             method: 'GET'
         }, function(err, res, body) {
             if (res.statusCode === 200) {

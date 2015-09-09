@@ -53,6 +53,9 @@ global.adminStaticBase = '';
 global.fs = require('fs');
 global.path = require('path');
 
+//wechat 配置文件
+global.weconfig = require('./config/weconfig');
+
 //输出 process.pid 方便调试
 fs.writeFileSync(path.join(__dirname, 'app.pid'), process.pid);
 
@@ -151,7 +154,7 @@ app.use(function(err, req, res, next) {
     res.send('500' + err);
 });
 
-var server = app.listen(18080, function() {
+var server = app.listen(80, function() {
     console.log('Listening on port %d', server.address().port);
 });
 

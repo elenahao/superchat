@@ -9,22 +9,16 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
-// 获取指定分页和个数的组
+// 调用微信接口获取公众号的所有组
 app.get('/admin/api/group/add', function(req, res) {
     console.log("admin group get...");
-    var APPID = 'wx0c7c93d636ff9769';
-    var APPSECRET = 'd4a38c7b7804febf8c33045005713191';
     var ACCESS_TOKEN = '';
-    request({
-        url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+APPID+'&secret='+APPSECRET,
-        method: 'GET'
-    }, function(err, res, body) {
-        if(err) console.log(err);
-        if (res.statusCode === 200) {
-            var _data = JSON.parse(body);
-            ACCESS_TOKEN = _data.access_token;//['access_token'];
-            console.log('access_token='+ACCESS_TOKEN);
+    Token.getAccessToken().then(function resolve(res) {
+        if(res.access_token){
+            console.log(res.access_token);
+            ACCESS_TOKEN = res.access_token;
             request({
                 url: 'https://api.weixin.qq.com/cgi-bin/groups/get?access_token='+ACCESS_TOKEN,
                 method: 'GET'
@@ -49,6 +43,11 @@ app.get('/admin/api/group/add', function(req, res) {
                 }
             });
         }
-    });
-    res.end('get group success');
+    },function reject(err){
+        res.status(400).send(JSON.stringify({
+            ret: -4,
+            msg: errors
+        }));
+    })
+    res.redirect('/admin/group');
 });

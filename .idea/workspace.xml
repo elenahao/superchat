@@ -2,7 +2,175 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a60e7fb8-fd8d-4839-bb43-613dfcbd870b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/aero_s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/aero_s2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/alipay.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_close.hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_close.hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_close.hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_e.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_e.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_e.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_n.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_n.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_n.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_ne.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_ne.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_ne.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_nw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_nw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_nw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_se.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_se.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_se.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_sw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_sw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_sw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_title_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero/ie6/aui_w.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/ie6/aui_w.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/ie6/aui_w.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/bg2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/bg2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/bg2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/bg_css3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/bg_css3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/bg_css3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/bg_css3_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/bg_css3_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/bg_css3_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/chrome/border.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/bottom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/chrome/chrome_s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/close.hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/close.hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/close.hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/color_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/commercial_license.doc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/doc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/e.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/e.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/e.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/icons/error.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/icons/face-sad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/icons/face-smile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/idialog_s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog/idialog_s2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/lixiaolong.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/icons/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/n.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/n.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/n.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/ne.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/ne.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/ne.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/nw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/nw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/nw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/opensource.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/photo.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/icons/question.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/s.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/s1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera/s2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/se.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/se.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/se.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/icons/succeed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/sw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/sw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/sw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/images/text.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black/ie6/w.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue/ie6/w.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green/ie6/w.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/icons/warning.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/API.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/AUTHORS.en.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/admin/api/group/addwc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/aero.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/artDialog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/artDialog.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/black.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/blue.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/chrome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/ajaxContent/content.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/ajaxContent/content.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/demo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/down.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/redis/exists.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/export.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/frameset.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/common/token/getAccessToken.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/googleMaps.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/ajaxContent/googleMaps.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/green.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/helloWorld.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/highlight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/highlight.pack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/idialog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/iframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/iframeA.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/iframeB.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/plugins/iframeTools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/plugins/iframeTools.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/iframeTop.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/iframe_frameset.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/languages/javascript.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/jquery.artDialog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/jquery.artDialog.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/labs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/license.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/log.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/ajaxContent/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/login_iframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/login_iframe_2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/styles/magula.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/new.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/opera.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/plugin.iframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/readme.eng.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/simple.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/highlight/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/common/token.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/topFrame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/skins/twitter.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/artDialog/_doc/upd.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/weconfig.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/message/pages/home.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/group/add.js" afterPath="$PROJECT_DIR$/routes/admin/api/group/add.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/user/add.js" afterPath="$PROJECT_DIR$/routes/admin/api/user/add.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.pid" afterPath="$PROJECT_DIR$/app.pid" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/pages/group/get.js" afterPath="$PROJECT_DIR$/routes/admin/pages/group/get.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/pages/user/get.js" afterPath="$PROJECT_DIR$/routes/admin/pages/user/get.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/user/getUserInfo.js" afterPath="$PROJECT_DIR$/routes/admin/api/user/getUserInfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/group.jade" afterPath="$PROJECT_DIR$/views/admin/group.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/subpage/group.jade" afterPath="$PROJECT_DIR$/views/admin/subpage/group.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/redis.js" afterPath="$PROJECT_DIR$/libs/redis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/css/style.css" afterPath="$PROJECT_DIR$/public/admin/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="superchat.iws" />
@@ -24,32 +192,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="wechat.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/wechat.js">
+      <file leaf-file-name="group.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/subpage/group.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state vertical-scroll-proportion="-10.37037">
+              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="addgroup.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/admin/js/addgroup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.pid" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.pid">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.21837088">
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,13 +231,29 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/admin/api/user/quarz.js" />
-        <option value="$PROJECT_DIR$/routes/admin/api/user/add.js" />
-        <option value="$PROJECT_DIR$/routes/admin/api/user/getUserInfo.js" />
         <option value="$PROJECT_DIR$/routes/admin/pages/user/get.js" />
         <option value="$PROJECT_DIR$/views/admin/subpage/user.jade" />
         <option value="$PROJECT_DIR$/model/common/user/get.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/node_modules/wechat/lib/wechat.js" />
+        <option value="$PROJECT_DIR$/app.pid" />
+        <option value="$PROJECT_DIR$/public/admin/js/addGroup.js" />
+        <option value="$PROJECT_DIR$/libs/redis/exists.js" />
+        <option value="$PROJECT_DIR$/libs/redis.js" />
+        <option value="$PROJECT_DIR$/config/wechat-conf.js" />
+        <option value="$PROJECT_DIR$/config/wconfig.js" />
+        <option value="$PROJECT_DIR$/model/common/token/addAccessToken.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/model/common/token.js" />
+        <option value="$PROJECT_DIR$/config/weconfig.js" />
+        <option value="$PROJECT_DIR$/public/admin/css/style.css" />
+        <option value="$PROJECT_DIR$/views/admin/group.jade" />
+        <option value="$PROJECT_DIR$/model/common/token/getAccessToken.js" />
+        <option value="$PROJECT_DIR$/routes/admin/api/group/addwc.js" />
+        <option value="$PROJECT_DIR$/routes/admin/api/group/add.js" />
+        <option value="$PROJECT_DIR$/routes/admin/api/user/add.js" />
+        <option value="$PROJECT_DIR$/routes/admin/api/user/getUserInfo.js" />
+        <option value="$PROJECT_DIR$/views/admin/subpage/group.jade" />
+        <option value="$PROJECT_DIR$/public/admin/js/addgroup.js" />
       </list>
     </option>
   </component>
@@ -145,7 +321,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="superchat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="superchat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="superchat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="superchat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subpage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -157,13 +373,16 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/wechat" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/super8" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/model/common" />
+      <recent name="$PROJECT_DIR$/libs/redis" />
       <recent name="$PROJECT_DIR$/node_modules" />
     </key>
   </component>
@@ -232,17 +451,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="723" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19669421" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23140496" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22859451" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2641357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3090909" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21322314" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -266,29 +485,29 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/quarz.js">
+    <entry file="file://$PROJECT_DIR$/route/admin/api/user/get.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1255814">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/user.jade">
+    <entry file="file://$PROJECT_DIR$/route/admin/api/user/query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -296,157 +515,403 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/common/user/gets.js">
+    <entry file="file://$PROJECT_DIR$/route/admin/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/pages/user/get.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express-session/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/subpage/user.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7037036">
-          <caret line="61" column="51" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/common/user/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/route/admin/pages/user/get.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.649681">
-          <caret line="196" column="9" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/tools/date.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/common/user/get.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7409201">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5289256">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/pages/group/get.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23076923">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/getUserInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.046153847">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/wechat/lib/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/wechat/lib/wechat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5823666">
-          <caret line="578" column="50" selection-start-line="578" selection-start-column="38" selection-end-line="578" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/wechat/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/wechat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48908296">
-          <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+        <state vertical-scroll-proportion="-6.3703704">
+          <caret line="139" column="15" selection-start-line="139" selection-start-column="15" selection-end-line="139" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.pid">
+    <entry file="file://$PROJECT_DIR$/route/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/question.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/error.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1440990959000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440990959000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440990959000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/base.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/pagelets/head/meta.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/pagelets/nav.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1440492145000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/pagelets/header.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1440492145000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/pagelets/footfunc.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/home.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/middleware/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6239168">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/pages/group/get.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/question.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335">
+          <caret line="28" column="90" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9963636">
+          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/goldengun.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.093587525">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/group.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3333335">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/base.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/js/addquestion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40120968">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express-validator/lib/express_validator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3490909">
+          <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/weconfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/admin/api/question/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/common/token.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/common/token/getAccessToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/admin/pages/question/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6532258">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/admin/api/question/get.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7278226">
+          <caret line="73" column="15" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/redis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6590389">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/common/oauth/set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6590389">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/redis/hmset.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5303293">
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34315425">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/quarz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/addwc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="76" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/getUserInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/addTopic.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/user.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="34.962963">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/achievement.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/addPlayset.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/addQuestion.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.037037">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/robot.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.666667">
+          <caret line="48" column="40" selection-start-line="45" selection-start-column="32" selection-end-line="48" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/subpage/group.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.37037">
+          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/js/addgroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21837088">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

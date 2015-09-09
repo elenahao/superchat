@@ -1,4 +1,13 @@
 div.gm-user
+    - var formURL = '/admin/api/group/edit/'
+    form#questTable(action=formURL,method="POST")
+        input(type="hidden",name="gname",id="gname")
+        div.gm-search-bar
+            div.col-xs-4
+                input.form-control.qname(type="text")
+            a.btn.btn-primary.btn-sm.active.gm-search(role="button") 搜索
+            a.btn.btn-primary.btn-sm.active.gm-add(role="button") 新增
+            a.btn.btn-primary.btn-sm.active.gm-refresh(role="button", href="/admin/api/group/add") 刷新
     div.gm-question-form
         table.table.table-striped.gm-topic-table
             thead
@@ -9,6 +18,8 @@ div.gm-user
                         | 组名称
                     th
                         | 组人数
+                    th
+                        | 操作
             tbody
                 each group in groups
                     tr
@@ -18,6 +29,11 @@ div.gm-user
                             | #{group.name}
                         td
                             | #{group.count}
+                        td
+                            a.btn.btn-sm.btn-edit(href="#")
+                                | 编辑
+                            a.btn.btn-sm.btn-delete(href="#")
+                                | 删除
     nav
         ul.pagination
             each page in pages

@@ -56,6 +56,10 @@ html,body{
 }
 .gm-add{
     position: absolute;
+    right: 90px;
+}
+.gm-refresh{
+    position: absolute;
     right: 30px;
 }
 /*电影题目*/
