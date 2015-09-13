@@ -305,3 +305,14 @@ html,body{
     cursor: default;
 }
 
+
+/*Derek*/
+.submit_row{
+    border: 1px solid #CCCCCC;
+    background: #ffffff;
+    margin: 0;
+    padding: 10px 0;
+}
+.submit_select{
+    margin: 15px 0;
+}
