@@ -12,7 +12,7 @@ var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 // 调取微信接口获取用户的openid
-app.get('/admin/api/user/add', function(req, res) {
+app.get('/admin/api/user/refresh', function(req, res) {
     console.log("admin user get...");
     var ACCESS_TOKEN = '';
     Token.getAccessToken().then(function resolve(res) {
@@ -58,7 +58,7 @@ app.get('/admin/api/user/add', function(req, res) {
             msg: errors
         }));
     })
-    res.send('get user success');
+    res.redirect('/admin/user');
 });
 
 var getUser = function(ACCESS_TOKEN, next_openid) {

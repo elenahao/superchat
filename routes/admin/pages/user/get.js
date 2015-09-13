@@ -42,6 +42,7 @@ app.get(['/admin/user'],
                 csrf: res.locals._csrf,
                 sitenavs: _nav,//传到页面后，左侧菜单栏根据isActive点亮或变灰
                 users: data.users,
+                groups: data.groups,
                 pages: _pageLinks
             });
         } // end of render
@@ -57,6 +58,7 @@ app.get(['/admin/user'],
             if (res.statusCode === 200) {
                 var _data = JSON.parse(body);
                 if (_data.ret == 0) {
+                    //获取组信息
                     console.log('rendering ...');
                     render(_data.data);
                 }

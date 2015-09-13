@@ -26,10 +26,10 @@ app.get('/admin/api/user/getInfo', function(req, res) {
     },function reject(err){
         res.status(400).send(JSON.stringify({
             ret: -4,
-            msg: errors
+            msg: err
         }));
     })
-    res.send('get user success');
+    res.redirect('/admin/user');
 });
 
 function scan(ACCESS_TOKEN) {

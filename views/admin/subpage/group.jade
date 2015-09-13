@@ -1,39 +1,40 @@
 div.gm-user
-    - var formURL = '/admin/api/group/edit/'
+    - var formURL = '/admin/api/group/add/'
     form#questTable(action=formURL,method="POST")
         input(type="hidden",name="gname",id="gname")
+        input(type="hidden",name="gid",id="gid")
         div.gm-search-bar
             div.col-xs-4
-                input.form-control.qname(type="text")
+                input.form-control.qname(type="text", placeholder="组名称")
             a.btn.btn-primary.btn-sm.active.gm-search(role="button") 搜索
             a.btn.btn-primary.btn-sm.active.gm-add(role="button") 新增
-            a.btn.btn-primary.btn-sm.active.gm-refresh(role="button", href="/admin/api/group/add") 刷新
-    div.gm-question-form
-        table.table.table-striped.gm-topic-table
-            thead
-                tr
-                    th
-                        | ID
-                    th
-                        | 组名称
-                    th
-                        | 组人数
-                    th
-                        | 操作
-            tbody
-                each group in groups
+            a.btn.btn-primary.btn-sm.active.gm-refresh(role="button", href="/admin/api/group/refresh") 刷新
+        div.gm-question-form
+            table.table.table-striped.gm-topic-table
+                thead
                     tr
-                        td(scope="row")
-                            | #{group.id}
-                        td
-                            | #{group.name}
-                        td
-                            | #{group.count}
-                        td
-                            a.btn.btn-sm.btn-edit(href="#")
-                                | 编辑
-                            a.btn.btn-sm.btn-delete(href="#")
-                                | 删除
+                        th
+                            | ID
+                        th
+                            | 组名称
+                        th
+                            | 组人数
+                        th
+                            | 操作
+                tbody
+                    each group in groups
+                        tr
+                            td(scope="row")
+                                | #{group.id}
+                            td
+                                | #{group.name}
+                            td
+                                | #{group.count}
+                            td
+                                a.btn.btn-sm.btn-edit(groupid="#{group.id}" groupname="#{group.name}")
+                                    | 编辑
+                                a.btn.btn-sm.btn-delete(groupid="#{group.id}" groupname="#{group.name}")
+                                    | 删除
     nav
         ul.pagination
             each page in pages

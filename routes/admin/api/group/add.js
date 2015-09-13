@@ -1,5 +1,5 @@
 /**
- * Created by elenahao on 15/9/1.
+ * Created by elenahao on 15/9/9.
  */
 
 'use strict';
@@ -11,43 +11,60 @@ var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
-// 调用微信接口获取公众号的所有组
-app.get('/admin/api/group/add', function(req, res) {
-    console.log("admin group get...");
-    var ACCESS_TOKEN = '';
-    Token.getAccessToken().then(function resolve(res) {
-        if(res.access_token){
-            console.log(res.access_token);
-            ACCESS_TOKEN = res.access_token;
-            request({
-                url: 'https://api.weixin.qq.com/cgi-bin/groups/get?access_token='+ACCESS_TOKEN,
-                method: 'GET'
-            }, function(err, res, body) {
-                if(err) console.log(err);
-                console.log('======'+body);
-                if (res.statusCode === 200) {
-                    console.log('success');
-                    //存入redis
-                    var data = JSON.parse(body);
-                    var groups = data.groups;
-                    for(var i = 0; i< groups.length;i++){
-                        var group = groups[i];
-                        var key = 'group:'+group.id;
-                        redis.hmset(key, group)
-                            .then(function resolve(res) {
-                                console.log('is hmset ok:', res);
-                            }, function reject(err) {
-                                dfd.reject(err);
-                            })
+app.post(['/admin/api/group/add'],
+    function(req, res, next){
+        console.log('admin api group add-to-wechat ... ');
+        console.log('gname='+req.body.gname);
+        req.sanitize('gname').trim();
+        req.sanitize('gname').escape();
+        //验证
+        req.checkBody('gname', 'empty').notEmpty();
+        console.log('gname='+req.body.gname);
+        var errors = req.validationErrors();
+        console.log('err:',errors);
+
+        if (errors) {
+            res.status(400).send(JSON.stringify({
+                ret: -1,
+                msg: errors
+            }));
+        } else {
+            //var _data = req.body;
+            var _gname = req.body.gname;
+            if (_gname) {
+                //{"group":{"name":"test"}}
+                //先获取ACCESS_TOKEN
+                var ACCESS_TOKEN = '';
+                Token.getAccessToken().then(function resolve(res) {
+                    if(res.access_token){
+                        console.log(res.access_token);
+                        ACCESS_TOKEN = res.access_token;
+                        console.log(res.access_token);
+                        console.log('_gname='+_gname);
+                        var group = {
+                            name: _gname
+                        }
+                        console.log(JSON.stringify(group));
+                        request({url: 'https://api.weixin.qq.com/cgi-bin/groups/create?access_token='+ACCESS_TOKEN,
+                            method: 'POST',
+                            body: JSON.stringify({group: group})
+                        }, function (err, res, body){
+                            console.log('is request get ok111:', body);
+                        });
                     }
-                }
-            });
+                },function reject(err){
+                    res.status(400).send(JSON.stringify({
+                        ret: -4,
+                        msg: errors
+                    }));
+                })
+            } else {
+                res.status(400).send(JSON.stringify({
+                    ret: -3,
+                    msg: errors
+                }));
+            }
+            res.redirect('/admin/group');
         }
-    },function reject(err){
-        res.status(400).send(JSON.stringify({
-            ret: -4,
-            msg: errors
-        }));
-    })
-    res.redirect('/admin/group');
-});
+    });
+

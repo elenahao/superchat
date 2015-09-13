@@ -58,10 +58,17 @@ html,body{
     position: absolute;
     right: 90px;
 }
+/*add-S by hxy at 2015-09-11*/
 .gm-refresh{
     position: absolute;
     right: 30px;
 }
+.gm-refresh-info{
+    position: absolute;
+    right: 120px;
+}
+/*add-E by hxy at 2015-09-11*/
+
 /*电影题目*/
 .gm-topic{
 
