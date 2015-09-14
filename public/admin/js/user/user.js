@@ -37,7 +37,42 @@
                 });
             }
         });
-
     });
+    //Derek
+    var oRadio = $(".submit_radio");
+    console.log(oRadio);
+    for(var i = 0; i<oRadio.length; i++){
+        (function(){
+            var p = i;
+            oRadio[p].onclick = function(){
+                console.log(p);
+                switch(p){
+                    case 0:
+                        showSelect("#select_sex");
+                        break;
+                    case 1:
+                        showSelect("#select_city");
+                        break;
+                    case 2:
+                        showSelect("#select_country");
+                        break;
+                    case 3:
+                        showSelect("#select_province");
+                        break;
+                    case 4:
+                        showSelect("#select_language");
+                        break;
+                    default :
+                        showSelect("#select_sex1");
+                        break;
+                }
+            };
+        })();
+    }
+    function showSelect(id) {
+        $(".submit_select").removeClass("display");
+        $(id).removeClass("display");
+        $(id).siblings().addClass("display");
+    }
 })($);
 

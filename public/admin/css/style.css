@@ -323,3 +323,9 @@ html,body{
 .submit_select{
     margin: 15px 0;
 }
+.display{
+    display: none;
+}
+.block{
+    display: block;
+}
