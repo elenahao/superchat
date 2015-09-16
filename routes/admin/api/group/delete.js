@@ -13,6 +13,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 app.get('/admin/api/group/delete/:gid',
     function(req, res, next){
+        var dfd = Q.defer();
         console.log('admin api group delete-to-wechat ... ');
         console.log('gid='+req.params.gid);
         var _gid = req.params.gid;
@@ -34,6 +35,18 @@ app.get('/admin/api/group/delete/:gid',
                         body: JSON.stringify({group: group})
                     }, function (err, res, body){
                         console.log('is request get ok:', body);
+                        redis.del('group:'+_gid).then(function resolve(res){
+                            console.log('is del group ok:', res);
+                            return redis.del('schedual-user:'+_gid);
+                        }, function reject(err){
+                            dfd.reject(err);
+                        })
+                        .then(function resolve(res){
+                            console.log('is del schedual ok:', res);
+                            dfd.resolve(res);
+                        }, function reject(err){
+                            dfd.reject(err);
+                        })
                     });
                 }
             },function reject(err){

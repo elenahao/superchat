@@ -122,6 +122,53 @@
             }
         });
 
+        //add at 2015-09-15
+        questTable.delegate('.btn-warning', 'click', function(e) {
+            e.preventDefault();
+            var target = $(e.currentTarget);
+            var groupid = $(this).attr("groupid");
+            var groupnickname = $(this).attr("groupnickname") == undefined ? '' : $(this).attr("groupnickname");
+            var dialog = art.dialog({
+                title: '编辑别名',
+                content: '<label>别名：</label><input id="group_nickname" value="'+groupnickname+'"/>',
+                ok: function(){
+                    var group_nickname = $('#group_nickname').val();
+                    if(group_nickname == '') {
+                        alert('(╯‵□′)╯︵┻━┻ 检查别名为必填项！');
+                        return false;
+                    }else{
+                        console.log('ddd'+group_nickname);
+                        console.log('sss'+questTable.find('#gnickname'));
+                        questTable.find('#gnickname').val(group_nickname);
+                        questTable.find('#gid').val(groupid);
+                        questTable.attr('action', '/admin/api/group/nickname');
+                        $.ajax({
+                            url: questTable.attr('action'),
+                            headers: {
+                                'X-CSRF-Token': csrfKey
+                            },
+                            data: questTable.serialize(),
+                            method: 'POST',
+                            dataType: 'json',
+                            success: function(res) {
+                                if (res.ret == 0) {
+                                    window.location.href = '/admin/group';
+                                } else {
+                                    alert('(╯‵□′)╯︵┻━┻ 失败......');
+                                }
+                            }
+                        });
+                    }
+
+                },okVal: '确定',
+                cancelVal: '关闭',
+                cancel: function(){
+                    console.log('关闭');
+                },fixed:true,
+                resize:true
+            });
+        });
+
     });
 })($);
 

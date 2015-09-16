@@ -14,6 +14,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 app.post(['/admin/api/group/add'],
     function(req, res, next){
         console.log('admin api group add-to-wechat ... ');
+        var dfd = Q.defer();
         console.log('gname='+req.body.gname);
         req.sanitize('gname').trim();
         req.sanitize('gname').escape();
@@ -49,7 +50,25 @@ app.post(['/admin/api/group/add'],
                             method: 'POST',
                             body: JSON.stringify({group: group})
                         }, function (err, res, body){
-                            console.log('is request get ok111:', body);
+                            console.log('is request get ok:', body);
+                            if(!err){
+                                var _body = JSON.parse(body);
+                                if(typeof _body.group === 'undefined'){
+                                    res.status(400).send(JSON.stringify({
+                                        ret: -4,
+                                        msg: body
+                                    }));
+                                }else{
+                                    var _g = _body.group;
+                                    redis.hmset('group:'+_g.id, {id: _g.id, name: _g.name, count: 0})
+                                    .then(function resolve(res){
+                                        console.log('is hmset group ok:', res);
+                                        dfd.resolve(res);
+                                    }, function reject(err){
+                                       dfd.reject(err);
+                                    });
+                                }
+                            }
                         });
                     }
                 },function reject(err){

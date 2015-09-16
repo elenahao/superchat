@@ -60,10 +60,10 @@
                         showSelect("#select_province");
                         break;
                     case 4:
-                        showSelect("#select_language");
+                        showSelect("#select_group");
                         break;
                     default :
-                        showSelect("#select_sex1");
+                        showSelect("#select_follow");
                         break;
                 }
             };

@@ -56,16 +56,20 @@ html,body{
 }
 .gm-add{
     position: absolute;
-    right: 90px;
+    right: 140px;
 }
 /*add-S by hxy at 2015-09-11*/
 .gm-refresh{
     position: absolute;
-    right: 30px;
+    right: 85px;
 }
 .gm-refresh-info{
     position: absolute;
-    right: 120px;
+    right: 180px;
+}
+.gm-synchronize{
+    position: absolute;
+    right: 30px;
 }
 /*add-E by hxy at 2015-09-11*/
 

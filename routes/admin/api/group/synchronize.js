@@ -1,5 +1,5 @@
 /**
- * Created by elenahao on 15/9/1.
+ * Created by elenahao on 15/9/16.
  */
 
 'use strict';
@@ -9,13 +9,24 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var Group = require(path.resolve(global.gpath.app.model + '/common/group'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 // 调用微信接口获取公众号的所有组
-app.get('/admin/api/group/refresh', function(req, res) {
+app.get('/admin/api/group/synchronize', function(req, res) {
     var dfd = Q.defer();
-    console.log("admin group refresh ...");
-    Token.getAccessToken().then(function resolve(res) {
+    console.log("admin group synchronize ...");
+    //将redis中的group数据全部删除
+    Group.delAll().then(function resolve(res) {
+        console.log('del over...');
+        return Token.getAccessToken();
+    }, function reject(err){
+        res.status(400).send(JSON.stringify({
+            ret: -4,
+            msg: err
+        }));
+    })
+    .then(function resolve(res) {
         var ACCESS_TOKEN = '';
         if(res.access_token){
             console.log(res.access_token);

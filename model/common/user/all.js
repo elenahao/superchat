@@ -17,7 +17,6 @@ var _getAllUser = function() {
         scan().then(function(res){
             var u = [];
             Lazy(res).each(function(value,key){
-                console.log('key='+key+'--value='+value);
                 u.push(value);
             });
             if(Lazy(u).isEmpty()){
@@ -50,7 +49,6 @@ function scan() {
                 if(res[1].length > 0){
                     console.log(res[1]);
                     Lazy(res[1]).each(function(uid){
-                        console.log('uid='+uid);
                         users[uid] = uid.split(':')[1];
                     });
                 }

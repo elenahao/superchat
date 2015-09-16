@@ -2,6 +2,7 @@ div.gm-user
     - var formURL = '/admin/api/group/add/'
     form#questTable(action=formURL,method="POST")
         input(type="hidden",name="gname",id="gname")
+        input(type="hidden",name="gnickname",id="gnickname")
         input(type="hidden",name="gid",id="gid")
         div.gm-search-bar
             div.col-xs-4
@@ -9,6 +10,7 @@ div.gm-user
             a.btn.btn-primary.btn-sm.active.gm-search(role="button") 搜索
             a.btn.btn-primary.btn-sm.active.gm-add(role="button") 新增
             a.btn.btn-primary.btn-sm.active.gm-refresh(role="button", href="/admin/api/group/refresh") 刷新
+            a.btn.btn-primary.btn-sm.active.gm-synchronize(role="button", href="/admin/api/group/synchronize") 同步
         div.gm-question-form
             table.table.table-striped.gm-topic-table
                 thead
@@ -17,6 +19,8 @@ div.gm-user
                             | ID
                         th
                             | 组名称
+                        th
+                            | 别名(wy:国家-省份-城市-性别-是否关注)
                         th
                             | 组人数
                         th
@@ -28,6 +32,14 @@ div.gm-user
                                 | #{group.id}
                             td
                                 | #{group.name}
+                            td
+                                if group.nickname
+                                    |#{group.nickname}
+                                    a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}" groupnickname="#{group.nickname}")
+                                        | 编辑
+                                else
+                                    a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}")
+                                        | 编辑
                             td
                                 | #{group.count}
                             td

@@ -13,6 +13,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 app.post(['/admin/api/group/edit'],
     function(req, res, next){
+        var dfd = Q.defer();
         console.log('admin api group edit-to-wechat ... ');
         console.log('gname='+req.body.gname);
         console.log('gid='+req.body.gid);
@@ -54,19 +55,25 @@ app.post(['/admin/api/group/edit'],
                             method: 'POST',
                             body: JSON.stringify({group: group})
                         }, function (err, res, body){
+                            redis.hmset('group:'+_gid, {name: _gname}).then(function resolve(res){
+                                console.log('is hmset ok:', res);
+                                dfd.resolve(res);
+                            }, function reject(err){
+                                dfd.reject(err);
+                            })
                             console.log('is request get ok:', body);
                         });
                     }
                 },function reject(err){
                     res.status(400).send(JSON.stringify({
                         ret: -4,
-                        msg: errors
+                        msg: err
                     }));
                 })
             } else {
                 res.status(400).send(JSON.stringify({
                     ret: -3,
-                    msg: errors
+                    msg: err
                 }));
             }
             res.redirect('/admin/group');
