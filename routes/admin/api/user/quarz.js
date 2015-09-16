@@ -13,8 +13,8 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-rule.hour = 14;
-rule.minute = 04;
+rule.hour = 2;
+rule.minute = 0;
 
 var j = schedule.scheduleJob(rule, function(){
     //SCAN获取所有的schedual定时
