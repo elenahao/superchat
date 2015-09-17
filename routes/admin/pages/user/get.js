@@ -48,7 +48,7 @@ app.get(['/admin/user'],
         } // end of render
 
         var _start = !_.isNaN(parseInt(req.query.start)) ? req.query.start : 0;
-        var _count = !_.isNaN(parseInt(req.query.count)) ? req.query.count : 20;
+        var _count = !_.isNaN(parseInt(req.query.count)) ? req.query.count : 2;
 
         request({
             url: 'http://127.0.0.1/admin/api/user/?start=' + _start + '&count=' + _count,
