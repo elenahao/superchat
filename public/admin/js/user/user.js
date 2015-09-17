@@ -5,6 +5,7 @@
 (function($) {
     $(function() {
         var questTable = $('#questTable');
+        var searchBar = $('.gm-search-bar');
         var csrfKey = $('#csrfKey').val();
         console.log(csrfKey);
 
@@ -35,6 +36,17 @@
                         }
                     }
                 });
+            }
+        });
+        searchBar.delegate('.gm-search', 'click', function(e){
+            e.preventDefault();
+
+            var uname = searchBar.find('.uname').val();
+
+            if (uname != '') {
+                location.href = '/admin/user/name/' + uname;
+            } else {
+                alert('(╯‵□′)╯︵┻━┻ 填个名字啊......');
             }
         });
     });

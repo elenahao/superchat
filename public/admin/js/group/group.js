@@ -5,6 +5,7 @@
 (function($) {
     $(function() {
         var questTable = $('#questTable');
+        var searchBar = $('.gm-search-bar');
         var csrfKey = $('#csrfKey').val();
         console.log(csrfKey);
 
@@ -167,6 +168,18 @@
                 },fixed:true,
                 resize:true
             });
+        });
+
+        searchBar.delegate('.gm-search', 'click', function(e){
+            e.preventDefault();
+
+            var gname = searchBar.find('.gname').val();
+
+            if (gname != '') {
+                location.href = '/admin/group/name/' + gname;
+            } else {
+                alert('(╯‵□′)╯︵┻━┻ 填个名字啊......');
+            }
         });
 
     });
