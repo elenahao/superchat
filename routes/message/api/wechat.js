@@ -10,7 +10,7 @@ var config = {
 /////////add by hxy at 2015-07-29
 
 
-app.get('/wechat', wechat(config, function (req, res, next) {
+app.post('/wechat', wechat(config, function (req, res, next) {
 	// 微信输入信息都在req.weixin上
 	console.log("---request="+req);
 	console.log("---message="+req.weixin);
