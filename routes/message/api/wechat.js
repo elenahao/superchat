@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+'use strict'
+
 var wechat = require('wechat');
 var config = {
 	token: 'haoxueying123',
@@ -10,7 +10,7 @@ var config = {
 /////////add by hxy at 2015-07-29
 
 
-router.get('/', wechat(config, function (req, res, next) {
+app.get('/wechat', wechat(config, function (req, res, next) {
 	// 微信输入信息都在req.weixin上
 	console.log("---request="+req);
 	console.log("---message="+req.weixin);
@@ -48,5 +48,3 @@ router.get('/', wechat(config, function (req, res, next) {
 		]);
 	}
 }));
-
-module.exports = router;

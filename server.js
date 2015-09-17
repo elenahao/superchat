@@ -139,8 +139,8 @@ app.use(bodyParser.urlencoded({
 //路由
 require('./routes');
 
-var wechat = require('./routes/wechat');
-app.use('/wechat', wechat);
+//var wechat = require('./routes/message/api/wechat');
+//app.use('/wechat', wechat);
 
 // 404
 app.use(function(req, res, next) {
