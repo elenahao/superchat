@@ -333,3 +333,9 @@ html,body{
 .block{
     display: block;
 }
+#x_div .col-xs-12{
+    height: 50px;
+}
+#x_div .col-xs-12 .col-xs-3{
+    text-align: right;
+}
