@@ -17,7 +17,8 @@ var _redis = {
     expire : require('./redis/expire'),
     zrevrange : require('./redis/zrevrange'),
     exists : require('./redis/exists'),
-    del: require('./redis/del')
+    del: require('./redis/del'),
+    lrange: require('./redis/lrange')
 }
 
 if (global.devMode) {

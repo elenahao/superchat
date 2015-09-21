@@ -20,7 +20,7 @@ div.gm-user
                         th
                             | 组名称
                         th
-                            | 别名(wy:国家-省份-城市-性别-是否关注)
+                            | 定时(wy:国家-省份-城市-性别-是否关注)
                         th
                             | 组人数
                         th
@@ -33,9 +33,9 @@ div.gm-user
                             td
                                 | #{group.name}
                             td
-                                if group.nickname
-                                    |#{group.nickname}
-                                    a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}" groupnickname="#{group.nickname}")
+                                if group.schedual_user
+                                    |#{group.schedual_user}
+                                    a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}" groupsu="#{group.schedual_user}")
                                         | 编辑
                                 else
                                     a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}")
@@ -56,3 +56,60 @@ div.gm-user
                 else
                     li
                         a(href="#{page.link}") #{page.text}
+//div
+//    label按照地区：
+//    select.form-control#group_su
+//        option
+//            | 中国
+//        option
+//            | 美国
+//    select.form-control#group_su
+//        option
+//            | 北京
+//        option
+//            | 上海
+//    select.form-control#group_su
+//        option
+//            | 朝阳
+//        option
+//            | 海淀
+//    label按照性别：
+//
+//<label>按照性别：</label><radio id="group_su" value="男">男</radio><radio id="group_su" value="女"></radio><radio id="group_su" value="未知"></radio><br>
+//<label>按照关注事件：</label><input type="text" id="subscribe_start"/>-<input type="text" id="subscribe_end"/><br>
+div.col-xs-12
+    div.col-xs-12
+        div.col-xs-3
+            label
+            | 按照地域
+        div.col-xs-9
+            div.col-xs-4
+                select.form-control.country-change(name="country")
+                    option(value="",selected="selected") -请选择-
+                    each country in countries
+                        option(value="#{country.id}") #{country.name}
+            div.col-xs-4
+                select.form-control
+                    option
+            div.col-xs-4
+                select.form-control
+                    option
+    div.col-xs-12
+        div.col-xs-3
+            | 按照性别
+        div.col-xs-9
+            div.col-xs-8
+                input(type="radio")
+                |男
+                input(type="radio")
+                |女
+                input(type="radio")
+                |不限
+            div.col-xs-4
+    div.col-xs-12
+        div.col-xs-3
+            | 按照关注时间
+        div.col-xs-9
+            input(typt="text")
+            |至
+            input(typt="text")

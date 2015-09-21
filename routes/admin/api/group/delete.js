@@ -37,7 +37,7 @@ app.get('/admin/api/group/delete/:gid',
                         console.log('is request get ok:', body);
                         redis.del('group:'+_gid).then(function resolve(res){
                             console.log('is del group ok:', res);
-                            return redis.del('schedual-user:'+_gid);
+                            return redis.del('schedual_user:'+_gid);
                         }, function reject(err){
                             dfd.reject(err);
                         })

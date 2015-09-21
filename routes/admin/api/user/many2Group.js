@@ -3,7 +3,7 @@
  */
 
 /*
-将所有城市为beijing的添加到‘北京’的组内
+将所有城市为beijing的添加到‘北京’的组内 for test
  */
 var path = require('path');
 var Q = require('q');
@@ -50,7 +50,7 @@ app.get('/admin/api/user/manyToGroup',
                         method: 'POST',
                         body: JSON.stringify({openid_list: us_openid, to_groupid: to_groupid})
                     }, function (err, res, body){
-                        console.log('is request get ok111:', body);
+                        console.log('is request get ok:', body);
                     });
                 }
             },function reject(err){

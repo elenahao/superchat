@@ -128,10 +128,12 @@
             e.preventDefault();
             var target = $(e.currentTarget);
             var groupid = $(this).attr("groupid");
-            var groupnickname = $(this).attr("groupnickname") == undefined ? '' : $(this).attr("groupnickname");
+            //var groupnickname = $(this).attr("groupnickname") == undefined ? '' : $(this).attr("groupnickname");
             var dialog = art.dialog({
-                title: '编辑别名',
-                content: '<label>别名：</label><input id="group_nickname" value="'+groupnickname+'"/>',
+                title: '自动添加用户',
+                content: '<label>按照地区：</label><select class="form-control" id="group_su" value=""><option>1</option></select><select class="form-control" id="group_su" value=""><option>1</option></select><select class="form-control" id="group_su" value=""><option>1</option></select><br>' +
+                '<label>按照性别：</label><radio id="group_su" value="男">男</radio><radio id="group_su" value="女"></radio><radio id="group_su" value="未知"></radio><br>' +
+                '<label>按照关注事件：</label><input type="text" id="subscribe_start"/>-<input type="text" id="subscribe_end"/><br>',
                 ok: function(){
                     var group_nickname = $('#group_nickname').val();
                     if(group_nickname == '') {
@@ -142,7 +144,7 @@
                         console.log('sss'+questTable.find('#gnickname'));
                         questTable.find('#gnickname').val(group_nickname);
                         questTable.find('#gid').val(groupid);
-                        questTable.attr('action', '/admin/api/group/nickname');
+                        questTable.attr('action', '/admin/api/group/addQuarz');
                         $.ajax({
                             url: questTable.attr('action'),
                             headers: {

@@ -19,6 +19,11 @@ _nav.prototype = {
                 id: 2,
                 name: '用户管理',
                 href: '/admin/user'
+            },
+            area: {
+                id: 3,
+                name: '区域管理',
+                href: '/admin/area'
             }
         }
     }

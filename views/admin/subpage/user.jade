@@ -28,13 +28,9 @@ div.gm-user
                         th
                             | 省份
                         th
-                            | 语言
-                        th
                             | 头像
                         th
                             | 用户关注时间
-                        th
-                            | 备注
                         th
                             | 组ID
                         th
@@ -62,16 +58,9 @@ div.gm-user
                             td
                                 | #{user.province}
                             td
-                                if user.language == 'zh_CN'
-                                    | 简体中文
-                                else
-                                    | #{user.language}
-                            td
                                 img.img-rounded(src="#{user.headimgurl}" alt="" width="30px" height="30px")
                             td
                                 | #{user.subscribe_time}
-                            td
-                                | #{user.remark}
                             td
                                 | #{user.groupid}
                             td

@@ -13,7 +13,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-rule.hour = 2;
+rule.hour = 2;//每周每天半夜2点整开始跑
 rule.minute = 0;
 
 var j = schedule.scheduleJob(rule, function(){
@@ -118,8 +118,10 @@ var _validator = function(schedual, user){
     var city_val = schedual.city;
     console.log('schedual------', schedual.sex);
     var sex_val = schedual.sex;
-    console.log('schedual------', schedual.subscribe);
-    var subscribe_val = schedual.subscribe;
+    console.log('schedual------', schedual.subscribe_start);
+    var subscribe_start_val = schedual.subscribe_start;
+    console.log('schedual------', schedual.subscribe_end);
+    var subscribe_end_val = schedual.subscribe_end;
     var to_groupid_val = schedual.to_groupid;
     console.log('to_groupid=' + to_groupid_val);
     var flag1 = false;
@@ -127,6 +129,7 @@ var _validator = function(schedual, user){
     var flag3 = false;
     var flag4 = false;
     var flag5 = false;
+    var flag6 = false;
     if (typeof country_val === 'undefined') {
         flag1 = true;
     } else {
@@ -163,15 +166,24 @@ var _validator = function(schedual, user){
             flag4 = false;
         }
     }
-    if (typeof subscribe_val === 'undefined') {
+    if (typeof subscribe_start_val === 'undefined') {
         flag5 = true;
     } else {
-        if (user.subscribe === subscribe_val) {
+        if (parseInt(user.subscribe_time) >= parseInt(subscribe_start_val)) {
             flag5 = true;
         } else {
             flag5 = false;
         }
     }
-    console.log(flag1 && flag2 && flag3 && flag4 && flag5);
-    return flag1 && flag2 && flag3 && flag4 && flag5;
+    if (typeof subscribe_end_val === 'undefined') {
+        flag6 = true;
+    } else {
+        if (parseInt(user.subscribe_time) <= parseInt(subscribe_end_val)) {
+            flag6 = true;
+        } else {
+            flag6 = false;
+        }
+    }
+    console.log(flag1 && flag2 && flag3 && flag4 && flag5 && flag6);
+    return flag1 && flag2 && flag3 && flag4 && flag5 && flag6;
 }

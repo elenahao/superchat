@@ -13,7 +13,7 @@ var _getSchedual = function(suid) {
         });
     } else {
         Q(
-            redis.hgetall('schedual-user:' + suid)
+            redis.hgetall('schedual_user:' + suid)
         ).then(function resolve(res) {
             var _schedual = res;
             _.extend(_schedual, {

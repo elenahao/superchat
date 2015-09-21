@@ -8,7 +8,7 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var Group = require(path.resolve(global.gpath.app.model + '/common/group'));
 
-// 获取指定分页和个数的题目
+// 获取指定分页和个数的组
 app.get('/admin/api/group',
     function(req, res) {
         console.log('/admin/api/group', req.query.start, req.query.count);

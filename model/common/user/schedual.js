@@ -36,7 +36,7 @@ function scan() {
     function _scan(){
         redis.client.scan(
             cursor,
-            'match', 'schedual-user:*',
+            'match', 'schedual_user:*',
             'count', '100',
             function(err, res) {
                 cursor = res[0];

@@ -10,17 +10,17 @@ var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 
-app.post(['/admin/api/group/nickname'],
+app.post(['/admin/api/group/addSchedual'],
     function(req, res, next){
-        console.log('admin api group nickname-group ... ');
-        console.log('gnickname='+req.body.gnickname);
+        console.log('admin api group addSchedual ... ');
+        console.log('su='+req.body.su);
         console.log('gid='+req.body.gid);
-        req.sanitize('gnickname').trim();
-        req.sanitize('gnickname').escape();
+        req.sanitize('su').trim();
+        req.sanitize('su').escape();
         req.sanitize('gid').trim();
         req.sanitize('gid').escape();
         //验证
-        req.checkBody('gnickname', 'empty').notEmpty();
+        req.checkBody('su', 'empty').notEmpty();
         req.checkBody('gid', 'empty').notEmpty().isInt();
         var errors = req.validationErrors();
         console.log('err:',errors);
@@ -31,27 +31,38 @@ app.post(['/admin/api/group/nickname'],
                 msg: errors
             }));
         } else {
-            var _gnickname = req.body.gnickname;
+            var _su = req.body.su;
             var _gid = req.body.gid;
             var options = {
-                nickname: _gnickname
+                schedual_user: _su
             }
             var dic = new Array('country', 'province', 'city', 'sex', 'subscribe');
             var obj = {};
             var array = new Array();
-            array = _gnickname.split(':')[1].split('-');
+            array = _gquarz.split(':')[1].split('#');
             for(var i = 0; i < array.length; i++){
-                if(array[i] == '*'){
+                if(array[i] === '*'){
                     continue;
                 }else{
-                    obj[dic[i]] = array[i];
+                    if(dic[i] === 'subscribe'){//如果是关注日期的选项，需要进行换算成毫秒再存储，便于后面比较计算
+                        var subscribe_start = array[i].split('~')[0];
+                        var subscribe_end = array[i].split('~')[1];
+                        subscribe_start = subscribe_start.replace(new RegExp('-','gm'),'/');
+                        subscribe_end = subscribe_end.replace(new RegExp('-','gm'),'/');
+                        var start = (new Date(subscribe_start)).getTime();
+                        var end = (new Date(subscribe_end)).getTime();
+                        obj['subscribe_start'] = subscribe_start;
+                        obj['subscribe_end'] = subscribe_end;
+                    }else{
+                        obj[dic[i]] = array[i];
+                    }
                 }
             }
-            if (_gnickname && _gid) {
+            if (_su && _gid) {
                 redis.hmset('group:'+_gid, options)
                     .then(function resolve(res){
                         console.log('is hmset ok:', res);
-                        return redis.hmset('schedual-user:'+_gid, obj);
+                        return redis.hmset('schedual_user:'+_gid, obj);
                     }, function reject(err){
                         res.status(400).send(JSON.stringify({
                             ret: -1,

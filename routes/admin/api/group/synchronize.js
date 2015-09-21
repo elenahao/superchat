@@ -16,7 +16,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 app.get('/admin/api/group/synchronize', function(req, res) {
     var dfd = Q.defer();
     console.log("admin group synchronize ...");
-    //将redis中的group数据全部删除
+    //将redis中的group数据全部删除 //需要添加一个删除schedual的功能
     Group.delAll().then(function resolve(res) {
         console.log('del over...');
         return Token.getAccessToken();
