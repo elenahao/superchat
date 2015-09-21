@@ -131,9 +131,8 @@
             //var groupnickname = $(this).attr("groupnickname") == undefined ? '' : $(this).attr("groupnickname");
             var dialog = art.dialog({
                 title: '自动添加用户',
-                content: '<label>按照地区：</label><select class="form-control" id="group_su" value=""><option>1</option></select><select class="form-control" id="group_su" value=""><option>1</option></select><select class="form-control" id="group_su" value=""><option>1</option></select><br>' +
-                '<label>按照性别：</label><radio id="group_su" value="男">男</radio><radio id="group_su" value="女"></radio><radio id="group_su" value="未知"></radio><br>' +
-                '<label>按照关注事件：</label><input type="text" id="subscribe_start"/>-<input type="text" id="subscribe_end"/><br>',
+                width: 800,
+                content: document.getElementById('x_div'),
                 ok: function(){
                     var group_nickname = $('#group_nickname').val();
                     if(group_nickname == '') {
