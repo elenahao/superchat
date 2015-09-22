@@ -13,6 +13,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 // 调取微信接口获取用户的openid
 app.get('/admin/api/user/refresh', function(req, res) {
+    var dfd = Q.defer();
     console.log("admin user get...");
     var ACCESS_TOKEN = '';
     Token.getAccessToken().then(function resolve(res) {
@@ -33,7 +34,7 @@ app.get('/admin/api/user/refresh', function(req, res) {
                     var count = _body.count;
                     var data = _body.data;
                     var openids = data.openid;
-                    var next_openid = data.next_openid;
+                    var next_openid = _body.next_openid;
                     for(var i = 0; i< openids.length; i++){
                         var openid = openids[i];
                         var options = {
@@ -62,16 +63,21 @@ app.get('/admin/api/user/refresh', function(req, res) {
 });
 
 var getUser = function(ACCESS_TOKEN, next_openid) {
+    var dfd = Q.defer();
+    console.log(ACCESS_TOKEN);
+    console.log(next_openid);
     request({
         url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN+'&next_openid='+next_openid,
         method: 'GET'
     }, function(err, res, body){
         var _body = JSON.parse(body);
+        console.log('_body='+_body);
         var total = _body.total;
         var count = _body.count;
         var data = _body.data;
+        console.log('data='+data);
         var openids = data.openid;
-        var next_openid = data.next_openid;
+        var next_openid = _body.next_openid;
         for(var i = 0; i< openids.length; i++){
             var openid = openids[i];
             var options = {
@@ -95,7 +101,7 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
                 var count = _body.count;
                 var data = _body.data;
                 var openids = data.openid;
-                var next_openid = data.next_openid;
+                var next_openid = _body.next_openid;
                 for (var i = 0; i < openids.length; i++) {
                     var openid = openids[i];
                     var options = {

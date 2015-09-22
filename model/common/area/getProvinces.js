@@ -11,7 +11,7 @@ var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var _getProvinces = function(country) {
     console.log('get provinces by country...');
     var dfd = Q.defer();
-    redis.lrange('country:'+country, '0', '-1').then(function resolve(res){
+    redis.lrange('province:'+country, '0', '-1').then(function resolve(res){
         console.log('is lrange ok:', res);
         dfd.resolve(res);
     },function err(err){

@@ -13,19 +13,19 @@ var Area = require(path.resolve(global.gpath.app.model + '/common/area'));
 app.post('/admin/api/area/getProvinces',
     function(req, res) {
         console.log('/admin/api/area/getProvinces...');
-        console.log(res.body.country);
-        //req.sanitize('country').trim();
-        //req.sanitize('country').escape();
-        //req.checkBody('country', 'empty').notEmpty();
-        //var errors = req.validationErrors();
+        console.log(req.body.country);
+        req.sanitize('country').trim();
+        req.sanitize('country').escape();
+        req.checkBody('country', 'empty').notEmpty();
+        var errors = req.validationErrors();
         console.log('err:',errors);
-        //if (errors) {
+        if (errors) {
             res.status(400).send(JSON.stringify({
                 ret: -1,
                 msg: errors
             }));
-        //} else {
-            var country = res.body.country;
+        } else {
+            var country = req.body.country;
             console.log('country=',country);
             Area.getProvinces(country).then(function done(provinces) {
                 console.log('provinces='+provinces);
@@ -34,7 +34,9 @@ app.post('/admin/api/area/getProvinces',
                     if (provinces[i]) {
                         var province = provinces[i];
                         var _id = province.split(':')[0];
+                        console.log(_id);
                         var _name = province.split(':')[1];
+                        console.log(_name);
                         _ps.push({id: _id, name:_name});
                     } else {
                         break;
@@ -50,5 +52,5 @@ app.post('/admin/api/area/getProvinces',
                     msg: err
                 }));
             });
-        //}
+        }
     });

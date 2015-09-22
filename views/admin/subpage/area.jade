@@ -19,14 +19,16 @@ div.gm-user
                 tbody
                     tr
                         td
-                            select.form-control.country-change(name="country")
-                                option(value="",selected="selected") -请选择-
+                            select.form-control.country-change(name="countries")
+                                option(value="",selected="selected") --请选择--
                                 each country in countries
                                     option(value="#{country.id}") #{country.name}
                         td
                             select.form-control.province-change(name="province")
+                                option(value="",selected="selected") --请选择--
                         td
                             select.form-control.city-change(name="city")
+                                option(value="",selected="selected") --请选择--
                         td
                             a.btn.btn-sm.btn-edit()
                                 | 删除
