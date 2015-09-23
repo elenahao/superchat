@@ -12,7 +12,7 @@ var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 // 调取微信接口获取用户的openid
-app.get('/admin/api/user/refresh', function(req, res) {
+app.get('/admin/api/refresh/user', function(req, res) {
     var dfd = Q.defer();
     console.log("admin user get...");
     var ACCESS_TOKEN = '';
@@ -20,6 +20,9 @@ app.get('/admin/api/user/refresh', function(req, res) {
         if(res.access_token){
             console.log(res.access_token);
             ACCESS_TOKEN = res.access_token;
+            //var next_openid = 'o0aT-dzYotN0c1QJeejYOGStmKFQ';
+            //var next_openid = 'o0aT-d-2Ml_edNGuWquQQki_Xpgk';
+            //getUser(ACCESS_TOKEN, next_openid);
             request({
                 url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN,
                 method: 'GET'

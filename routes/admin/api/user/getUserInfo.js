@@ -40,7 +40,7 @@ function scan(ACCESS_TOKEN) {
         redis.client.scan(
             cursor,
             'match', 'user:*',
-            'count', '1',
+            'count', '100',
             function(err, res) {
                 var user_list = new Array();
                 cursor = res[0];

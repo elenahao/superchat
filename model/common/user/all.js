@@ -24,7 +24,7 @@ var _getAllUser = function() {
             }
             getUsers(u).then(function done(us){
                 redis.set('allus', JSON.stringify(us));
-                redis.client.expire('allus', 20);
+                //redis.client.expire('allus', 20);
                 dfd.resolve(us);
             },function err(err){
                 dfd.reject(err);

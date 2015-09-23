@@ -25,7 +25,7 @@ var _getAllGroup = function() {
 
             getGroups(g).then(function done(gs){
                 redis.set('allgs', JSON.stringify(gs));
-                redis.client.expire('allgs', 20);
+                //redis.client.expire('allgs', 20);
                 dfd.resolve(gs);
             },function err(err){
                 dfd.reject(err);

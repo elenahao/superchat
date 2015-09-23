@@ -16,7 +16,7 @@ var _nav = require(path.resolve(global.gpath.app.model + '/admin/pages/sitenav')
 
 _nav.group.isActive = true;
 
-//展示全部用户
+//展示全部组
 app.get(['/admin/group'],
     function(req, res, next) {
         console.log("admin group...");
