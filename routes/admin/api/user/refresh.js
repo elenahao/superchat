@@ -33,7 +33,7 @@ app.get('/admin/api/refresh/user', function(req, res) {
                 if (res.statusCode === 200) {
                     //console.log('success');
                     //存入redis
-                    var _body = JSON.parse(clone(body));
+                    var _body = JSON.parse(body);
                     //var total = _body.total;
                     //var count = _body.count;
                     //var data = _body.data;
