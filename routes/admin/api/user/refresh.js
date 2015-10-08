@@ -33,7 +33,7 @@ app.get('/admin/api/refresh/user', function(req, res) {
                 if (res.statusCode === 200) {
                     //console.log('success');
                     //存入redis
-                    var _body = JSON.parse(body);
+                    var _body = JSON.parse(clone(body));
                     //var total = _body.total;
                     //var count = _body.count;
                     //var data = _body.data;
@@ -71,7 +71,7 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
         url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN+'&next_openid='+next_openid,
         method: 'GET'
     }, function(err, res, body){
-        var _body = JSON.parse(body);
+        var _body = JSON.parse(clone(body));
         //console.log('_body='+_body);
         //var total = _body.total;
         //var count = _body.count;
@@ -94,7 +94,7 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
                 url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN+'&next_openid='+next_openid,
                 method: 'GET'
             }, function(err, res, body) {
-                var _body = JSON.parse(body);
+                var _body = JSON.parse(clone(body));
                 //var total = _body.total;
                 //var count = _body.count;
                 //var data = _body.data;
