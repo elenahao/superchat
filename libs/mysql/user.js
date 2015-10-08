@@ -41,7 +41,7 @@ exports.findUsersByPage = function (pageNo, pageSize) {
 exports.addUserOpenid = function (openid) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
-        console.log(openid);
+        //console.log(openid);
         conn.query('insert ignore into wx_user (openid) values (?)', openid, function (err, ret) {
             if (err) {
                 console.error(err);
