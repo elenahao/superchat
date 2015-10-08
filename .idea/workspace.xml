@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a60e7fb8-fd8d-4839-bb43-613dfcbd870b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/user/refresh.js" afterPath="$PROJECT_DIR$/routes/admin/api/user/refresh.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/mysql/user.js" afterPath="$PROJECT_DIR$/libs/mysql/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="superchat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="refresh.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="refresh.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/admin/api/user/refresh.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8028169">
+            <state vertical-scroll-proportion="-28.444445">
               <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
               <folding />
             </state>
@@ -79,6 +78,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="53" column="52" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.556338">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -133,7 +142,6 @@
         <option value="$PROJECT_DIR$/libs/mysql.js" />
         <option value="$PROJECT_DIR$/model/common/group.js" />
         <option value="$PROJECT_DIR$/libs/mysql/client.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/model/common/group/pagingQuery.js" />
         <option value="$PROJECT_DIR$/routes/admin/pages/group/get.js" />
         <option value="$PROJECT_DIR$/routes/admin/api/group/query.js" />
@@ -150,6 +158,7 @@
         <option value="$PROJECT_DIR$/routes/admin/api/group/synchronize.js" />
         <option value="$PROJECT_DIR$/routes/admin/api/user/refresh.js" />
         <option value="$PROJECT_DIR$/libs/mysql/user.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -752,14 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/common/group.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21761657">
@@ -1138,8 +1139,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/api/user/refresh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8028169">
+        <state vertical-scroll-proportion="-28.444445">
           <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.556338">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
           <folding />
         </state>
       </provider>
