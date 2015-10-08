@@ -18,15 +18,16 @@ app.get('/admin/api/group/synchronize', function(req, res) {
     var dfd = Q.defer();
     console.log("admin group synchronize ...");
     //将redis中的group数据全部删除 //需要添加一个删除schedual的功能
-    Group.delAll().then(function resolve(res) {
-        console.log('del over...');
-        return Token.getAccessToken();
-    }, function reject(err){
-        res.status(400).send(JSON.stringify({
-            ret: -4,
-            msg: err
-        }));
-    })
+    //Group.delAll().then(function resolve(res) {
+    //    console.log('del over...');
+    //    return Token.getAccessToken();
+    //}, function reject(err){
+    //    res.status(400).send(JSON.stringify({
+    //        ret: -4,
+    //        msg: err
+    //    }));
+    //})
+    Token.getAccessToken()
     .then(function resolve(res) {
         var ACCESS_TOKEN = '';
         if(res.access_token){
