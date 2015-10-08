@@ -66,7 +66,7 @@ app.get('/admin/api/refresh/user', function(req, res) {
 var getUser = function(ACCESS_TOKEN, next_openid) {
     var dfd = Q.defer();
     //console.log(ACCESS_TOKEN);
-    //console.log(next_openid);
+    console.log(next_openid);
     request({
         url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN+'&next_openid='+next_openid,
         method: 'GET'
