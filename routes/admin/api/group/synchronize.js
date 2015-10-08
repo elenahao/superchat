@@ -9,6 +9,7 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 var Group = require(path.resolve(global.gpath.app.model + '/common/group'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
@@ -44,13 +45,7 @@ app.get('/admin/api/group/synchronize', function(req, res) {
                     var groups = data.groups;
                     for(var i = 0; i< groups.length;i++){
                         var group = groups[i];
-                        var key = 'group:'+group.id;
-                        redis.hmset(key, group)
-                            .then(function resolve(res) {
-                                console.log('is hmset ok:', res);
-                            }, function reject(err) {
-                                dfd.reject(err);
-                            })
+                        mysql.group.addGroup(group);
                     }
                 }
             });

@@ -53,6 +53,7 @@ app.get(['/admin/group'],
             url: 'http://127.0.0.1/admin/api/group/?start=' + _start + '&count=' + _count,
             method: 'GET'
         }, function(err, res, body) {
+            console.log(body);
             if (res.statusCode === 200) {
                 var _data = JSON.parse(body);
                 if (_data.ret == 0) {

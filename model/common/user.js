@@ -7,4 +7,6 @@ module.exports = {
     schedual: require('./user/schedual'),
     getScheduals: require('./user/getScheduals'),
     getSchedual: require('./user/getSchedual'),
+    pagingQuery: require('./user/pagingQuery'),
+    getOpenidByPage: require('./user/getOpenidByPage')
 }

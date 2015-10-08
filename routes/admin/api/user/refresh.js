@@ -9,6 +9,7 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 // 调取微信接口获取用户的openid
@@ -40,12 +41,9 @@ app.get('/admin/api/refresh/user', function(req, res) {
                     var next_openid = _body.next_openid;
                     for(var i = 0; i< openids.length; i++){
                         var openid = openids[i];
-                        var options = {
-                            openid : openid
-                        }
-                        redis.hmset('user:'+openid, options)
+                        mysql.user.addUserOpenid(openid)
                             .then(function resolve(res) {
-                                console.log('is set ok:', res);
+                                console.log('is addOpenid ok:', res);
                             }, function reject(err) {
                                 dfd.reject(err);
                             })
@@ -83,12 +81,9 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
         var next_openid = _body.next_openid;
         for(var i = 0; i< openids.length; i++){
             var openid = openids[i];
-            var options = {
-                openid : openid
-            }
-            redis.hmset('user:'+openid, options)
+            mysql.user.addUserOpenid(openid)
                 .then(function resolve(res) {
-                    console.log('is set ok:', res);
+                    console.log('is addOpenid ok:', res);
                 }, function reject(err) {
                     dfd.reject(err);
                 })
@@ -107,12 +102,9 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
                 var next_openid = _body.next_openid;
                 for (var i = 0; i < openids.length; i++) {
                     var openid = openids[i];
-                    var options = {
-                        openid: openid
-                    }
-                    redis.hmset('user:' + openid, options)
+                    mysql.user.addUserOpenid(openid)
                         .then(function resolve(res) {
-                            console.log('is set ok:', res);
+                            console.log('is addOpenid ok:', res);
                         }, function reject(err) {
                             dfd.reject(err);
                         })

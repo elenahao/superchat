@@ -15,26 +15,18 @@ app.get('/admin/api/group',
 
         var _start = !_.isNaN(parseInt(req.query.start)) ? parseInt(req.query.start) : 0;
         var _count = !_.isNaN(parseInt(req.query.count)) ? parseInt(req.query.count) : 20;
-        var _end = _start + _count;
 
-        Group.all().then(function done(groups) {
-            console.log('group='+groups);
-            var _pages = Math.ceil(groups.length / _count);
+        Group.pagingQuery(_start, _count).then(function done(result) {
+            console.log(result);
+            console.log('group='+result.groups);
+            var _pages = result.totalPage;
+            console.log(_pages);
             var _now = Math.floor(_start / _count) + 1;
-
-            var _gs = [];
-            for (var i = _start; i < _end; i++) {
-                if (groups[i]) {
-                    _gs.push(groups[i]);
-                } else {
-                    break;
-                }
-            }
-
+            console.log(_now);
             res.status(200).send(JSON.stringify({
                 ret: 0,
                 data: {
-                    groups: _gs,
+                    groups: result.groups,
                     page: _pages,
                     now: _now,
                     start: _start,

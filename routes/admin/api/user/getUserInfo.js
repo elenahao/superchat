@@ -10,10 +10,12 @@ var _ = require('lodash');
 var request = require('request');
 var http = require('http');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
+var User = require(path.resolve(global.gpath.app.model + '/common/user'));
 
 // 调取微信接口获取用户的详细信息
-app.get('/admin/api/user/getInfo', function(req, res) {
+app.get('/admin/api/getInfo/user', function(req, res) {
     console.log("admin userInfo get...");
     var ACCESS_TOKEN = '';
     Token.getAccessToken().then(function resolve(res) {
@@ -34,63 +36,47 @@ app.get('/admin/api/user/getInfo', function(req, res) {
 
 function scan(ACCESS_TOKEN) {
     var dfd = Q.defer();
-    var cursor = '0';
-
+    var count = 10000;
+    var cursor = 0;
     function _scan(ACCESS_TOKEN){
-        redis.client.scan(
-            cursor,
-            'match', 'user:*',
-            'count', '100',
-            function(err, res) {
-                var user_list = new Array();
-                cursor = res[0];
-                if(res[1].length > 0){
-                    console.log(res[1]);
-                    Lazy(res[1]).each(function(uid){
-                        console.log('uid='+uid);
-                        var _data = {
-                            openid: uid.split(':')[1],
-                            lang: "zh-CN"
-                        }
-                        user_list.push(_data);
-                    });
-                    console.log(JSON.stringify({user_list: user_list}));
-                    console.log('ACCESS_TOKEN='+ACCESS_TOKEN);
-                    var url = 'https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token='+ACCESS_TOKEN+'&user_list='+JSON.stringify(user_list);
-                    console.log(url);
-                    request({
-                        url: 'https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token='+ACCESS_TOKEN,//+'&user_list='+JSON.stringify({user_list: user_list}),
-                        body: JSON.stringify({user_list: user_list}),
-                        method: 'POST'
-                    }, function(err, res, body) {
-                        if(err) console.log(err);
-                        console.log('======'+body);
-                        if (res.statusCode === 200) {
-                            console.log('success');
-                            //存入redis
-                            var _body = JSON.parse(body);
-                            console.log(_body);
-                            var user_info_list = _body.user_info_list;
-                            for(var i = 0; i< user_info_list.length; i++){
-                                var options = user_info_list[i];
-                                var openid = options.openid;
-                                redis.hmset('user:'+openid, options)
-                                    .then(function resolve(res) {
-                                        console.log('is set ok:', res);
-                                    }, function reject(err) {
-                                        dfd.reject(err);
-                                    })
-                            }
-                        }
-                    });
+        User.getOpenidByPage(cursor, count).then(function done(openids){
+            console.log('ACCESS_TOKEN='+ACCESS_TOKEN);
+            var url = 'https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token='+ACCESS_TOKEN+'&user_list='+JSON.stringify(openids);
+            console.log(url);
+            request({
+                url: 'https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token='+ACCESS_TOKEN,//+'&user_list='+JSON.stringify({user_list: user_list}),
+                body: JSON.stringify({user_list: openids}),
+                method: 'POST'
+            }, function(err, res, body) {
+                if(err) console.log(err);
+                console.log('======'+body);
+                if (res.statusCode === 200) {
+                    console.log('success');
+                    //存入redis
+                    var _body = JSON.parse(body);
+                    console.log(_body);
+                    var user_info_list = _body.user_info_list;
+                    for(var i = 0; i< user_info_list.length; i++){
+                        var user = user_info_list[i];
+                        //var openid = user.openid;
+                        mysql.user.updateUser(user)
+                            .then(function resolve(res) {
+                                console.log('is update ok:', res);
+                            }, function reject(err) {
+                                dfd.reject(err);
+                            })
+                    }
                 }
-                if (cursor == 0) {
+                if (openids.length != count) {
                     dfd.resolve(res);
                 } else {
+                    cursor++;
                     _scan(ACCESS_TOKEN);
                 }
-            }
-        );
+            });
+        }, function err(err){
+            dfd.reject(err);
+        })
     }
     _scan(ACCESS_TOKEN);
 

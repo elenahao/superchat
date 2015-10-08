@@ -16,29 +16,25 @@ app.get('/admin/api/user/',
         console.log('/admin/api/user/', req.query.start, req.query.count);
         var _start = !_.isNaN(parseInt(req.query.start)) ? parseInt(req.query.start) : 0;
         var _count = !_.isNaN(parseInt(req.query.count)) ? parseInt(req.query.count) : 20;
-        var _end = _start + _count;
         var _pages = 0;
         var _now = 0;
         var _us = [];
-        User.all().then(function done(users) {
-            console.log('user='+users);
-            _pages = Math.ceil(users.length / _count);
+
+        User.pagingQuery(_start, _count).then(function done(result) {
+            console.log(result);
+            console.log('user='+result.users);
+            _pages = result.totalPage;
+            console.log(_pages);
             _now = Math.floor(_start / _count) + 1;
-            for (var i = _start; i < _end; i++) {
-                if (users[i]) {
-                    _us.push(users[i]);
-                } else {
-                    break;
-                }
-            }
+            console.log(_now);
+            _us = result.users;
             return Group.all();
         }, function err(err) {
             res.status(400).send(JSON.stringify({
                 ret: -1,
                 msg: err
             }));
-        })
-        .then(function done(groups) {
+        }).then(function done(groups) {
             console.log('groups='+groups);
             res.status(200).send(JSON.stringify({
                 ret: 0,
