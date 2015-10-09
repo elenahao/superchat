@@ -57,10 +57,10 @@ app.get('/admin/api/refresh/user', function(req, res) {
     },function reject(err){
         res.status(400).send(JSON.stringify({
             ret: -4,
-            msg: errors
+            msg: err
         }));
     })
-    res.redirect('/admin/user');
+    //res.redirect('/admin/user');
 });
 
 var getUser = function(ACCESS_TOKEN, next_openid) {
