@@ -29,27 +29,36 @@ app.get('/admin/api/refresh/user', function(req, res) {
                 url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN,
                 method: 'GET'
             }, function(err, res, body) {
-                if(err) console.log(err);
+                if(err) {
+                    console.log(err);
+                }
                 if (res.statusCode === 200) {
-                    //console.log('success');
+                    //console.log(body);
                     //存入redis
-                    var _body = JSON.parse(clone(body));
+                    var _body = JSON.parse(body);
                     //var total = _body.total;
                     //var count = _body.count;
                     //var data = _body.data;
                     //var openids = data.openid;
                     var next_openid = _body.next_openid;
+                    //var openids = _body.data.openid;
+                    //mysql.user.addUserOpenid(_body.data.openid[i])
+                    //    .then(function resolve(res) {
+                    //        console.log('is addOpenid ok:', res);
+                    //    }, function reject(err) {
+                    //        dfd.reject(err);
+                    //    })
                     for(var i = 0; i< _body.data.openid.length; i++){
                         //var openid = openids[i];
                         mysql.user.addUserOpenid(_body.data.openid[i])
                             .then(function resolve(res) {
                                 console.log('is addOpenid ok:', res);
+                                if(i == 10000){
+                                    getUser(ACCESS_TOKEN, next_openid);
+                                }
                             }, function reject(err) {
                                 dfd.reject(err);
                             })
-                    }
-                    if(_body.total != _body.count){
-                        getUser(ACCESS_TOKEN, next_openid);
                     }
                 }
             });
@@ -71,7 +80,7 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
         url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN+'&next_openid='+next_openid,
         method: 'GET'
     }, function(err, res, body){
-        var _body = JSON.parse(clone(body));
+        var _body = JSON.parse(body);
         //console.log('_body='+_body);
         //var total = _body.total;
         //var count = _body.count;
@@ -84,6 +93,9 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
             mysql.user.addUserOpenid(_body.data.openid[i])
                 .then(function resolve(res) {
                     console.log('is addOpenid ok:', res);
+                    if(i == 10000){
+                        getUser(ACCESS_TOKEN, next_openid);
+                    }
                 }, function reject(err) {
                     dfd.reject(err);
                 })
@@ -94,7 +106,7 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
                 url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN+'&next_openid='+next_openid,
                 method: 'GET'
             }, function(err, res, body) {
-                var _body = JSON.parse(clone(body));
+                var _body = JSON.parse(body);
                 //var total = _body.total;
                 //var count = _body.count;
                 //var data = _body.data;
@@ -110,9 +122,10 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
                         })
                 }
             });
-        }else{
-            getUser(ACCESS_TOKEN, next_openid);
         }
+        //else{
+        //    getUser(ACCESS_TOKEN, next_openid);
+        //}
     });
 
 }
