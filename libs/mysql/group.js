@@ -36,7 +36,7 @@ exports.findGroupsByPage = function (pageNo, pageSize) {
         })
     });
     return dfd.promise;
-}
+};
 
 exports.findAllGroups = function () {
     console.log('in findAllGroups...');
@@ -53,7 +53,7 @@ exports.findAllGroups = function () {
         });
     });
     return dfd.promise;
-}
+};
 
 exports.addGroup = function (group) {
     var dfd = Q.defer();
@@ -69,6 +69,29 @@ exports.addGroup = function (group) {
             }
             conn.release();
         })
+    })
+    return dfd.promise;
+};
+
+exports.updateGroup = function (groups) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        console.log('--'+groups+'--');
+        if(groups && groups != ''){
+            conn.query('replace into wx_groups (id,name,count,nickname) values '+groups, function (err, ret) {
+                if (err) {
+                    console.error(err);
+                    dfd.reject(err);
+                }
+                else {
+                    dfd.resolve(ret);
+                }
+                conn.release();
+            })
+        }else{
+            conn.release();
+            dfd.resolve('null data');
+        }
     })
     return dfd.promise;
 };

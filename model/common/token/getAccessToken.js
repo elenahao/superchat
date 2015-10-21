@@ -52,6 +52,7 @@ var _getAccessToken = function() {
                        redis.set('access_token', ACCESS_TOKEN)
                            .then(function resolve(res) {
                                console.log('is redis set ok:', res);
+                               //console.log('过期时间:'+ _data.expires_in);
                                return redis.expire('access_token', EXPIRETIME);
                            }, function reject(err) {
                                dfd.reject(err);

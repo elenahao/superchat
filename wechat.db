@@ -22,3 +22,15 @@ CREATE TABLE `wechat`.`wx_user` (
   `groupid` INT NULL COMMENT '用户所在的分组ID',
   PRIMARY KEY (`id`)  COMMENT '');
 
+  ALTER TABLE `wechat`.`wx_user`
+  CHANGE COLUMN `nickname` `nickname` VARCHAR(255) NOT NULL DEFAULT 'wepiao' COMMENT '用户的昵称' ,
+  CHANGE COLUMN `city` `city` VARCHAR(255) NOT NULL DEFAULT '无' COMMENT '用户所在的城市' ,
+  CHANGE COLUMN `province` `province` VARCHAR(255) NOT NULL DEFAULT '无' COMMENT '用户所在的省份' ,
+  CHANGE COLUMN `country` `country` VARCHAR(255) NOT NULL DEFAULT '无' COMMENT '用户所在的国家' ,
+  CHANGE COLUMN `groupid` `groupid` INT(11) NOT NULL DEFAULT 9999 COMMENT '用户所在的分组ID' ,
+  ADD INDEX `index_nickname` (`nickname` ASC)  COMMENT '',
+  ADD INDEX `index_city` (`city` ASC)  COMMENT '',
+  ADD INDEX `index_province` (`province` ASC)  COMMENT '',
+  ADD INDEX `index_country` (`country` ASC)  COMMENT '',
+  ADD INDEX `index_groupid` (`groupid` ASC)  COMMENT '';
+

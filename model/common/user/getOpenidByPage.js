@@ -10,7 +10,7 @@ var _getPagingOpenid = function(pageNo, pageSize) {
     console.log('in _getPagingOpenid....');
     var dfd = Q.defer();
     mysql.user.findOpenidByPage(pageNo, pageSize).then(function resolve(res){
-        console.log('res=',res);
+        //console.log('res=',res);
         dfd.resolve(res);
     },function reject(err){
         console.log('findOpenidByPage err:', err);

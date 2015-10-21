@@ -2,7 +2,7 @@
  * Created by elenahao on 15/9/7.
  */
 
-var schedule = require("node-schedule");
+//var schedule = require("node-schedule");
 var path = require('path');
 var Q = require('q');
 var Lazy = require('lazy.js');
@@ -11,46 +11,46 @@ var request = require('request');
 var User = require(path.resolve(global.gpath.app.model + '/common/user'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
-var rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-rule.hour = 2;//每周每天半夜2点整开始跑
-rule.minute = 0;
+//var rule = new schedule.RecurrenceRule();
+//rule.dayOfWeek = [0, new schedule.Range(1, 6)];
+//rule.hour = 2;//每周每天半夜2点整开始跑
+//rule.minute = 0;
 
-var j = schedule.scheduleJob(rule, function(){
-    //SCAN获取所有的schedual定时
-    var dfd = Q.defer();
-    var scheduals = [];
-    var users = [];
-    User.schedual().then(function done(res) {
-        Lazy(res).each(function(_res) {
-            scheduals.push(_res);
-        });
-        return User.all();
-    }, function err(err) {
-        dfd.reject({err: err});
-    })
-    .then(function done(res) {
-        Lazy(res).each(function(_res) {
-            users.push(_res);
-        });
-        return _handle(scheduals, users);
-    }, function err(err) {
-        dfd.reject({err: err});
-    })
-    .then(function done(res) {
-        console.log('is handle ok:', res);
-        return _request(res);
-    }, function err(err) {
-        dfd.reject({err: err});
-    })
-    .then(function done(res) {
-        console.log('is request ok:', res);
-        dfd.resolve(res);
-    }, function err(err) {
-        dfd.reject({err: err});
-    })
-
-});
+//var j = schedule.scheduleJob(rule, function(){
+//    //SCAN获取所有的schedual定时
+//    var dfd = Q.defer();
+//    var scheduals = [];
+//    var users = [];
+//    User.schedual().then(function done(res) {
+//        Lazy(res).each(function(_res) {
+//            scheduals.push(_res);
+//        });
+//        return User.all();
+//    }, function err(err) {
+//        dfd.reject({err: err});
+//    })
+//    .then(function done(res) {
+//        Lazy(res).each(function(_res) {
+//            users.push(_res);
+//        });
+//        return _handle(scheduals, users);
+//    }, function err(err) {
+//        dfd.reject({err: err});
+//    })
+//    .then(function done(res) {
+//        console.log('is handle ok:', res);
+//        return _request(res);
+//    }, function err(err) {
+//        dfd.reject({err: err});
+//    })
+//    .then(function done(res) {
+//        console.log('is request ok:', res);
+//        dfd.resolve(res);
+//    }, function err(err) {
+//        dfd.reject({err: err});
+//    })
+//
+//});
 
 var _request = function(options){
     var dfd = Q.defer();

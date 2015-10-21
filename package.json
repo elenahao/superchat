@@ -37,7 +37,9 @@
     "wechat": "git://github.com/node-webot/wechat.git",
     "node-schedule": "*",
     "mysql": "*",
-    "safe-clone-deep": "~1.1.2"
+    "safe-clone-deep": "~1.1.2",
+    "iconv-lite": "*",
+    "iconv":"~2.1.11"
   },
   "devDependencies": {
     "chai": "^3.2.0",

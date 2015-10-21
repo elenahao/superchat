@@ -9,6 +9,7 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 // 调用微信接口获取公众号的所有组
@@ -30,17 +31,25 @@ app.get('/admin/api/group/refresh', function(req, res) {
                     console.log('success');
                     //存入redis
                     var data = JSON.parse(body);
-                    var groups = data.groups;
-                    for(var i = 0; i< groups.length;i++){
-                        var group = groups[i];
-                        var key = 'group:'+group.id;
-                        redis.hmset(key, group)
-                            .then(function resolve(res) {
-                                console.log('is hmset ok:', res);
-                            }, function reject(err) {
-                                dfd.reject(err);
-                            })
+                    var groups = [];
+                    for(var i = 0; i< data.groups.length;i++){
+                        if(group[i]){
+                            var group = '(' + groups[i].id + ',' + groups[i].name + ',' + groups[i].count;
+                            groups.push(group);
+                        }
                     }
+                    Q.all(
+                        groups
+                    ).then(function resolve(res) {
+                            return mysql.group.updateGroup(res.toString());
+                        }, function reject(err) {
+                            dfd.reject(err);
+                        }).then(function resolve(ret) {
+                            console.log('is update ok:', ret);
+                            dfd.resolve(ret);
+                        }, function reject(err) {
+                            dfd.reject(err);
+                        })
                 }
             });
         }
