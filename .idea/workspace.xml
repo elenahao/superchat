@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a60e7fb8-fd8d-4839-bb43-613dfcbd870b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/user/refresh.js" afterPath="$PROJECT_DIR$/routes/admin/api/user/refresh.js" />
     </list>
     <ignored path="superchat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,18 +85,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getUserInfoAttach.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/admin/api/user/getUserInfoAttach.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.333334">
-              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#43#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="weconfig.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/weconfig.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -172,7 +160,6 @@
         <option value="$PROJECT_DIR$/routes/admin/api/group/synchronize.js" />
         <option value="$PROJECT_DIR$/node_modules/safe-clone-deep/src/index.js" />
         <option value="$PROJECT_DIR$/model/common/token/getAccessToken.js" />
-        <option value="$PROJECT_DIR$/routes/admin/api/user/refresh.js" />
         <option value="$PROJECT_DIR$/model/common/user/getOpenidByPage.js" />
         <option value="$PROJECT_DIR$/wechat.db" />
         <option value="$PROJECT_DIR$/views/admin/subpage/user.jade" />
@@ -193,6 +180,7 @@
         <option value="$PROJECT_DIR$/libs/mysql/user.js" />
         <option value="$PROJECT_DIR$/routes/admin/api/user/getUserInfoAttach.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/routes/admin/api/user/refresh.js" />
       </list>
     </option>
   </component>
@@ -535,13 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.880597">
           <caret line="143" column="19" selection-start-line="143" selection-start-column="19" selection-end-line="143" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/refresh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -890,6 +871,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.111111">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/user/refresh.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39130434">
+          <caret line="12" column="61" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="61" />
           <folding />
         </state>
       </provider>
