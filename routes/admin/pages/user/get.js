@@ -1,7 +1,3 @@
-/**
- * Created by elenahao on 15/9/6.
- */
-
 'use strict'
 
 var path = require('path');

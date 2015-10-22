@@ -26,6 +26,7 @@ app.get(['/admin/group'],
             var _pageLinks = [];
             if (data.page > 1) {
                 Lazy(calPage(data.now, data.page, 10)).each(function(value, index) {
+                    console.log(value);
                     if (value != '...') {
                         _pageLinks.push({
                             text: value,
