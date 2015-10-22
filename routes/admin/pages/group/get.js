@@ -31,7 +31,7 @@ app.get(['/admin/group'],
                         _pageLinks.push({
                             text: value,
                             isCurrent: value == data.now ? true : false,
-                            link: '/admin/group/?start=' + (value * data.count - data.count) + '&count=' + data.count
+                            link: '/admin/group/?start=' + value + '&count=' + data.count
                         });
                     }
                 });
