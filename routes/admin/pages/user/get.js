@@ -26,7 +26,7 @@ app.get(['/admin/user'],
                         _pageLinks.push({
                             text: value,
                             isCurrent: value == data.now ? true : false,
-                            link: '/admin/user/?start=' + (value * data.count - data.count) + '&count=' + data.count
+                            link: '/admin/user/?start=' + value + '&count=' + data.count
                         });
                     }
                 });

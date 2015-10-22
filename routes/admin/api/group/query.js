@@ -21,7 +21,8 @@ app.get('/admin/api/group',
             console.log('group='+result.groups);
             var _pages = result.totalPage;
             console.log(_pages);
-            var _now = Math.floor(_start / _count) + 1;
+            //var _now = Math.floor(_start / _count) + 1;
+            var _now = _start;
             console.log(_now);
             res.status(200).send(JSON.stringify({
                 ret: 0,
