@@ -1,0 +1,463 @@
+/*menu settings*/
+a.add,a.menu{
+	background: transparent url(../images/wx_compress.png) 0 0 no-repeat;
+}
+/*wei menu*/
+.wMenu{
+	width: 90%;
+	min-width: 770px;
+	color: #666;
+}
+.wMenu span{
+	float: right;
+	font-size: 12px;
+}
+a.add,a.menu{
+	width: 19px;
+	height: 19px;
+	display: inline-block;
+	margin:0 7px 0 8px;
+}
+a.add{
+	background-position: 0 0;
+}
+a.menu{
+	background-position: 0 -67px;
+}
+.wMenu h4{    
+	border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    font-weight: normal;
+    height: 32px;
+    padding:12px 10px 0 20px;
+}
+.wMenuBd{
+	font-size: 14px;
+	padding-bottom: 30px;
+}
+.wMenuBd p{
+    height: 20px;
+    padding:15px 10px 15px 20px;
+}
+.wMenuBd p.addMenu{
+	text-align: center;
+	padding-top: 130px;
+	font-size: 18px;
+}
+.wMenuBd p.addMenu em{
+	font-size: 30px;
+}
+.wMenuBd p.wMenuLayer1{
+	background: #f8f8f8;
+	border-bottom: 1px solid #dddbdb;
+}
+.wMenuBd p.wMenuLayer2,.wMenuBd p.wMenuLayer3{
+	padding-left: 30px;
+	background: #f8f8f8;
+	border-bottom: 1px solid #dddbdb;
+}
+.wMenuBd p.wMenuLayer3{
+	padding-left: 60px;
+}
+.wMenu .welcome dt{
+	font-weight: normal;
+	height: 22px;
+}
+.wMenu .welcome .textarea{
+	width: 750px;
+	padding:10px;
+}
+.wMenu .menuTips{
+	line-height: 30px;
+}
+.wMenu .menuTips .btn-submit{
+	padding:1px 20px;
+}
+.wMenu .foot{
+	text-align: center;
+	padding:15px;
+	border: 1px solid #dddbdb;
+	border-top:none;
+	background: #fff;
+}
+#wMenuOp{
+	border:1px solid #ccc;
+	background: #fff;
+}
+#wMenuOp .main{
+	padding: 0;
+	float: left;
+	width: 35%;
+	border-right: 1px solid #ccc;
+	min-height: 400px;
+	_height:400px;
+}
+#wMenuOp .side{
+	float: right;
+	width: 65%;
+	background: transparent;
+	margin-right: -1px;
+}
+#wMenuOp.wSiteMenu .main{
+	width: 767px;
+	border:none;
+}
+#wMenuOp .side h4{
+	font-weight: normal;
+	height: 32px;
+	font-size: 14px;
+	border-bottom: 1px solid #ccc;
+	padding:12px 20px 0;
+}
+#wMenuOp .side h4 span{
+	color: #3799de;
+}
+#wMenuOp .side h4 span a{
+	color: #3799de;
+}
+#wMenuOp .side h5{
+	font-weight: normal;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	margin: 50px 0 30px;
+}
+#wMenuOp .side h6{
+	font-weight: normal;
+	line-height: 40px;
+	font-size: 14px;
+	margin: 10px 0 20px;
+	padding-left: 20px;
+}
+#wMenuOp .side h6 a{
+	color: #3799de;
+}
+#wMenuOp .side .editor{
+	padding-left: 20px;
+}
+#wMenuOp .side .opEnter{
+	width: 500px;
+	margin: 0 auto;
+}
+#wMenuOp .side .opEnter2{
+	width: 320px;
+}
+#wMenuOp .side .opEnter li{
+	float: left;
+	width:120px;
+	height: 150px;
+	background:#fff url(../images/wx_op_enter.png) 0 0 no-repeat;
+	margin:0 20px;
+	display: inline;
+}
+#wMenuOp .side .opEnter li a{
+	display: inline-block;
+	width:120px;
+	height: 30px;
+	line-height: 30px;
+	padding-top:120px;
+	text-align: center;
+	color: #afafaf;
+}
+#wMenuOp .side .opEnter li.no2{
+	background-position: 0 -213px;
+}
+#wMenuOp .side .opEnter li.no3{
+	background-position: 0 -425px;
+}
+
+#wMenuOp .main .iconDot{
+	color: #999;
+	margin-right: 10px;
+	font-size: 6px;
+	vertical-align: middle;
+	margin-top: -2px;
+	display: inline-block;
+}
+#wMenuOp .wMenuBd p{
+	cursor: pointer;
+	_cursor:hand;
+}
+#wMenuOp .wMenuBd p.cur{
+	background: #eee;
+}
+/*material multi add*/
+.icon18_common {
+    display: inline-block;
+    height: 27px;
+    line-height: 100px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 27px;
+}
+.icon20_common {
+    display: inline-block;
+    height: 40px;
+    line-height: 100px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 40px;
+}
+.edit_gray,.del_gray,.add_gray{
+    background: url("../images/compress24.png") 0 0 no-repeat;
+}
+.edit_gray:hover{
+    background-position: 0 -62px;
+}
+.del_gray{
+    background-position: 0 -136px;
+}
+.del_gray:hover{
+    background-position: 0 -223px;
+}
+.add_gray{
+    background-position: 0 -299px;
+}
+.add_gray:hover{
+    background-position: 0 -400px;
+    border-color: #333;
+}
+.matMsg{
+	margin-top:10px;
+	width: 910px;
+}
+.matMsg .side{
+	float: left;
+	width: 320px;
+}
+.matMsg .main{
+	float: right;
+	width: 530px;
+	position: relative;
+	border:1px solid #ccc;
+	padding:10px;
+	background: #fff;
+}
+.matMsg .main .arrow{
+	position: absolute;
+}
+.matMsg .main .arrow_in {
+    border-color: transparent #fff transparent transparent;
+    border-style: dashed solid dashed dashed;
+    border-width: 12px 12px 12px 0;
+    display: inline-block;
+    height: 0;
+    left: -12px;
+    top: 44px;
+    width: 0;
+    _line-height:0;
+}
+.matMsg .main .arrow_out {
+    border-color: transparent #ccc transparent transparent;
+    border-style: dashed solid dashed dashed;
+    border-width: 12px 12px 12px 0;
+    display: inline-block;
+    height: 0;
+    left: -13px;
+    top: 44px;
+    width: 0;
+    _line-height:0;
+}
+.matMsg .side .btnOk{
+	margin-top: 20px;
+}
+.matMsg .side .btnOk button{
+	padding:5px 30px;
+}
+.matMsg .side .msgPrivew{
+	border:1px solid #ccc;
+	padding:15px;
+	background: #fff;
+}
+.matMsg .side .msgPrivew .title{  
+	font-size: 14px;
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+.matMsg .side .msgPrivew .img{  
+	background: #fff;
+	padding:10px 0 20px;
+}
+.matMsg .side .msgPrivew .img .loading{
+	display: none;
+}
+.msgForm{
+	margin-top:-10px;
+	*margin-top:0;
+}
+.msgForm dt{
+	font-size: 14px;
+	height: 24px;
+	margin-top: 10px;
+	font-weight: normal;
+}
+.msgForm dd{
+	padding-top:5px;
+}
+.msgForm .text{
+	border:1px solid #ccc;
+	padding:10px;
+	width: 500px;
+	border-radius: 4px;
+}
+.msgForm .select{
+	border:1px solid #ccc;
+	padding:10px;
+	border-radius: 4px;
+}
+.msgForm .tips{
+	text-align: right;
+	color: #f00;
+	line-height: 24px;
+}
+.msgForm textarea{
+	border:1px solid #ccc;
+	padding:10px;
+	width: 500px;
+	height: 50px;
+	border-radius: 4px;
+}
+.msgForm .errorTips{
+	line-height: 30px;
+	padding-left: 5px;
+	color: #f00;
+}
+/*msg multi*/
+.msgMultiPrivew{
+	border:1px solid #ccc;
+	background: #fff;
+}
+.msgItem{
+	border-top: 1px solid #ccc;
+}
+.msgItem .cover{
+	position: relative;
+	width: 290px;
+	height: 160px;
+}
+.msgItem .cover h4{
+	background: rgba(0, 0, 0, 0.6);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000); /* For IE 8*/ 
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 290px;
+    line-height: 34px;
+    height: 34px;
+    overflow: hidden;
+    text-indent: 5px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 16px;
+    z-index: 1000;
+}
+.msgItem .cover .img{
+	position: relative;
+}
+.msgItem .loading{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	opacity: 0.7;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=98); 
+}
+.msgItem .loading img{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin:-16px 0 0 -16px;
+}
+
+.msgItem .editMask{
+	display: none;
+	width: 320px;
+	height: 78px;
+	position: absolute;
+	background: rgba(229, 229, 229, 0.9);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5e5e5e5, endColorstr=#e5e5e5e5); /* For IE 8*/ 
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5e5e5e5, endColorstr=#e5e5e5e5)";
+	top:0;
+	left: 0;
+	padding-top: 28px;
+	text-align: center;
+}
+.msgItem .editMask a{
+	margin:0 15px;
+}
+.coverItem{
+	padding: 15px;
+	border-top: none;
+}
+.coverItem .editMask{
+	padding-top: 108px;
+	width: 290px;
+	height: 110px;
+}
+
+.msgItem .line{
+	height: 76px;
+	overflow: hidden;
+	position: relative;
+	padding:15px;
+}
+.msgItem .line span{
+	display: block;
+	float: right;
+	margin-left: 5px;
+	width: 60px;
+	position: relative;
+}
+.msgItem .line h4{
+    max-height:38px;
+    _height:38px;
+    overflow: hidden;
+    padding-top: 6px;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-weight: normal;
+    font-size: 12px;
+}
+.addMsg{
+    border: 2px dotted #d9dadc;
+    display: block;
+    font-size: 0;
+    line-height: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin:20px;
+    _padding:15px 0;
+}
+.addMsg:hover{
+	border-color:#b0b0b0;
+}
+
+.commonBoxMatMsg{
+	margin-bottom: 0;
+}
+.content .foot{
+	text-align: center;
+	padding:15px;
+	border: 1px solid #dddbdb;
+	border-top:none;
+	background: #fff;
+}
+.matMsg .formLR{
+	width: 525px;
+	margin-top: 30px;
+}
+.matMsg .formLR dt{
+	width: 100px;
+}
+.matMsg .formLR dd{
+	width: 370px;
+}
+.matMsg .uploadImg p{
+	margin-bottom: 15px;
+}
+.matMsg .uploadImg label{
+	margin-left: 10px;
+}

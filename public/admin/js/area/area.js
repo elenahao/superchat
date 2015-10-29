@@ -4,12 +4,14 @@
 
 (function($) {
     $(function() {
+        var configTable = $('#x_div');
         var questTable = $('#questTable');
         var csrfKey = $('#csrfKey').val();
         console.log(csrfKey);
 
-        questTable.delegate('.country-change', 'change', function(e) {
+        configTable.delegate('.country-change', 'change', function(e) {
             e.preventDefault();
+            console.log('in country change');
             var country_val = $('.country-change').val();
             if(country_val == '') {
                 //如果国家下拉框为空，则后面的省份和城市下拉均制空
@@ -21,7 +23,7 @@
             }else{
                 questTable.find('#country').val(country_val);
                 $.ajax({
-                    url: questTable.attr('action'),
+                    url: '/admin/api/area/findProvinceByCountry/' + country_val,
                     headers: {
                         'X-CSRF-Token': csrfKey
                     },
@@ -29,13 +31,14 @@
                     method: 'POST',
                     dataType: 'json',
                     success: function(res) {
+                        alert(res);
                         if (res.ret == 0) {
                             var obj = res.data;
                             var options = '';
                             $(obj).each(function(index){
                                 var val = obj[index];
                                 if (typeof val === 'object') {
-                                    var option = '<option value='+val.id+'>'+val.name+'</option>';
+                                    var option = '<option value='+val.name+'>'+val.name+'</option>';
                                     options = options + option;
                                 } else {
                                     alert('(╯‵□′)╯︵┻━┻ 失败......');

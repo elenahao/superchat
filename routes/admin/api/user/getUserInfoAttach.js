@@ -29,7 +29,7 @@ app.get('/admin/api/getInfo/user_attach', function(req, res) {
         }
     },function reject(err){
         res.status(400).send(JSON.stringify({
-            ret: -4,
+            ret: -1,
             msg: err
         }));
     })

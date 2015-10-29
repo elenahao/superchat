@@ -3,7 +3,8 @@
 var _mysql = {
     client: require('./mysql/client'),
     user: require('./mysql/user'),
-    group: require('./mysql/group')
+    group: require('./mysql/group'),
+    area: require('./mysql/area')
 }
 
 if (global.devMode) {

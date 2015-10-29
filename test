@@ -15,7 +15,9 @@ var y = '{"subscribe":1,"openid":"o0aT-d-2LQp1jnL5BuPqaog-w_kk","nickname":"尐�
 var body = '{"user_info_list":[{"subscribe":1,"openid":"o0aT-d--POH0fF7ANo4CRtXsgKoI","nickname":".。✎╭☸ 魂✘魂.❤️๑","sex":2,"language":"zh_CN","city":"绍兴","province":"浙江","country":"中国","headimgurl":"http:\\/\\/wx.qlogo.cn\\/mmopen\\/n9UUU8c5lXZSEwcETXkLW6T03szIibtMsyTE3ZJHpvYM0KyRgvyasVkScHj3jMSllibuALyNJicU2L86Cu5Kia2FRPaI8qAicnatx\\/0","subscribe_time":1444186953,"unionid":"owJ__t6Eurdab_xMjIr_IL9vESBs","remark":"","groupid":0}]}';
 
 
-
+ALTER TABLE `wechat`.`wx_user`
+ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT COMMENT '自增主键' AFTER `openid`,
+ADD UNIQUE INDEX `id_UNIQUE` (`id` ASC)  COMMENT '';
 
 
 

@@ -22,9 +22,9 @@ app.get('/admin/api/refresh/user', function(req, res) {
             //console.log(res.access_token);
             ACCESS_TOKEN = res.access_token;
             //var next_openid = 'o0aT-dzYotN0c1QJeejYOGStmKFQ';
-            var next_openid = 'o0aT-d-HGo9aZ5EOD6l7C-pzAoY4';
-            getUser(ACCESS_TOKEN, next_openid);
-            /*
+            //var next_openid = 'o0aT-d-HGo9aZ5EOD6l7C-pzAoY4';
+            //getUser(ACCESS_TOKEN, next_openid);
+
             request({
                 url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN,
                 method: 'GET'
@@ -52,18 +52,20 @@ app.get('/admin/api/refresh/user', function(req, res) {
                         //var openid = openids[i];
 
                     //}
-                    mysql.user.addUserOpenid(_body.data.openid.join("'),('"))
-                        .then(function resolve(res) {
-                            console.log('is addOpenid ok:', res);
-                            if(total != count){
-                                console.log('next_openid='+next_openid);
-                                getUser(ACCESS_TOKEN, next_openid);
-                            }
-                        }, function reject(err) {
-                            dfd.reject(err);
-                        })
+                    if(_body.data && _body.data.openid) {
+                        mysql.user.addUserOpenid(_body.data.openid.join("'),('"))
+                            .then(function resolve(res) {
+                                console.log('is addOpenid ok:', res);
+                                if (total != count) {
+                                    console.log('next_openid=' + next_openid);
+                                    getUser(ACCESS_TOKEN, next_openid);
+                                }
+                            }, function reject(err) {
+                                dfd.reject(err);
+                            })
+                    }
                 }
-            });*/
+            });
         }
     },function reject(err){
         res.status(400).send(JSON.stringify({

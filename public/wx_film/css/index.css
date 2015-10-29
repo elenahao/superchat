@@ -1,0 +1,296 @@
+/*index layout*/
+.idxHd{
+	height: 98px;
+	width: 100%;
+	background: #fff;
+}
+.idxHdCon{
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 34px;
+}
+.idxBd{
+	width: 100%;
+}
+.idxBdCon{
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+.idxSec1{
+	height: 600px;
+	background: #eee url(../images/index_topbg.jpg) center center no-repeat;
+}
+.idxSec2{
+	height: 640px;
+	background: #fff;
+}
+.idxSec3{
+	height: 990px;
+	background: #fbfaf7;
+}
+.idxSec4{
+	height: 650px;
+	background: #fff;
+}
+.idxSec5{
+	height: 570px;
+	background: #fbfaf7;
+}
+.topDesc{
+	position: absolute;
+	top:250px;
+	left: 0;
+	width: 640px;
+	color: #fff;
+}
+.topDesc dt{
+	font-size: 70px;
+	line-height:100px;
+}
+.topDesc dd.no1{
+	font-size: 26px;
+	line-height: 48px;
+}
+.topDesc dd.no2{
+	font-size: 20px;
+	line-height:30px;
+}
+
+.txtDesc{
+	padding:105px 0 50px;
+	text-align: center;
+	width: 930px;
+	margin:0 auto;
+}
+.txtDesc dt{
+	font-size: 32px;
+	line-height: 80px;
+}
+.txtDesc dd{
+	font-size: 22px;
+	color: #999;
+	line-height: 32px;
+}
+.funList{
+	margin-top: 10px;
+}
+.funList li{
+	float: left;
+	width: 200px;
+	height: 150px;
+	text-align: center;
+}
+.funList li dt{
+	font-size: 20px;
+	color: #666;
+	line-height: 40px;
+}
+.funList li dd{
+	font-size: 16px;
+	color: #999;
+	line-height: 30px;
+}
+.idxSec5 h3{
+	text-align: center;
+	font-size: 30px;
+	padding: 100px 0 70px;
+	font-weight: normal;
+}
+.hotFilm .more{
+	width: 210px;
+	padding-top: 40px;
+	font-size: 24px;
+	text-align: center;
+	color: #f87171;
+}
+.hotFilm .more dd{
+	margin-top: 25px;
+}
+/*index footer*/
+.idxFt{
+	height: 130px;
+	width: 100%;
+	padding:30px 0 0;
+	background: #2d2d2d;
+}
+.idxFtCon{
+	width: 1000px;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 18px;
+}
+.idxFtCon a{
+	color: #fff;
+	margin:0 36px;
+}
+.idxFtCon .link,.idxFtCon .copyright{
+	text-align: center;
+}
+.idxFtCon .link{
+	font-size: 24px;
+	line-height: 50px;
+}
+.idxFtCon .copyright{
+	line-height: 30px;
+}
+.idxFtCon .copyright i{
+	margin-left: 36px;
+}
+/*login*/
+.login{
+	width: 300px;
+	height: 340px;
+	position: absolute;
+	z-index: 1;
+	right:0;
+	top: 100px;
+	border-radius: 3px;
+	background: #fff;
+	padding:30px;
+}
+.login h3{
+	line-height:60px;
+	font-size: 28px;
+	font-weight: normal;
+}
+.signName,.password {
+	height: 48px;
+	width: 100%;
+	border: #b5b5b5 solid 1px;
+	background: #fff;
+}
+.signName{
+	margin-bottom: 20px;
+	position: relative;
+}
+.password {
+	margin-bottom:15px;
+	position: relative;
+}
+.signName span,.password span {
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	display: inline-block;
+	top:12px;
+	left: 20px;
+}
+.signName span {
+	background:#fff url(../images/sign/sign_name.png) 0 0 no-repeat;
+}
+.password span {
+	background:#fff url(../images/sign/password.png) 0 0 no-repeat;
+}
+.signName input,.password input{
+	height: 42px;
+	line-height: 48px;
+	padding-top: 3px;
+	padding-left: 60px;
+	border:none;
+	width: auto;
+	font-size: 18px;
+}
+.signBut .input_ui-btn{
+	width: 100%;
+	height: 60px;
+	font-size: 26px;
+}
+.otherOp{
+	padding:10px 0 20px;
+	font-size: 16px;
+	color: #999;
+}
+.otherOp span{
+	float: right;
+}
+.otherOp span a{
+	color: #f87171;
+}
+
+/*login*/
+.signnr{
+	position:absolute;
+	left:37px;
+}
+.sign_con {
+	width: 1px;
+	height: 400px;
+	z-index: 1;
+	margin: 0px auto;
+	position: relative;
+}
+
+.sign_con p {
+	display: block;
+}
+
+.sign_con .bg {
+	width: 325px;
+	height: 340px;
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	top: 20px;
+	border-radius: 3px;
+	background: #000;
+	filter: Alpha(Opacity=40);
+	opacity: .4;
+}
+
+.sign_list {
+	z-index: 10;
+	width: 325px;
+	height: 290px;
+	position: absolute;
+	right: 0;
+	top: 20px;
+}
+
+.sign_title {
+	border-bottom: #515b68 solid 1px;
+	font-size: 18px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	padding-left: 40px;
+}
+
+
+
+
+
+.sign_but {
+	height: 40px;
+	line-height: 40px;
+	width: 248px;
+	text-align: center;
+	margin: 0px 0px 12px;
+}
+
+.sign_but a {
+	display: block;
+	background: #4396fe;
+	border-radius: 3px;
+	font-size: 18px;
+	color: #fff;
+}
+
+.sign_bot {
+	height: 20px;
+	line-height: 20px;
+	width: 248px;
+}
+
+.sign_bot a {
+	display: block;
+	font-size: 14px;
+}
+
+.sign_bot .l {
+	color: #f2f2f2;
+}
+
+.sign_bot .r {
+	color: #4799ff;
+}

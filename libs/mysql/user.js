@@ -8,7 +8,7 @@ exports.findUsersByPage = function (pageNo, pageSize) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
         console.log('getConnection...');
-        conn.query("select count(*) as u from wx_user", function (err, ret) {
+        conn.query("select count(*) from wx_user", function (err, ret) {
             if (err) {
                 dfd.reject(err);
             }
@@ -62,12 +62,12 @@ exports.findOpenidByPage = function (pageNo, pageSize) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
         console.log('getConnection...');
-        //conn.query("select count(*) as u from wx_user where u.nickname is null", function (err, ret) {
-        //    if (err) {
-        //        dfd.reject(err);
-        //    }
-        //    else {
-                //var totalCount = ret[0].u;
+        conn.query("select count(*) as u from wx_user where nickname is null", function (err, ret) {
+            if (err) {
+                dfd.reject(err);
+            }
+            else {
+                var totalCount = ret[0].u;
                 var totalCount = 12443066;
                 var totalPage = Math.ceil(totalCount / pageSize);
                 if(pageNo > totalPage){
@@ -85,9 +85,9 @@ exports.findOpenidByPage = function (pageNo, pageSize) {
                         dfd.resolve(rows);
                     }
                 });
-            //}
+            }
             conn.release();
-        //})
+        })
     });
     return dfd.promise;
 }

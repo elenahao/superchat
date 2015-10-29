@@ -1,0 +1,75 @@
+div.content
+    h3.tips 你可以在这里设置公众号菜单及内容
+        span
+            a(href="#") 有问题点我
+    section.main
+        div.commonBox.commonBoxMatMsg
+            div.matMsg.cl
+                aside.side
+                    div.msgMultiPrivew
+                        div#msgPrivew
+                            div#msgItem0.msgItem.coverItem
+                                div.cover
+                                    h4 说说“黄金粥”究竟啥滋味
+                                    div.img
+                                        img.curAvatar(width="290", height="160", src="#{adminStaticBase}/wx_film/images/source/290x160_1.jpg")
+                                    div.editMask(style="display:none")
+                                        a.icon18_common.edit_gray.fixpng(href="javascript:;" onclick="return false;") 编辑
+                            div#msgItem1.msgItem
+                                div.line
+                                    span
+                                        img.curAvatar(width="60" height="45" src="#{adminStaticBase}/wx_film/images/source/60x45_1.jpg")
+                                    h4 横行世界的中国假冒汽配何时休
+                                    div.editMask(style="display:block")
+                                        a.icon18_common.edit_gray.fixpng(href="javascript:;" data-id="1" onclick="return false;") 编辑
+                                        a.icon18_common.del_gray.fixpng(href="javascript:;" data-id="1" onclick="return false;") 删除
+                        a#addMsg.addMsg(href="javascript:void(0)" onclick="return false;")
+                            i.icon20_common.add_gray.fixpng 增加一条
+                section.main
+                    i.arrow.arrow_out
+                    i.arrow.arrow_in
+                    form(action="#" method="post")
+                        dl.formLR.cl
+                            dt 标题
+                                em *
+                            dd
+                                p
+                                    input.ui-input(type="text")
+                                    i.item 12/19
+                        dl.formLR.cl
+                            dt 作者
+                                em *
+                            dd
+                                p
+                                    input.ui-input(type="text")
+                                    i.item 12/19
+                        dl.formLR.uploadImg.cl
+                            dt 封面图片
+                                em *
+                            dd
+                                p
+                                    i.num 建议尺寸:900像素*500像素
+                                p
+                                    a.input_ui-btn(href="#") 上传图片
+                                div
+                                    label.label_check(for="checkbox-02" hidefocus="true") 封面图案显示在正文中
+                                        input#checkbox-02(name="sample-checkbox-02" type="checkbox" value="1")
+                        dl.formLR.cl
+                            dt 摘要
+                                em *
+                            dd
+                                p
+                                    i.num 选填，该摘要只在发送图文信息为单条时显示
+                                p
+                                    textarea
+                        dl.formLR.cl
+                            dt 摘要
+                                em *
+                            dd
+                                p
+                                    textarea
+    div.foot
+        p
+            input.input_ui-btn(type="submit" value="保存")
+            a.input_ui-btn(href="#") 预览
+            a.input_ui-btn(href="#") 取消

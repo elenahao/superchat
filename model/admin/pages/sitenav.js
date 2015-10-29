@@ -24,6 +24,11 @@ _nav.prototype = {
                 id: 3,
                 name: '区域管理',
                 href: '/admin/area'
+            },
+            mass: {
+                id: 4,
+                name: '群发图文信息',
+                href: '/admin/massMessage'
             }
         }
     }

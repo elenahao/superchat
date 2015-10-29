@@ -43,6 +43,7 @@ app.get(['/admin/group'],
                 csrf: res.locals._csrf,
                 sitenavs: _nav,//传到页面后，左侧菜单栏根据isActive点亮或变灰
                 groups: data.groups,
+                countries: data.countries,
                 pages: _pageLinks
             });
         } // end of render

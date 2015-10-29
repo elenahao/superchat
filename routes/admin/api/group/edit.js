@@ -9,11 +9,11 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 app.post(['/admin/api/group/edit'],
     function(req, res, next){
-        var dfd = Q.defer();
         console.log('admin api group edit-to-wechat ... ');
         console.log('gname='+req.body.gname);
         console.log('gid='+req.body.gid);
@@ -39,11 +39,11 @@ app.post(['/admin/api/group/edit'],
                 //{"group":{"id":108,"name":"test2_modify2"}}
                 //先获取ACCESS_TOKEN
                 var ACCESS_TOKEN = '';
-                Token.getAccessToken().then(function resolve(res) {
-                    if(res.access_token){
-                        console.log(res.access_token);
-                        ACCESS_TOKEN = res.access_token;
-                        console.log(res.access_token);
+                Token.getAccessToken().then(function resolve(ret) {
+                    if(ret.access_token){
+                        console.log(ret.access_token);
+                        ACCESS_TOKEN = ret.access_token;
+                        console.log(ret.access_token);
                         console.log('_gname='+_gname);
                         console.log('_gid='+_gid);
                         var group = {
@@ -54,29 +54,41 @@ app.post(['/admin/api/group/edit'],
                         request({url: 'https://api.weixin.qq.com/cgi-bin/groups/update?access_token='+ACCESS_TOKEN,
                             method: 'POST',
                             body: JSON.stringify({group: group})
-                        }, function (err, res, body){
-                            redis.hmset('group:'+_gid, {name: _gname}).then(function resolve(res){
-                                console.log('is hmset ok:', res);
-                                dfd.resolve(res);
-                            }, function reject(err){
-                                dfd.reject(err);
-                            })
-                            console.log('is request get ok:', body);
+                        }, function (err, _res, body){
+                            //{"errcode": 0, "errmsg": "ok"}
+                            var _body = JSON.parse(body);
+                            if(_body.errcode == 0){
+                                mysql.group.updateGroupName(group).then(function resolve(ret){
+                                    console.log('is updateGroupName ok:', ret);
+                                    res.status(200).send(JSON.stringify({
+                                        ret: 0
+                                    }));
+                                }, function reject(err){
+                                    res.status(400).send(JSON.stringify({
+                                        ret: -1,
+                                        msg: err
+                                    }));
+                                })
+                            }else{
+                                res.status(400).send(JSON.stringify({
+                                    ret: body.errcode,
+                                    msg: body.errmsg
+                                }));
+                            }
                         });
                     }
                 },function reject(err){
                     res.status(400).send(JSON.stringify({
-                        ret: -4,
+                        ret: -1,
                         msg: err
                     }));
                 })
             } else {
                 res.status(400).send(JSON.stringify({
-                    ret: -3,
+                    ret: -1,
                     msg: err
                 }));
             }
-            res.redirect('/admin/group');
         }
     });
 

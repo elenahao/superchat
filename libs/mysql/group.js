@@ -59,7 +59,7 @@ exports.addGroup = function (group) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
         console.log(group);
-        conn.query('insert into wx_group (id,name,count) values (?,?,?)', [group.id, group.name, group.count], function (err, ret) {
+        conn.query('insert into wx_group (id,name,count) values (?,?,?)', [group.id, group.name, 0], function (err, ret) {
             if (err) {
                 console.error(err);
                 dfd.reject(err);
@@ -78,7 +78,47 @@ exports.updateGroup = function (groups) {
     pool.getConnection(function (err, conn) {
         console.log('--'+groups+'--');
         if(groups && groups != ''){
-            conn.query('replace into wx_groups (id,name,count,nickname) values '+groups, function (err, ret) {
+            conn.query('replace into wx_group (id,name,count,nickname) values '+groups, function (err, ret) {
+                if (err) {
+                    console.error(err);
+                    dfd.reject(err);
+                }
+                else {
+                    dfd.resolve(ret);
+                }
+                conn.release();
+            })
+        }else{
+            conn.release();
+            dfd.resolve('null data');
+        }
+    })
+    return dfd.promise;
+};
+
+exports.delGroup = function (gid) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        console.log(gid);
+        conn.query('delete from wx_group where id=?', [gid], function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.reject(err);
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};
+
+exports.updateGroupName = function (group) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        if(group){
+            conn.query('update wx_group set name=? where id=?',[group.name,group.id], function (err, ret) {
                 if (err) {
                     console.error(err);
                     dfd.reject(err);
