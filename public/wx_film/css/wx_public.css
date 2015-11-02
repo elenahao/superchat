@@ -393,13 +393,14 @@ a.menu{
 	border-top: none;
 }
 .coverItem .editMask{
-	padding-top: 108px;
+	padding-top: 56px;
+	padding-left:130px;
 	width: 290px;
-	height: 110px;
+	height: 126px;
 }
 
 .msgItem .line{
-	height: 76px;
+	height: 6px;
 	overflow: hidden;
 	position: relative;
 	padding:15px;
