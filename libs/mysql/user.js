@@ -68,7 +68,7 @@ exports.findOpenidByPage = function (pageNo, pageSize) {
             }
             else {
                 var totalCount = ret[0].u;
-                var totalCount = 12443066;
+                //var totalCount = 12443066;
                 var totalPage = Math.ceil(totalCount / pageSize);
                 if(pageNo > totalPage){
                     pageNo = totalPage;

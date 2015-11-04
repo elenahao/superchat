@@ -66,15 +66,16 @@
             e.preventDefault();
             var target = $(e.currentTarget);
             var msgPrivew = $('#msgPrivew');
-            var msgItem = msgPrivew.children().last();
-            msgItem.css('display', 'block');
-            msgPrivew.append(msgItem);
+            var msgItem_last_id = msgPrivew.children().last().attr('id');
+            var _id = 'msgItem'+parseInt(msgItem_last_id.charAt(msgItem_last_id.length-1))+1;
+            //var node = document.createTextNode($('#msgItem_add').attr('id', _id));
+
+            var msgItem = $('#msgItem_add');
+            //msgItem.css('display', 'block');
+            //msgItem.attr('id', 'msgItem'+parseInt(msgItem_last_id.charAt(msgItem_last_id.length-1))+1);
+            msgPrivew.append(msgItem.attr('id', _id));
+            $('#'+_id).css('display', 'block');
         });
     });
-    //function showSelect(id) {
-    //    $(".submit_select").removeClass("display");
-    //    $(id).removeClass("display");
-    //    $(id).siblings().addClass("display");
-    //}
 })($);
 

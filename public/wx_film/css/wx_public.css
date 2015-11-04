@@ -403,7 +403,7 @@ a.menu{
 	height: 6px;
 	overflow: hidden;
 	position: relative;
-	padding:15px;
+	padding:40px;
 }
 .msgItem .line span{
 	display: block;
@@ -411,6 +411,7 @@ a.menu{
 	margin-left: 5px;
 	width: 60px;
 	position: relative;
+	margin-top:-18px;
 }
 .msgItem .line h4{
     max-height:38px;
