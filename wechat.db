@@ -62,3 +62,21 @@ CREATE TABLE `wechat`.`wx_mass_msg` (
   INDEX `in_posted_time` (`posted_time` ASC) ,
   INDEX `in_msg_posted_id` (`msg_posted_id` ASC) ,
   INDEX `in_msg_data_id` (`msg_data_id` ASC) ;
+
+CREATE TABLE `wechat`.`wx_mass_msg_item` (
+  `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键，唯一标示',
+  `mass_msg_id` INT NULL COMMENT '关联wx_mass_msg表的id',
+  `thumb_media_id` VARCHAR(255) NULL COMMENT '缩略图media_id',
+  `author` VARCHAR(45) NULL COMMENT '作者，选填',
+  `title` VARCHAR(100) NULL COMMENT '标题',
+  `content` BLOB NULL COMMENT '内容',
+  `content_source_url` VARCHAR(255) NULL COMMENT '阅读全文对应的链接',
+  `show_cover_pic` INT NULL COMMENT '是否展示首页图片，1为展示，0为不展示',
+  `cover_pic_url` VARCHAR(255) NULL COMMENT '封面图链接，通过调用微信接口获取',
+  `add_time` DATETIME NULL COMMENT '此条item添加的时间',
+  `last_update_time` DATETIME NULL COMMENT '最后一次修改此条item的时间',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `in_mass_msg_id` (`mass_msg_id` ASC)  COMMENT '',
+  INDEX `in_thumb_media_id` (`thumb_media_id` ASC)  COMMENT '',
+  INDEX `in_add_time` (`add_time` ASC)  COMMENT '',
+  INDEX `in_last_update_time` (`last_update_time` ASC)  COMMENT '');

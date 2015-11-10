@@ -78,18 +78,18 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use(lusca({
-    csrf: true,
-    csp: { /* ... */ },
-    xframe: 'SAMEORIGIN',
-    p3p: 'ABCDEF',
-    hsts: {
-        maxAge: 31536000,
-        includeSubDomains: true,
-        preload: true
-    },
-    xssProtection: true
-}));
+//app.use(lusca({
+//    csrf: true,
+//    csp: { /* ... */ },
+//    xframe: 'SAMEORIGIN',
+//    p3p: 'ABCDEF',
+//    hsts: {
+//        maxAge: 31536000,
+//        includeSubDomains: true,
+//        preload: true
+//    },
+//    xssProtection: true
+//}));
 
 //开启 gzip 压缩
 var compression = require('compression');

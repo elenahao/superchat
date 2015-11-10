@@ -6,7 +6,6 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var http = require('http');
-var iconv = require('iconv-lite');
 var fs = require('fs');
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));

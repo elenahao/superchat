@@ -19,12 +19,7 @@ app.get('/admin/api/refresh/user', function(req, res) {
     var ACCESS_TOKEN = '';
     Token.getAccessToken().then(function resolve(res) {
         if(res.access_token){
-            //console.log(res.access_token);
             ACCESS_TOKEN = res.access_token;
-            //var next_openid = 'o0aT-dzYotN0c1QJeejYOGStmKFQ';
-            //var next_openid = 'o0aT-d-HGo9aZ5EOD6l7C-pzAoY4';
-            //getUser(ACCESS_TOKEN, next_openid);
-
             request({
                 url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN,
                 method: 'GET'
@@ -33,25 +28,10 @@ app.get('/admin/api/refresh/user', function(req, res) {
                     console.log(err);
                 }
                 if (res.statusCode === 200) {
-                    //console.log(body);
-                    //存入redis
                     var _body = JSON.parse(body);
                     var total = _body.total;
                     var count = _body.count;
-                    //var data = _body.data;
-                    //var openids = data.openid;
                     var next_openid = _body.next_openid;
-                    //var openids = _body.data.openid;
-                    //mysql.user.addUserOpenid(_body.data.openid[i])
-                    //    .then(function resolve(res) {
-                    //        console.log('is addOpenid ok:', res);
-                    //    }, function reject(err) {
-                    //        dfd.reject(err);
-                    //    })
-                    //for(var i = 0; i< _body.count; i++){
-                        //var openid = openids[i];
-
-                    //}
                     if(_body.data && _body.data.openid) {
                         mysql.user.addUserOpenid(_body.data.openid.join("'),('"))
                             .then(function resolve(res) {
@@ -78,8 +58,6 @@ app.get('/admin/api/refresh/user', function(req, res) {
 
 var getUser = function(ACCESS_TOKEN, next_openid) {
     var dfd = Q.defer();
-    //console.log(ACCESS_TOKEN);
-    //console.log(next_openid);
     request({
         url: 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+ACCESS_TOKEN+'&next_openid='+next_openid,
         method: 'GET'
@@ -87,23 +65,8 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
         if(err) console.log('出错啦~~~'+err);
         console.log(body);
         var _body = JSON.parse(body);
-        //console.log('_body='+_body);
-        //var total = _body.total;
         var count = _body.count;
-        //var data = _body.data;
-        //console.log('data='+data);
-        //var openids = data.openid;
         var _next_openid = _body.next_openid;
-        //for(var i = 0; i< _body.count; i++){
-        //    //var openid = openids[i];
-        //    mysql.user.addUserOpenid(_body.data.openid[i])
-        //        .then(function resolve(res) {
-        //            //console.log('is addOpenid ok:', res);
-        //        }, function reject(err) {
-        //            dfd.reject(err);
-        //        })
-        //
-        //}
         if(_body.data && _body.data.openid){
             mysql.user.addUserOpenid(_body.data.openid.join("'),('"))
                 .then(function resolve(res) {
@@ -116,13 +79,8 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
                             method: 'GET'
                         }, function(err, res, body) {
                             var _body = JSON.parse(body);
-                            //var total = _body.total;
-                            //var count = _body.count;
-                            //var data = _body.data;
-                            //var openids = data.openid;
                             var __next_openid = _body.next_openid;
                             for (var i = 0; i < _body.count; i++) {
-                                //var openid = openids[i];
                                 mysql.user.addUserOpenid(_body.data.openid[i])
                                     .then(function resolve(res) {
                                         console.log('is addOpenid ok:', res);
@@ -141,13 +99,8 @@ var getUser = function(ACCESS_TOKEN, next_openid) {
                     console.log(body);
                     dfd.reject(err);
                 });
-            //if(i == _body.count){
-            //    console.log('next_openid='+next_openid);
-            //    getUser(ACCESS_TOKEN, next_openid);
-            //}
         }else{
             console.log('openid不存在，重新获取:'+next_openid+';body='+body);
-            //getUser(res.access_token, next_openid);
             redis.del('access_token').then(function resolve(res){
                 return Token.getAccessToken();
             },function reject(err){

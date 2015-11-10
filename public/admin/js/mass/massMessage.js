@@ -12,9 +12,21 @@
             var files = $(this)[0].files;
             if(files){
                 formData.append('fileInput', files[0]);
+            }else{
+                alert('(╯‵□′)╯︵┻━┻ 请至少选个图片啊......');
+                return;
+            }
+            var msg_id = $('#msg_id').val();
+            var url = '';
+            if(msg_id && msg_id != ''){
+                //update
+                url = '/admin/api/mass/fileUpdate';
+            }else{
+                //insert
+                url = '/admin/api/mass/fileInsert';
             }
             $.ajax({
-                url: '/admin/api/mass/fileUpload',
+                url: url,
                 data: formData,
                 headers: {
                     'X-CSRF-Token': csrfKey
@@ -26,6 +38,7 @@
                 success: function(res) {
                     if (res.ret == 0) {
                         $('#cover').attr('src', res.msg);
+                        $('#msg_id').val(res.id);
                         $('#coverMask').css('display', 'block');
                     } else {
                         alert('(╯‵□′)╯︵┻━┻ 失败......');
