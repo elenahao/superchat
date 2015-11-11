@@ -89,6 +89,27 @@
             msgPrivew.append(msgItem.attr('id', _id));
             $('#'+_id).css('display', 'block');
         });
+
+        //实时统计标题、作者表单输入字数
+        var char_num = 0,title_num = 0,author_num = 0;
+        function countchar(name){
+            var $name = $('#'+name);
+            $name.on('keydown',function(){
+                var char_num = (name == 'title')?++title_num:++author_num;
+                var $char_num = $('#'+name+'+.item'+'>.char_number');
+                var $item = $('#'+name+'+.item');
+                $char_num.text(char_num);
+                var maxCharNum = (name == 'title')?64:8;
+                if(char_num >maxCharNum){
+                    $item.css('color','#f87171');
+                };
+                
+            });
+        }
+        countchar("title");
+        countchar("author");
+        
+        
     });
 })($);
 

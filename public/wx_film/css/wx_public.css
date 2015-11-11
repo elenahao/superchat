@@ -224,20 +224,31 @@ a.menu{
 .matMsg .side{
 	float: left;
 	width: 320px;
+	margin-right: 14px;
 }
 .matMsg .main{
-	float: right;
-	width: 530px;
 	position: relative;
-	border:1px solid #ccc;
-	padding:10px;
-	background: #fff;
+    padding: 10px;
+    border: 1px solid #e7e7eb;
+    background-color: #f4f5f9;
+    display: table-cell;
+    vertical-align: top;
+    float: none;
+    width: auto;
+}
+.matMsg .main:after {
+    content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    visibility: hidden;
+    clear: both;
+    height: 0!important;
+    display: block;
+    line-height: 0;
 }
 .matMsg .main .arrow{
 	position: absolute;
 }
 .matMsg .main .arrow_in {
-    border-color: transparent #fff transparent transparent;
+    border-color: transparent #F4F5F9 transparent transparent;
     border-style: dashed solid dashed dashed;
     border-width: 12px 12px 12px 0;
     display: inline-block;
@@ -325,7 +336,7 @@ a.menu{
 }
 /*msg multi*/
 .msgMultiPrivew{
-	border:1px solid #ccc;
+	/*border:1px solid #ccc;*/
 	background: #fff;
 }
 .msgItem{
@@ -333,7 +344,7 @@ a.menu{
 }
 .msgItem .cover{
 	position: relative;
-	width: 290px;
+	width: 100%;
 	height: 160px;
 }
 .msgItem .cover h4{
@@ -343,18 +354,23 @@ a.menu{
     bottom: 0;
     left: 0;
     position: absolute;
-    width: 290px;
+    width: 100%;
     line-height: 34px;
     height: 34px;
     overflow: hidden;
-    text-indent: 5px;
+    text-indent: 8px;
     color: #fff;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
     z-index: 1000;
 }
 .msgItem .cover .img{
 	position: relative;
+}
+#cover{
+	width: 100%;
+    height: 160px;
+    overflow: hidden;
 }
 .msgItem .loading{
 	display: none;
@@ -389,7 +405,6 @@ a.menu{
 	margin:0 15px;
 }
 .coverItem{
-	padding: 15px;
 	border-top: none;
 }
 .coverItem .editMask{
@@ -448,14 +463,17 @@ a.menu{
 	background: #fff;
 }
 .matMsg .formLR{
-	width: 525px;
-	margin-top: 30px;
+	width: auto;
+	margin-bottom: 10px;
 }
 .matMsg .formLR dt{
-	width: 100px;
+	display: block;
+	width: auto;
+	font-size:14px;
+	margin-bottom:4px;
 }
 .matMsg .formLR dd{
-	width: 370px;
+	width: 100%;
 }
 .matMsg .uploadImg p{
 	margin-bottom: 15px;
