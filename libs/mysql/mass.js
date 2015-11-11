@@ -88,3 +88,20 @@ exports.updateMsgAfterPosted = function (msg) {
     })
     return dfd.promise;
 };
+
+exports.updateMsgItem = function (items) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('replace into wx_mass_msg_item(id, mass_msg_id, title, content, show_cover_pic, author, content_source_url) values '+items.toString(),  function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.reject(err);
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};

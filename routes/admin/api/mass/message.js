@@ -71,6 +71,16 @@ app.post('/admin/api/mass/group',
                                     msg: err
                                 }));
                             })
+                        }else if(_body.errcode == 40001){
+                            redis.del('access_token').then(function resolve(ret) {
+                                console.log('is del ok:', ret);
+                                return _send();
+                            }, function reject(err) {
+                                res.status(200).send(JSON.stringify({
+                                    ret: -1,
+                                    msg: err
+                                }));
+                            });
                         }
                     });
                 }
