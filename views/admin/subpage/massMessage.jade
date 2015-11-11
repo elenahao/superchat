@@ -115,7 +115,10 @@ div.content
                                 p
                                     i.num 选填，该摘要只在发送图文信息为单条时显示
                                 p
-                                    textarea#digest(name="digest")
+                                    textarea#digest(name="digest",maxlength="120")
+                                    span.item 
+                                        i.char_number 0 
+                                        /120
                         dl.formLR.cl
                             dt 正文
                                 em *
