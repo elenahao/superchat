@@ -8,7 +8,7 @@ exports.findUsersByPage = function (pageNo, pageSize) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
         console.log('getConnection...');
-        conn.query("select count(*) from wx_user", function (err, ret) {
+        conn.query("select count(*) as u from wx_user", function (err, ret) {
             if (err) {
                 dfd.reject(err);
             }
