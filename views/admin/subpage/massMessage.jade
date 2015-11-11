@@ -13,7 +13,7 @@ div.content
                                     div.cover
                                         h4 标题
                                         div.img
-                                            img.curAvatar(id="cover", width="290", height="160", src="")
+                                            img.curAvatar(id="cover", src="")
                                         div.editMask#coverMask(style="display:none")
                                             input.icon18_common.edit_gray.fixpng.fileInput(name="fileInput", type="file", accept="image/*", value="编辑", style="cursor:pointer")
                                 div#msgItem1.msgItem(style="display:block")
@@ -84,15 +84,19 @@ div.content
                                 em *
                             dd
                                 p
-                                    input.ui-input#title(type="text", name="title")
-                                    i.item 12/19
+                                    input.ui-input#title(type="text", name="title",maxlength="64")
+                                    span.item 
+                                        i.char_number 0
+                                        /64
                         dl.formLR.cl
                             dt 作者
                                 em (选填)
                             dd
                                 p
-                                    input.ui-input#author(type="text", name="author")
-                                    i.item 12/19
+                                    input.ui-input#author(type="text", name="author",maxlength="8") 
+                                    span.item 
+                                        i.char_number 0 
+                                        /8
                         dl.formLR.uploadImg.cl
                             dt 封面图片
                                 em *
