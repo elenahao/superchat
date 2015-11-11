@@ -108,6 +108,15 @@
         }
         countchar("title");
         countchar("author");
+        var summary_num = 0;
+        $('#digest').on('keydown',function(){
+            summary_num++;
+            var $summary_num = $('#digest+.item>.char_number');
+            $summary_num.text(summary_num);
+            if(summary_num >120){
+                    $('#digest+.item').css('color','#f87171');
+                };
+        });
         
         
     });
