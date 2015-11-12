@@ -68,7 +68,6 @@ exports.findOpenidByPage = function (pageNo, pageSize) {
             }
             else {
                 var totalCount = ret[0].u;
-                //var totalCount = 12443066;
                 var totalPage = Math.ceil(totalCount / pageSize);
                 if(pageNo > totalPage){
                     pageNo = totalPage;
@@ -140,6 +139,23 @@ exports.updateFlag = function (users) {
                 conn.release();
             })
         }
+    })
+    return dfd.promise;
+};
+
+exports.updateGroupId = function (groupid, openid) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('update wx_user set groupid=? where openid=? ', [groupid, openid], function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.resolve('mysql update error');
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
     })
     return dfd.promise;
 };

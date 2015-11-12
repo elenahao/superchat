@@ -131,7 +131,7 @@ function _upload(res, params){
                                 var item = "(" + _params[j].id + "," + _params[0].msg_id + ",'" +
                                         _params[j].title + "','" + _params[j].content + "'," +
                                         _params[j].show_cover_pic + ",'" + _params[j].author + "','" +
-                                        _params[j].content_source_url + "')";
+                                        _params[j].content_source_url + "', now())";
                                 items.push(item);
                             }
                             Q.all(items).then(function done(ret){

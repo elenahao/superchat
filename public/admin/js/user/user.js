@@ -25,6 +25,7 @@
                     headers: {
                         'X-CSRF-Token': csrfKey
                     },
+                    data: questTable.serialize(),
                     method: 'POST',
                     dataType: 'json',
                     success: function(res) {

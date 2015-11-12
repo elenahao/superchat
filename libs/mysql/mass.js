@@ -92,7 +92,8 @@ exports.updateMsgAfterPosted = function (msg) {
 exports.updateMsgItem = function (items) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
-        conn.query('replace into wx_mass_msg_item(id, mass_msg_id, title, content, show_cover_pic, author, content_source_url) values '+items.toString(),  function (err, ret) {
+        conn.query('insert into wx_mass_msg_item (id,mass_msg_id, title, content, show_cover_pic, author, content_source_url, last_update_time) values '+items.toString()+
+            ' on duplicate key update id=values(id), mass_msg_id=values(mass_msg_id), title=values(title), content=values(content), show_cover_pic=values(show_cover_pic), author=values(author), content_source_url=values(content_source_url), last_update_time=values(last_update_time); ',  function (err, ret) {
             if (err) {
                 console.error(err);
                 dfd.reject(err);
