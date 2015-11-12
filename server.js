@@ -123,7 +123,7 @@ app.engine('.html', ejs.__express);
 app.set('view engine', 'html');
 
 //ueditor
-var ueditor = require("ueditor");
+var ueditor = require("./index.js");
 app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function(req, res, next) {
     // ueditor 客户发起上传图片请求
     if (req.query.action === 'uploadimage') {

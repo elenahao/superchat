@@ -77,14 +77,14 @@ var respond = function(static_url, callback) {
           file.pipe(fs.createWriteStream(tmpdir));
           fse.move(tmpdir, dest, function(err) {
             if (err) throw err;
-            console.log(req.body.pictitle);
+            //console.log(req.body.pictitle);
             //调用微信接口获取微信远程链接
             Token.getAccessToken().then(function done(ret){
               if(ret.access_token){
                 request({
-                  url: 'https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token='+ret.access_token+"&type=image",
+                  url: 'https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token='+ret.access_token,
                   formData: {
-                    media: fs.createReadStream(targetPath)
+                    media: fs.createReadStream(dest)
                   },
                   method: 'POST'
                 }, function(err, _res, body) {
@@ -93,7 +93,7 @@ var respond = function(static_url, callback) {
                   if(_body.url){
                     res.json({
                       'url': path.join(img_url, name),
-                      'title': req.body.pictitle,
+                      //'title': req.body.pictitle,
                       'original': filename,
                       'wx_img_url': _body.url,
                       'state': 'SUCCESS'
