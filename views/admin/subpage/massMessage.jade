@@ -16,7 +16,7 @@ div.content
                                             img.curAvatar(id="cover", src="")
                                         div.editMask#coverMask(style="display:none")
                                             input.icon18_common.edit_gray.fixpng.fileInput(name="fileInput", type="file", accept="image/*", value="编辑", style="cursor:pointer")
-                                div#msgItem1.msgItem()
+                                div#msgItem1.template.msgItem()
                                     div.line
                                         span
                                             img.curAvatar(width="60",height="45",src="#{adminStaticBase}/wx_film/images/source/60x45_1.jpg")
@@ -25,60 +25,61 @@ div.content
                                         div.editMask()
                                             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
                                             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                div#msgItem2.msgItem()
-                                    div.line
-                                        span
-                                            img.curAvatar(width="60",height="45",src="")
-                                            i.defaultImg 缩略图
-                                        h4 标题3
-                                        div.editMask()
-                                            a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                            a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                div#msgItem3.msgItem()
-                                    div.line
-                                        span
-                                            img.curAvatar(width="60",height="45",src="")
-                                            i.defaultImg 缩略图
-                                        h4 标题4
-                                        div.editMask()
-                                            a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                            a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                div#msgItem4.msgItem()
-                                    div.line
-                                        span
-                                            img.curAvatar(width="60",height="45",src="")
-                                            i.defaultImg 缩略图
-                                        h4 标题5
-                                        div.editMask()
-                                            a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                            a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                div#msgItem5.msgItem()
-                                    div.line
-                                        span
-                                            img.curAvatar(width="60",height="45",src="")
-                                            i.defaultImg 缩略图
-                                        h4 标题6
-                                        div.editMask()
-                                            a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                            a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                div#msgItem6.msgItem(style="display:none")
-                                    div.line
-                                        span
-                                            img.curAvatar(width="60",height="45",src="")
-                                            i.defaultImg 缩略图
-                                        h4 标题7
-                                        div.editMask()
-                                            a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                            a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                div#msgItem7.msgItem()
-                                    div.line
-                                        span
-                                            img.curAvatar(width="60",height="45",src="")
-                                            i.defaultImg 缩略图
-                                        h4 标题8
-                                        div.editMask()
-                                            a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                            a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
+                                //- div#msgItem2.msgItem()
+                                //-     div.line
+                                //-         span
+                                //-             img.curAvatar(width="60",height="45",src="")
+                                //-             i.defaultImg 缩略图
+                                //-         h4 标题3
+                                //-         div.editMask()
+                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
+                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
+                                //- div#msgItem3.msgItem()
+                                //-     div.line
+                                //-         span
+                                //-             img.curAvatar(width="60",height="45",src="")
+                                //-             i.defaultImg 缩略图
+                                //-         h4 标题4
+                                //-         div.editMask()
+                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
+                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
+                                //- div#msgItem4.msgItem()
+                                //-     div.line
+                                //-         span
+                                //-             img.curAvatar(width="60",height="45",src="")
+                                //-             i.defaultImg 缩略图
+                                //-         h4 标题5
+                                //-         div.editMask()
+                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
+                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
+                                //- div#msgItem5.msgItem()
+                                //-     div.line
+                                //-         span
+                                //-             img.curAvatar(width="60",height="45",src="")
+                                //-             i.defaultImg 缩略图
+                                //-         h4 标题6
+                                //-         div.editMask()
+                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
+                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
+                                //- div#msgItem6.msgItem(style="display:none")
+                                //-     div.line
+                                //-         span
+                                //-             img.curAvatar(width="60",height="45",src="")
+                                //-             i.defaultImg 缩略图
+                                //-         h4 标题7
+                                //-         div.editMask()
+                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
+                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
+                                //- div#msgItem7.msgItem()
+                                //-     div.line
+                                //-         span
+                                //-             img.curAvatar(width="60",height="45",src="")
+                                //-             i.defaultImg 缩略图
+                                //-         h4 标题8
+                                //-         div.editMask()
+                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
+                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
+
                             a#addMsg.addMsg(href="", onclick="")
                                 i.icon20_common.add_gray.fixpng 增加一条
                 section.main
