@@ -340,7 +340,9 @@ a.menu{
 	background: #fff;
 }
 .msgItem{
-	border-top: 1px solid #ccc;
+	border: 1px solid #ccc;
+	border-top: 0;
+	display: none;
 }
 .msgItem .cover{
 	position: relative;
@@ -391,48 +393,59 @@ a.menu{
 .msgItem .editMask{
 	display: none;
 	width: 320px;
-	height: 78px;
+	height: 100px;
 	position: absolute;
-	background: rgba(229, 229, 229, 0.9);
+	background: rgba(229, 229, 229, 0.7);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5e5e5e5, endColorstr=#e5e5e5e5); /* For IE 8*/ 
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5e5e5e5, endColorstr=#e5e5e5e5)";
 	top:0;
 	left: 0;
-	padding-top: 28px;
+	padding-top: 40px;
 	text-align: center;
 }
 .msgItem .editMask a{
 	margin:0 15px;
 }
 .coverItem{
-	border-top: none;
+	border: none;
+	display: block;
 }
 .coverItem .editMask{
 	padding-top: 56px;
 	padding-left:130px;
-	width: 290px;
+	width: 320px;
 	height: 126px;
 }
 
 .msgItem .line{
-	height: 6px;
+	min-height: 60px;
 	overflow: hidden;
 	position: relative;
-	padding:40px;
+	padding: 20px 14px;
+
 }
-.msgItem .line span{
-	display: block;
-	float: right;
-	margin-left: 5px;
+.msgItem .line .defaultImg{
 	width: 60px;
-	position: relative;
-	margin-top:-18px;
+    height: 60px;
+    display: block;
+    color: #c0c0c0;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ececec;
+    float: right;
 }
+.msgItem .line .curAvatar{
+	float: right;
+    width: 60px;
+    height: 60px;
+}
+
 .msgItem .line h4{
     max-height:38px;
     _height:38px;
     overflow: hidden;
-    padding-top: 6px;
     word-break: break-all;
     word-wrap: break-word;
     font-weight: normal;

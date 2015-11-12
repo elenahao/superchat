@@ -117,6 +117,39 @@
                     $('#digest+.item').css('color','#f87171');
                 };
         });
+
+        // 点击『+』增加图文副本列表项
+        function addItem(){
+            var $msgItem = $('.msgItem');
+            var i = 0;
+                $('#addMsg').on('click',function(){
+                    i++;
+                    $msgItem.eq(i).show();
+                    if(i>7){
+                        console.log('最多只能添加8条！');
+                        $(this).off();
+                    }
+                    
+                });
+        }
+        addItem();
+        // 鼠标滑过弹层显示
+        for(var i = 0;i<8;i++){
+            (function(i){
+                $('.msgItem').eq(i).on('mouseenter',function(){
+                    $('.editMask').eq(i).show();
+                });
+                $('.msgItem').eq(i).on('mouseleave',function(){
+                    $('.editMask').eq(i).hide();
+                });
+            })(i);
+                
+            };
+            
+
+                
+                
+
         
         
     });
