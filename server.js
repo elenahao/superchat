@@ -117,10 +117,8 @@ app.use('/', express.static(gpath.dist.public));
 //文档地址：https://www.npmjs.com/package/jade
 //文档地址2：https://github.com/jadejs/jade
 //palyground：http://jade-lang.com/
-var ejs = require('ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');
+app.set('view engine', 'jade');
 
 //ueditor
 var ueditor = require("./index.js");
@@ -185,6 +183,9 @@ app.use(function(err, req, res, next) {
     res.send('500' + err);
 });
 
+app.use('/', function(req, res) {
+    res.render('ueditor');
+});
 
 var server = app.listen(80, function() {
     console.log('Listening on port %d', server.address().port);
