@@ -1,0 +1,503 @@
+[2015-11-12 00:10:43.430] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 00:10:53.888] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ENETUNREACH]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ENETUNREACH
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:47:20.823] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ENETUNREACH]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ENETUNREACH
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:50:03.272] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:51:52.480] [INFO] console - 6379
+[2015-11-12 09:51:52.484] [INFO] console - 172.16.39.49
+[2015-11-12 09:51:52.485] [INFO] console - {}
+[2015-11-12 09:51:52.879] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 09:51:52.879] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 09:51:53.078] [INFO] console - true
+[2015-11-12 09:51:53.484] [INFO] console - Listening on port 80
+[2015-11-12 09:52:09.187] [INFO] console - admin massMessage...
+[2015-11-12 09:52:09.933] [WARN] console - Warning: missing space before text for line 97 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 09:52:09.935] [WARN] console - Warning: missing space before text for line 106 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 09:52:09.939] [WARN] console - Warning: missing space before text for line 128 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 09:53:08.628] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:54:23.957] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:55:39.460] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:56:55.291] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:58:11.710] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 09:59:28.905] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:00:47.630] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:02:08.872] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:05:45.568] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:07:18.399] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:09:03.650] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:11:10.029] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:13:52.322] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:17:35.729] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:23:02.933] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:31:26.546] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 10:52:44.779] [INFO] console - 6379
+[2015-11-12 10:52:44.785] [INFO] console - 172.16.39.49
+[2015-11-12 10:52:44.786] [INFO] console - {}
+[2015-11-12 10:52:45.180] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 10:52:45.181] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 10:52:45.372] [INFO] console - true
+[2015-11-12 10:52:45.793] [INFO] console - Listening on port 80
+[2015-11-12 10:56:40.812] [INFO] console - admin massMessage...
+[2015-11-12 10:56:41.550] [WARN] console - Warning: missing space before text for line 97 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 10:56:41.551] [WARN] console - Warning: missing space before text for line 106 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 10:56:41.553] [WARN] console - Warning: missing space before text for line 128 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 11:29:53.132] [INFO] console - 6379
+[2015-11-12 11:29:53.136] [INFO] console - 172.16.39.49
+[2015-11-12 11:29:53.140] [INFO] console - {}
+[2015-11-12 11:29:53.555] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 11:29:53.556] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 11:29:53.760] [INFO] console - true
+[2015-11-12 11:29:54.161] [INFO] console - Listening on port 80
+[2015-11-12 11:32:29.180] [INFO] console - admin massMessage...
+[2015-11-12 11:32:29.927] [WARN] console - Warning: missing space before text for line 97 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 11:32:29.929] [WARN] console - Warning: missing space before text for line 106 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 11:32:29.933] [WARN] console - Warning: missing space before text for line 128 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:24:11.369] [INFO] console - 6379
+[2015-11-12 13:24:11.373] [INFO] console - 172.16.39.49
+[2015-11-12 13:24:11.374] [INFO] console - {}
+[2015-11-12 13:24:11.767] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:24:11.767] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:24:12.015] [INFO] console - true
+[2015-11-12 13:24:12.419] [INFO] console - Listening on port 80
+[2015-11-12 13:24:15.229] [INFO] console - admin massMessage...
+[2015-11-12 13:24:15.976] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:24:15.978] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:24:15.982] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:25:52.687] [INFO] console - admin massMessage...
+[2015-11-12 13:25:52.710] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:25:52.711] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:25:52.712] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:25:56.213] [INFO] console - admin massMessage...
+[2015-11-12 13:25:56.222] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:25:56.223] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:25:56.226] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:26:34.266] [INFO] console - 6379
+[2015-11-12 13:26:34.271] [INFO] console - 172.16.39.49
+[2015-11-12 13:26:34.273] [INFO] console - {}
+[2015-11-12 13:26:34.665] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:26:34.666] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:26:34.862] [INFO] console - true
+[2015-11-12 13:26:35.262] [INFO] console - Listening on port 80
+[2015-11-12 13:26:35.978] [INFO] console - admin massMessage...
+[2015-11-12 13:26:36.691] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:26:36.692] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:26:36.703] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:28:19.218] [INFO] console - 6379
+[2015-11-12 13:28:19.224] [INFO] console - 172.16.39.49
+[2015-11-12 13:28:19.226] [INFO] console - {}
+[2015-11-12 13:28:19.321] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:28:19.321] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:28:19.367] [INFO] console - true
+[2015-11-12 13:28:19.444] [INFO] console - Listening on port 80
+[2015-11-12 13:28:20.104] [INFO] console - admin massMessage...
+[2015-11-12 13:28:20.382] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:28:20.385] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:28:20.388] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:29:12.918] [INFO] console - 6379
+[2015-11-12 13:29:12.921] [INFO] console - 172.16.39.49
+[2015-11-12 13:29:12.922] [INFO] console - {}
+[2015-11-12 13:29:13.310] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:29:13.311] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:29:13.500] [INFO] console - true
+[2015-11-12 13:29:13.887] [INFO] console - Listening on port 80
+[2015-11-12 13:29:14.190] [INFO] console - admin massMessage...
+[2015-11-12 13:29:14.949] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:29:14.953] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:29:14.957] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:32:32.509] [INFO] console - 6379
+[2015-11-12 13:32:32.515] [INFO] console - 172.16.39.49
+[2015-11-12 13:32:32.518] [INFO] console - {}
+[2015-11-12 13:32:32.921] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:32:32.922] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:32:33.119] [INFO] console - true
+[2015-11-12 13:32:33.533] [INFO] console - Listening on port 80
+[2015-11-12 13:32:35.899] [INFO] console - admin massMessage...
+[2015-11-12 13:32:36.632] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:32:36.635] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:32:36.638] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:33:19.696] [INFO] console - 6379
+[2015-11-12 13:33:19.700] [INFO] console - 172.16.39.49
+[2015-11-12 13:33:19.700] [INFO] console - {}
+[2015-11-12 13:33:19.781] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:33:19.781] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:33:19.828] [INFO] console - true
+[2015-11-12 13:33:19.906] [INFO] console - Listening on port 80
+[2015-11-12 13:33:20.314] [INFO] console - admin massMessage...
+[2015-11-12 13:33:20.625] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:33:20.627] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:33:20.631] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:34:42.656] [INFO] console - 6379
+[2015-11-12 13:34:42.659] [INFO] console - 172.16.39.49
+[2015-11-12 13:34:42.660] [INFO] console - {}
+[2015-11-12 13:34:42.750] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:34:42.750] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:34:42.793] [INFO] console - true
+[2015-11-12 13:34:42.874] [INFO] console - Listening on port 80
+[2015-11-12 13:34:46.007] [INFO] console - admin massMessage...
+[2015-11-12 13:34:46.311] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:34:46.314] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:34:46.317] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:34:55.994] [INFO] console - 6379
+[2015-11-12 13:34:55.998] [INFO] console - 172.16.39.49
+[2015-11-12 13:34:55.998] [INFO] console - {}
+[2015-11-12 13:34:56.077] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:34:56.078] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:34:56.170] [INFO] console - true
+[2015-11-12 13:34:56.332] [INFO] console - Listening on port 80
+[2015-11-12 13:34:57.553] [INFO] console - admin massMessage...
+[2015-11-12 13:34:57.859] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:34:57.861] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:34:57.864] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:35:33.744] [INFO] console - 6379
+[2015-11-12 13:35:33.747] [INFO] console - 172.16.39.49
+[2015-11-12 13:35:33.748] [INFO] console - {}
+[2015-11-12 13:35:33.843] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:35:33.843] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:35:33.886] [INFO] console - true
+[2015-11-12 13:35:33.966] [INFO] console - Listening on port 80
+[2015-11-12 13:38:00.908] [INFO] console - 6379
+[2015-11-12 13:38:00.912] [INFO] console - 172.16.39.49
+[2015-11-12 13:38:00.913] [INFO] console - {}
+[2015-11-12 13:38:01.000] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:38:01.000] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:38:01.046] [INFO] console - true
+[2015-11-12 13:38:01.144] [INFO] console - Listening on port 80
+[2015-11-12 13:38:04.058] [INFO] console - admin massMessage...
+[2015-11-12 13:38:04.836] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:38:04.839] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:38:04.842] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:38:44.311] [INFO] console - 6379
+[2015-11-12 13:38:44.318] [INFO] console - 172.16.39.49
+[2015-11-12 13:38:44.319] [INFO] console - {}
+[2015-11-12 13:38:44.588] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:38:44.588] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:38:44.637] [INFO] console - true
+[2015-11-12 13:38:44.711] [INFO] console - Listening on port 80
+[2015-11-12 13:38:46.973] [INFO] console - admin massMessage...
+[2015-11-12 13:38:47.695] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:38:47.698] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:38:47.701] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:39:55.821] [INFO] console - 6379
+[2015-11-12 13:39:55.825] [INFO] console - 172.16.39.49
+[2015-11-12 13:39:55.826] [INFO] console - {}
+[2015-11-12 13:39:55.912] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:39:55.912] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:39:55.959] [INFO] console - true
+[2015-11-12 13:39:56.034] [INFO] console - Listening on port 80
+[2015-11-12 13:39:59.628] [INFO] console - admin massMessage...
+[2015-11-12 13:39:59.901] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:39:59.903] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:39:59.906] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:42:04.780] [INFO] console - 6379
+[2015-11-12 13:42:04.788] [INFO] console - 172.16.39.49
+[2015-11-12 13:42:04.790] [INFO] console - {}
+[2015-11-12 13:42:05.193] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:42:05.194] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:42:05.408] [INFO] console - true
+[2015-11-12 13:42:05.807] [INFO] console - Listening on port 80
+[2015-11-12 13:42:06.123] [INFO] console - admin massMessage...
+[2015-11-12 13:42:06.874] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:42:06.877] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:42:06.880] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:44:47.263] [INFO] console - 6379
+[2015-11-12 13:44:47.269] [INFO] console - 172.16.39.49
+[2015-11-12 13:44:47.271] [INFO] console - {}
+[2015-11-12 13:44:47.661] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:44:47.661] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:44:47.859] [INFO] console - true
+[2015-11-12 13:44:48.267] [INFO] console - Listening on port 80
+[2015-11-12 13:44:55.769] [INFO] console - 6379
+[2015-11-12 13:44:55.772] [INFO] console - 172.16.39.49
+[2015-11-12 13:44:55.773] [INFO] console - {}
+[2015-11-12 13:44:55.856] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:44:55.856] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:44:55.901] [INFO] console - true
+[2015-11-12 13:44:55.975] [INFO] console - Listening on port 80
+[2015-11-12 13:44:58.340] [INFO] console - admin massMessage...
+[2015-11-12 13:44:59.077] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:44:59.079] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:44:59.083] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:45:01.211] [INFO] console - admin massMessage...
+[2015-11-12 13:45:01.226] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:45:01.227] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:45:01.229] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:45:23.548] [INFO] console - 6379
+[2015-11-12 13:45:23.553] [INFO] console - 172.16.39.49
+[2015-11-12 13:45:23.554] [INFO] console - {}
+[2015-11-12 13:45:23.687] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:45:23.687] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:45:23.770] [INFO] console - true
+[2015-11-12 13:45:23.882] [INFO] console - Listening on port 80
+[2015-11-12 13:45:24.535] [INFO] console - admin massMessage...
+[2015-11-12 13:45:25.197] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:45:25.200] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:45:25.203] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:46:39.845] [INFO] console - 6379
+[2015-11-12 13:46:39.848] [INFO] console - 172.16.39.49
+[2015-11-12 13:46:39.848] [INFO] console - {}
+[2015-11-12 13:46:39.927] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:46:39.928] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:46:39.972] [INFO] console - true
+[2015-11-12 13:46:40.048] [INFO] console - Listening on port 80
+[2015-11-12 13:46:43.324] [INFO] console - admin massMessage...
+[2015-11-12 13:46:44.020] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:46:44.022] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:46:44.026] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:53:55.798] [INFO] console - 6379
+[2015-11-12 13:53:55.802] [INFO] console - 172.16.39.49
+[2015-11-12 13:53:55.803] [INFO] console - {}
+[2015-11-12 13:53:56.223] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:53:56.224] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:53:56.460] [INFO] console - true
+[2015-11-12 13:53:56.866] [INFO] console - Listening on port 80
+[2015-11-12 13:53:58.137] [INFO] console - admin massMessage...
+[2015-11-12 13:53:58.878] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:53:58.881] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:53:58.885] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:55:50.176] [INFO] console - 6379
+[2015-11-12 13:55:50.180] [INFO] console - 172.16.39.49
+[2015-11-12 13:55:50.181] [INFO] console - {}
+[2015-11-12 13:55:50.585] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:55:50.586] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:55:50.787] [INFO] console - true
+[2015-11-12 13:55:51.177] [INFO] console - Listening on port 80
+[2015-11-12 13:55:51.559] [INFO] console - admin massMessage...
+[2015-11-12 13:55:52.320] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:55:52.323] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:55:52.326] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:57:59.135] [INFO] console - 6379
+[2015-11-12 13:57:59.139] [INFO] console - 172.16.39.49
+[2015-11-12 13:57:59.140] [INFO] console - {}
+[2015-11-12 13:57:59.224] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:57:59.224] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:57:59.274] [INFO] console - true
+[2015-11-12 13:57:59.373] [INFO] console - Listening on port 80
+[2015-11-12 13:58:02.176] [INFO] console - admin massMessage...
+[2015-11-12 13:58:02.471] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:58:02.473] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:58:02.476] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:59:01.730] [INFO] console - 6379
+[2015-11-12 13:59:01.734] [INFO] console - 172.16.39.49
+[2015-11-12 13:59:01.735] [INFO] console - {}
+[2015-11-12 13:59:02.133] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 13:59:02.133] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 13:59:02.335] [INFO] console - true
+[2015-11-12 13:59:02.780] [INFO] console - Listening on port 80
+[2015-11-12 13:59:03.287] [INFO] console - admin massMessage...
+[2015-11-12 13:59:04.002] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:59:04.005] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 13:59:04.011] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:01:12.421] [INFO] console - 6379
+[2015-11-12 14:01:12.425] [INFO] console - 172.16.39.49
+[2015-11-12 14:01:12.426] [INFO] console - {}
+[2015-11-12 14:01:12.819] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 14:01:12.819] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 14:01:13.015] [INFO] console - true
+[2015-11-12 14:01:13.418] [INFO] console - Listening on port 80
+[2015-11-12 14:01:14.068] [INFO] console - admin massMessage...
+[2015-11-12 14:01:14.796] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:01:14.799] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:01:14.802] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:02:43.626] [INFO] console - 6379
+[2015-11-12 14:02:43.630] [INFO] console - 172.16.39.49
+[2015-11-12 14:02:43.631] [INFO] console - {}
+[2015-11-12 14:02:43.914] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 14:02:43.915] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 14:02:43.960] [INFO] console - true
+[2015-11-12 14:02:44.047] [INFO] console - Listening on port 80
+[2015-11-12 14:02:44.117] [INFO] console - admin massMessage...
+[2015-11-12 14:02:44.404] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:02:44.406] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:02:44.409] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:05:00.954] [INFO] console - admin massMessage...
+[2015-11-12 14:05:00.982] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:05:00.984] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:05:00.985] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:07:41.522] [INFO] console - admin massMessage...
+[2015-11-12 14:07:41.536] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:07:41.536] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:07:41.537] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:32:33.634] [INFO] console - 6379
+[2015-11-12 14:32:33.641] [INFO] console - 172.16.39.49
+[2015-11-12 14:32:33.643] [INFO] console - {}
+[2015-11-12 14:32:34.034] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 14:32:34.035] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 14:32:34.237] [INFO] console - true
+[2015-11-12 14:32:34.625] [INFO] console - Listening on port 80
+[2015-11-12 14:32:35.097] [INFO] console - admin massMessage...
+[2015-11-12 14:32:35.839] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:32:35.842] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:32:35.847] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:33:25.132] [INFO] console - 6379
+[2015-11-12 14:33:25.136] [INFO] console - 172.16.39.49
+[2015-11-12 14:33:25.137] [INFO] console - {}
+[2015-11-12 14:33:25.532] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 14:33:25.533] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 14:33:25.744] [INFO] console - true
+[2015-11-12 14:33:26.139] [INFO] console - Listening on port 80
+[2015-11-12 14:33:26.392] [INFO] console - admin massMessage...
+[2015-11-12 14:33:27.113] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:33:27.116] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:33:27.120] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:36:53.135] [INFO] console - 6379
+[2015-11-12 14:36:53.140] [INFO] console - 172.16.39.49
+[2015-11-12 14:36:53.141] [INFO] console - {}
+[2015-11-12 14:36:53.560] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 14:36:53.560] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 14:36:53.762] [INFO] console - true
+[2015-11-12 14:36:54.160] [INFO] console - Listening on port 80
+[2015-11-12 14:36:54.370] [INFO] console - admin massMessage...
+[2015-11-12 14:36:55.126] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:36:55.128] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:36:55.131] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:37:24.639] [INFO] console - 6379
+[2015-11-12 14:37:24.643] [INFO] console - 172.16.39.49
+[2015-11-12 14:37:24.644] [INFO] console - {}
+[2015-11-12 14:37:25.041] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 14:37:25.042] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 14:37:25.237] [INFO] console - true
+[2015-11-12 14:37:25.652] [INFO] console - Listening on port 80
+[2015-11-12 14:37:28.356] [INFO] console - admin massMessage...
+[2015-11-12 14:37:29.075] [WARN] console - Warning: missing space before text for line 98 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:37:29.077] [WARN] console - Warning: missing space before text for line 107 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:37:29.081] [WARN] console - Warning: missing space before text for line 129 of jade file "/Users/linglingda/myWork/myProject/new-superchat/superchat/views/admin/subpage/massMessage.jade"
+[2015-11-12 14:40:04.126] [INFO] console - 6379
+[2015-11-12 14:40:04.131] [INFO] console - 172.16.39.49
+[2015-11-12 14:40:04.132] [INFO] console - {}
+[2015-11-12 14:40:04.531] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 14:40:04.532] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 14:40:04.739] [INFO] console - true
+[2015-11-12 14:40:05.159] [INFO] console - Listening on port 80
+[2015-11-12 14:51:03.605] [ERROR] console - Error caught in uncaughtException event: { [Error: Cannot find module 'ejs'] code: 'MODULE_NOT_FOUND' }
+Error: Cannot find module 'ejs'
+    at Function.Module._resolveFilename (module.js:336:15)
+    at Function.Module._load (module.js:278:25)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at Object.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/server.js:120:11)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Function.Module.runMain (module.js:501:10)
+    at startup (node.js:129:16)
+    at node.js:814:3

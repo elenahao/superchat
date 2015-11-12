@@ -10,14 +10,16 @@ var _ = require('lodash');
 var request = require('request');
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 
 app.post('/admin/api/user/oneToGroup',
     function(req, res, next){
         var dfd = Q.defer();
         console.log('admin api one user-to-group ... ');
         var _gid = req.body.gid;
+        console.log(req.body.gid);
         var _openid = req.body.openid;
-
+        console.log(req.body.openid);
         if (_gid && _openid) {
             //{"openid":"oDF3iYx0ro3_7jD4HFRDfrjdCM58","to_groupid":108}
             //先获取ACCESS_TOKEN
@@ -29,18 +31,22 @@ app.post('/admin/api/user/oneToGroup',
                     request({url: 'https://api.weixin.qq.com/cgi-bin/groups/members/update?access_token='+ACCESS_TOKEN,
                         method: 'POST',
                         body: JSON.stringify({openid: _openid, to_groupid: _gid})
-                    }, function (err, res, body){
+                    }, function (err, _res, body){
                         console.log('is request get ok:', body);
                         if(!err){
                             var _body = JSON.parse(body);
                             if(_body.errmsg === 'ok'){
-                                redis.hmset('user:'+_openid, {groupid: _gid})
-                                    .then(function resolve(res){
-                                        console.log('is hmset user-groupid ok:', res);
-                                        dfd.resolve(res);
-                                    }, function reject(err){
-                                        dfd.reject(err);
-                                    });
+                                mysql.user.updateGroupId(_gid, _openid).then(function done(ret){
+                                    console.log('is update groupid ok:', ret);
+                                    res.status(200).send(JSON.stringify({
+                                        ret: 0
+                                    }));
+                                }, function err(err){
+                                    res.status(400).send(JSON.stringify({
+                                        ret: -1,
+                                        msg: err
+                                    }));
+                                })
                             }
                         }
                     });
