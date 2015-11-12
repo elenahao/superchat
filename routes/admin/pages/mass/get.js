@@ -21,3 +21,4 @@ app.get(['/admin/massMessage'],
             sitenavs: _nav//传到页面后，左侧菜单栏根据isActive点亮或变灰
         });
     });
+                                                                                               

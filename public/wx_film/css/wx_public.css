@@ -339,10 +339,11 @@ a.menu{
 	/*border:1px solid #ccc;*/
 	background: #fff;
 }
+.template{display: none;}
 .msgItem{
 	border: 1px solid #ccc;
 	border-top: 0;
-	display: none;
+	/*display: none;*/
 }
 .msgItem .cover{
 	position: relative;

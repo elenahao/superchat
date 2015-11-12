@@ -90,7 +90,7 @@
             $('#'+_id).css('display', 'block');
         });
 
-        //实时统计标题、作者表单输入字数
+        //实时统计标题、作者表单输入字数 
         var char_num = 0,title_num = 0,author_num = 0;
         function countchar(name){
             var $name = $('#'+name);
@@ -103,6 +103,8 @@
                 if(char_num >maxCharNum){
                     $item.css('color','#f87171');
                 };
+                //左边栏实时显示输入
+                var content = $('#'+name).val();
                 
             });
         }
@@ -123,10 +125,12 @@
             var $msgItem = $('.msgItem');
             var i = 0;
                 $('#addMsg').on('click',function(){
-                    i++;
-                    $msgItem.eq(i).show();
-                    if(i>7){
-                        console.log('最多只能添加8条！');
+                    var $template = $('.template');
+                    var $item = "<div id='' class='msgItem'>"+$template.html()+"</div>";
+                    $('#msgPrivew').append($item);
+                    var item_len = $('#msgPrivew .msgItem').length;
+                    if(item_len >8){
+                        alert('最多只能添加8条！');
                         $(this).off();
                     }
                     
@@ -134,17 +138,17 @@
         }
         addItem();
         // 鼠标滑过弹层显示
-        for(var i = 0;i<8;i++){
-            (function(i){
-                $('.msgItem').eq(i).on('mouseenter',function(){
-                    $('.editMask').eq(i).show();
+            function showEditMask(){
+                $('#msgPrivew').delegate('.msgItem','mouseenter',function(){
+                    $(this).find('.editMask').show();
                 });
-                $('.msgItem').eq(i).on('mouseleave',function(){
-                    $('.editMask').eq(i).hide();
+                $('#msgPrivew').delegate('.msgItem','mouseleave',function(){
+                    $(this).find('.editMask').hide();
                 });
-            })(i);
+            }
+        showEditMask();
                 
-            };
+
             
 
                 
