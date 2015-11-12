@@ -2,7 +2,7 @@ div.content
     h3.tips 你可以在这里设置公众号菜单及内容
         span
             a(href="#") 有问题点我
-    section.main
+    section.editbox
         div.commonBox.commonBoxMatMsg
             div.matMsg.cl
                 aside.side
@@ -16,7 +16,7 @@ div.content
                                             img.curAvatar(id="cover", src="")
                                         div.editMask#coverMask(style="display:none")
                                             input.icon18_common.edit_gray.fixpng.fileInput(name="fileInput", type="file", accept="image/*", value="编辑", style="cursor:pointer")
-                                div#msgItem1.template.msgItem()
+                                div#msgItem1.templateItem.msgItem()
                                     div.line
                                         span
                                             img.curAvatar(width="60",height="45",src="#{adminStaticBase}/wx_film/images/source/60x45_1.jpg")
@@ -25,64 +25,10 @@ div.content
                                         div.editMask()
                                             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
                                             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                //- div#msgItem2.msgItem()
-                                //-     div.line
-                                //-         span
-                                //-             img.curAvatar(width="60",height="45",src="")
-                                //-             i.defaultImg 缩略图
-                                //-         h4 标题3
-                                //-         div.editMask()
-                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                //- div#msgItem3.msgItem()
-                                //-     div.line
-                                //-         span
-                                //-             img.curAvatar(width="60",height="45",src="")
-                                //-             i.defaultImg 缩略图
-                                //-         h4 标题4
-                                //-         div.editMask()
-                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                //- div#msgItem4.msgItem()
-                                //-     div.line
-                                //-         span
-                                //-             img.curAvatar(width="60",height="45",src="")
-                                //-             i.defaultImg 缩略图
-                                //-         h4 标题5
-                                //-         div.editMask()
-                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                //- div#msgItem5.msgItem()
-                                //-     div.line
-                                //-         span
-                                //-             img.curAvatar(width="60",height="45",src="")
-                                //-             i.defaultImg 缩略图
-                                //-         h4 标题6
-                                //-         div.editMask()
-                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                //- div#msgItem6.msgItem(style="display:none")
-                                //-     div.line
-                                //-         span
-                                //-             img.curAvatar(width="60",height="45",src="")
-                                //-             i.defaultImg 缩略图
-                                //-         h4 标题7
-                                //-         div.editMask()
-                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-                                //- div#msgItem7.msgItem()
-                                //-     div.line
-                                //-         span
-                                //-             img.curAvatar(width="60",height="45",src="")
-                                //-             i.defaultImg 缩略图
-                                //-         h4 标题8
-                                //-         div.editMask()
-                                //-             a.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 编辑
-                                //-             a.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1",onclick="return false;") 删除
-
+                               
                             a#addMsg.addMsg(href="", onclick="")
                                 i.icon20_common.add_gray.fixpng 增加一条
-                section.main
+                section.main.mainEdite
                     i.arrow.arrow_out
                     i.arrow.arrow_in
                     form(id="rightForm", action="/admin/api/mass/uploadMsg", method="post")
@@ -92,7 +38,7 @@ div.content
                                 em *
                             dd
                                 p
-                                    input.ui-input#title(type="text", name="title",maxlength="64")
+                                    input.ui-input.title-input#title(type="text", name="title",maxlength="64")
                                     span.item 
                                         i.char_number 0
                                         /64
@@ -133,6 +79,58 @@ div.content
                             dd
                                 p
                                     textarea#content(name="content")
+                section.main.templateEdit
+                    div.inner
+                        i.arrow.arrow_out
+                        i.arrow.arrow_in
+                        form(id="rightForm", action="/admin/api/mass/uploadMsg", method="post")
+                            input#msg_id(type="hidden", name="msg_id", val="")
+                            dl.formLR.cl
+                                dt 标题
+                                    em *
+                                dd
+                                    p
+                                        input.ui-input.title-input#title(type="text", name="title",maxlength="64")
+                                        span.item 
+                                            i.char_number 0
+                                            /64
+                            dl.formLR.cl
+                                dt 作者
+                                    em (选填)
+                                dd
+                                    p
+                                        input.ui-input#author(type="text", name="author",maxlength="8") 
+                                        span.item 
+                                            i.char_number 0 
+                                            /8
+                            dl.formLR.uploadImg.cl
+                                dt 封面图片
+                                    em *
+                                dd
+                                    p
+                                        i.num 建议尺寸:900像素*500像素(不能超过2M)
+                                    p
+                                        input.fileInput(name="fileInput", type="file", accept="image/*", value="上传图片")
+                                    div
+                                        label.label_check(for="checkbox-02", hidefocus="true") 封面图案显示在正文中
+                                            input#checkbox-02(name="show_cover_pic", type="checkbox", value="1")
+                            dl.formLR.cl
+                                dt 摘要
+                                    em (选填)
+                                dd
+                                    p
+                                        i.num 选填，该摘要只在发送图文信息为单条时显示
+                                    p
+                                        textarea#digest(name="digest",maxlength="120")
+                                        span.item 
+                                            i.char_number 0 
+                                            /120
+                            dl.formLR.cl
+                                dt 正文
+                                    em *
+                                dd
+                                    p
+                                        textarea#content(name="content")
     div.foot
         p
             input.input_ui-btn(type="submit", value="保存")

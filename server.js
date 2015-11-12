@@ -117,10 +117,8 @@ app.use('/', express.static(gpath.dist.public));
 //文档地址：https://www.npmjs.com/package/jade
 //文档地址2：https://github.com/jadejs/jade
 //palyground：http://jade-lang.com/
-var ejs = require('ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');
+app.set('view engine', 'jade');
 
 //ueditor
 var ueditor = require("./index.js");
@@ -131,7 +129,7 @@ app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function(req, res
         var date = new Date();
         var imgname = req.ueditor.filename;
 
-        var img_url = '/images/ueditor/';
+        var img_url = '/img/ueditor/';
         res.ue_up(img_url); //你只要输入要保存的地址 。保存操作交给ueditor来做
     }
     //  客户端发起图片列表请求
@@ -164,9 +162,9 @@ app.use(bodyParser.urlencoded({
 //    protectUrlArr:['/api']}));
 
 
-app.use('/', function(req, res) {
-    res.render('ueditor');
-});
+// app.use('/', function(req, res) {
+//     res.render('ueditor');
+// });
 //路由
 require('./routes');
 
@@ -185,6 +183,9 @@ app.use(function(err, req, res, next) {
     res.send('500' + err);
 });
 
+// app.use('/', function(req, res) {
+//     res.render('ueditor');
+// });
 
 var server = app.listen(80, function() {
     console.log('Listening on port %d', server.address().port);
