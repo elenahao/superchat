@@ -2,13 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a60e7fb8-fd8d-4839-bb43-613dfcbd870b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.pid" afterPath="$PROJECT_DIR$/app.pid" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/f.txt" afterPath="$PROJECT_DIR$/f.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/mysql/mass.js" afterPath="$PROJECT_DIR$/libs/mysql/mass.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/user/one2Group.js" afterPath="$PROJECT_DIR$/routes/admin/api/user/one2Group.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/mass/upload.js" afterPath="$PROJECT_DIR$/routes/admin/api/mass/upload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/mysql/user.js" afterPath="$PROJECT_DIR$/libs/mysql/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/js/user/user.js" afterPath="$PROJECT_DIR$/public/admin/js/user/user.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/0.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/Uploader.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/alignicon.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/anchor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/arrow_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/arrow_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/bface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/button-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/cancelbutton.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/cface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/charts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/lang/zh-cn/images/copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/cursor_h.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/cursor_h.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/cursor_v.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/cursor_v.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/dialog-title-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/fface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/filescan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/highlighted.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/icons-all.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/icons.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/icons.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/image.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/jxface2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/loaderror.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/lang/zh-cn/images/localimage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/lock.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/lang/zh-cn/images/music.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/neweditor-tab-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/pagebreak.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/progress.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/scale.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/sortable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/spacer.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/sparator_v.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/success.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/images/success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/table-cell-align.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/tangram-colorpicker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/tface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/toolbar_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/unhighlighted.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/lang/zh-cn/images/upload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/upload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/videologo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/wface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/word.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/images/wordpaste.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/images/yface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/codemirror/codemirror.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/codemirror/codemirror.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/nodejs/config.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/dialogbase.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/emotion.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/emotion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/emotion/emotion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/help/help.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/help/help.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/help/help.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/iframe.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/image.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/image.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/image/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/internal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/jquery-1.10.2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/jquery-1.10.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/jquery-1.10.2.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/dialogs/link/link.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/ueditor.all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/ueditor.all.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/ueditor.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/css/ueditor.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/ueditor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/themes/default/css/ueditor.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/ueditor.parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/ueditor.parse.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.custom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.custom.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.flashonly.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.flashonly.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.html5only.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.html5only.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.withoutimage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ueditor/lang/zh-cn/zh-cn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="superchat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,96 +124,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="www" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/bin/www">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="112" column="39" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/app.js">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.666667">
-              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/node_modules/ueditor/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6847826">
-              <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ueditor.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/views/ueditor.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="18.666666">
-              <caret line="7" column="76" selection-start-line="7" selection-start-column="76" selection-end-line="7" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ueditor.all.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/public/ueditor/ueditor.all.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-577.3333">
-              <caret line="866" column="48" selection-start-line="866" selection-start-column="45" selection-end-line="866" selection-end-column="48" />
-              <folding>
-                <marker date="1447252601000" expanded="true" signature="342175:342192" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="346808:346826" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="388873:388899" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="547680:547752" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="557643:557669" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="557865:557956" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="558213:558288" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="558475:558490" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="634982:635054" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="686077:686088" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="690025:690038" placeholder="..." />
-                <marker date="1447252601000" expanded="true" signature="690415:690451" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ueditor.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/public/ueditor/ueditor.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3333333">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="15" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/ueditor/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1111112">
-              <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.46632123">
+              <caret line="89" column="46" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -141,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/admin/api/user/query.js" />
         <option value="$PROJECT_DIR$/routes/admin/pages/user/get.js" />
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/routes/admin/api/group/delete.js" />
@@ -158,7 +185,6 @@
         <option value="$PROJECT_DIR$/model/admin/pages/sitenav.js" />
         <option value="$PROJECT_DIR$/public/wx_film/css/global.css" />
         <option value="$PROJECT_DIR$/views/admin/subpage/group.jade" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/admin/massMessage.jade" />
         <option value="$PROJECT_DIR$/public/wx_film/css/wx_public.css" />
         <option value="$PROJECT_DIR$/wechat.db" />
@@ -170,7 +196,6 @@
         <option value="$PROJECT_DIR$/routes/admin/api/mass/preview.js" />
         <option value="$PROJECT_DIR$/views/admin/subpage/massMessage.jade" />
         <option value="$PROJECT_DIR$/public/admin/js/mass/massMessage.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/routes/admin/api/group/addSchedual.js" />
         <option value="$PROJECT_DIR$/config/weconfig.js" />
         <option value="$PROJECT_DIR$/routes/admin/api/user/refresh.js" />
@@ -190,8 +215,11 @@
         <option value="$PROJECT_DIR$/node_modules/ueditor/example/views/ueditor.html" />
         <option value="$PROJECT_DIR$/node_modules/ueditor/example/public/ueditor/ueditor.all.js" />
         <option value="$PROJECT_DIR$/node_modules/ueditor/example/app.js" />
-        <option value="$PROJECT_DIR$/node_modules/ueditor/index.js" />
         <option value="$PROJECT_DIR$/node_modules/ueditor/example/node_modules/ueditor/index.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/node_modules/ueditor/index.js" />
       </list>
     </option>
   </component>
@@ -282,162 +310,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ueditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ueditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ueditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ueditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ueditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ueditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superchat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ueditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -453,11 +325,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/node_modules/ueditor" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/routes/admin/api/mass" />
-      <recent name="$PROJECT_DIR$/model/common/mass" />
-      <recent name="$PROJECT_DIR$/libs/mysql" />
-      <recent name="$PROJECT_DIR$/public/admin/js/mass" />
-      <recent name="$PROJECT_DIR$/routes/admin/pages/mass" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/routes/message/api" />
@@ -550,7 +422,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="723" extended-state="7" />
+    <frame x="0" y="23" width="1280" height="723" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -558,7 +430,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2835218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19789983" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4892916" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21581548" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -591,56 +463,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/admin/pages/mass/get.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6217617">
-          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2746114">
-          <caret line="41" column="64" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/addSchedual.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/common/token/getAccessToken.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/synchronize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4974093">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/group/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/api/group/edit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -656,14 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="12.061594">
           <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/f.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -788,14 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/api/mass/file.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5647668">
-          <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/pages/group/get.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -897,14 +708,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8695652">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/public/images/ueditor/664409776024850432.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -939,42 +742,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/public/ueditor/ueditor.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.3333333">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="15" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/views/ueditor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="18.666666">
-          <caret line="7" column="76" selection-start-line="7" selection-start-column="76" selection-end-line="7" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/public/ueditor/ueditor.all.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-577.3333">
-          <caret line="866" column="48" selection-start-line="866" selection-start-column="45" selection-end-line="866" selection-end-column="48" />
+        <state vertical-scroll-proportion="-8.148149">
+          <caret line="15251" column="65" selection-start-line="15251" selection-start-column="65" selection-end-line="15251" selection-end-column="65" />
           <folding>
-            <marker date="1447252601000" expanded="true" signature="342175:342192" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="346808:346826" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="388873:388899" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="547680:547752" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="557643:557669" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="557865:557956" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="558213:558288" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="558475:558490" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="634982:635054" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="686077:686088" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="690025:690038" placeholder="..." />
-            <marker date="1447252601000" expanded="true" signature="690415:690451" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447252601000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9130435">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/views/ueditor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9130435">
+          <caret line="7" column="76" selection-start-line="7" selection-start-column="76" selection-end-line="7" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/api/mass/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31088084">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -986,23 +813,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/app.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/node_modules/ueditor/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.6847826">
+          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1111112">
-          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/package.json">
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1010,10 +829,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/node_modules/ueditor/index.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/jade/lib/jade.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6847826">
-          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+        <state vertical-scroll-proportion="11.34715">
+          <caret line="365" column="0" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6576087">
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/example/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ueditor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1761658">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="112" column="39" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ueditor/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.46632123">
+          <caret line="89" column="46" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
           <folding />
         </state>
       </provider>
