@@ -1,5 +1,5 @@
 (function($) {
-    
+
     $(function() {
         var rightForm = $('#rightForm');
         var leftForm = $('#leftForm');
@@ -177,12 +177,7 @@
             });
             
         }
-        showInfo( 0 );
-                
-
-            
-
-                
+        showInfo( 0 );   
                 
 
         

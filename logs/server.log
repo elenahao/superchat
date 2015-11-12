@@ -1614,3 +1614,66 @@ Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
     at Socket.emit (events.js:107:17)
     at net.js:459:14
     at process._tickCallback (node.js:355:11)
+[2015-11-12 21:09:04.608] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:10:22.165] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:11:40.892] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:13:02.183] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:14:27.719] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:16:00.685] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:17:45.983] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:19:52.505] [ERROR] console - Error caught in uncaughtException event: [Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT]
+Error: Redis connection to 172.16.39.49:6379 failed - connect ETIMEDOUT
+    at RedisClient.on_error (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:196:24)
+    at Socket.<anonymous> (/Users/linglingda/myWork/myProject/new-superchat/superchat/node_modules/redis/index.js:106:14)
+    at Socket.emit (events.js:107:17)
+    at net.js:459:14
+    at process._tickCallback (node.js:355:11)
+[2015-11-12 21:20:52.946] [INFO] console - 6379
+[2015-11-12 21:20:52.950] [INFO] console - 172.16.39.49
+[2015-11-12 21:20:52.951] [INFO] console - {}
+[2015-11-12 21:20:53.041] [INFO] console - wxacb9ce1b1d812430
+[2015-11-12 21:20:53.041] [INFO] console - bcd4b0fd8742414548bb66a16ff34a26
+[2015-11-12 21:20:53.778] [INFO] console - true
+[2015-11-12 21:20:54.167] [INFO] console - Listening on port 80
