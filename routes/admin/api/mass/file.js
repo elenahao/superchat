@@ -53,21 +53,21 @@ app.post('/admin/api/mass/fileInsert',
                                 }, function(err, _res, body) {
                                     console.log(body);
                                     var _body = JSON.parse(body);
-                                    //存mysql,insert,字段为id,thumb_media_id,cover_pic_local_url,cover_pic_url,add_time,last_update_time
+                                    //存mysql,insert,字段为id,thumb_media_id,cover_pic_local_url,add_time,last_update_time
                                     //var type = '';
                                     //var media_id = '';
                                     //var created_at = '';
                                     var msg = {
                                         thumb_media_id: _body.media_id,
                                         cover_pic_local_url: '/img/' + filename
-                                        //cover_pic_url: _body.url
                                     }
                                     mysql.mass.addMsg(msg).then(function done(ret){
                                         console.log('is mysql addMsg ok:', ret);
                                         res.status(200).send(JSON.stringify({
                                             ret: 0,
                                             msg: '/img/' + filename,
-                                            id: ret.insertId
+                                            id: ret.insertId,
+                                            thumb_media_id: _body.media_id
                                         }));
                                     }, function err(err){
                                         res.status(400).send(JSON.stringify({

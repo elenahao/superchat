@@ -78,7 +78,7 @@ exports.updateGroup = function (groups) {
     pool.getConnection(function (err, conn) {
         console.log('--'+groups+'--');
         if(groups && groups != ''){
-            conn.query('replace into wx_group (id,name,count,nickname) values '+groups, function (err, ret) {
+            conn.query('replace into wx_group (id,name,count) values '+groups, function (err, ret) {
                 if (err) {
                     console.error(err);
                     dfd.reject(err);

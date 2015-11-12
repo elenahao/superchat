@@ -32,52 +32,66 @@ app.post('/admin/api/mass/group',
             },
             msgtype: 'mpnews'
         }
-        Token.getAccessToken().then(function done(ret) {
-            if (ret.access_token) {
-                console.log(JSON.stringify(opt));
-                request({
-                    url: 'https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token='+ret.access_token,
-                    body: JSON.stringify(opt),
-                    method: 'POST'
-                }, function (err, _res, body) {
-                    //{
-                    //    "errcode":0,
-                    //    "errmsg":"send job submission success",
-                    //    "msg_id":34182,
-                    //    "msg_data_id": 206227730
-                    //}
-                    console.log(body);
-                    var _body = JSON.parse(body);
-                    if(_body.errcode && _body.errcode == 0){
-                        //成功
-                        var msg_posted_id = _body.msg_id;
-                        var msg_data_id = _body.msg_data_id;
-                        var msg = {
-                            msg_posted_id: msg_posted_id,
-                            msg_data_id: msg_data_id
+        function _send(){
+            Token.getAccessToken().then(function done(ret) {
+                if (ret.access_token) {
+                    console.log(JSON.stringify(opt));
+                    request({
+                        url: 'https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token='+ret.access_token,
+                        body: JSON.stringify(opt),
+                        method: 'POST'
+                    }, function (err, _res, body) {
+                        //{
+                        //    "errcode":0,
+                        //    "errmsg":"send job submission success",
+                        //    "msg_id":34182,
+                        //    "msg_data_id": 206227730
+                        //}
+                        console.log(body);
+                        var _body = JSON.parse(body);
+                        if(_body.errcode == 0){
+                            //成功
+                            var msg_posted_id = _body.msg_id;
+                            var msg_data_id = _body.msg_data_id;
+                            var msg = {
+                                msg_posted_id: msg_posted_id,
+                                msg_data_id: msg_data_id,
+                                id: msg_id
+                            }
+                            //存库
+                            mysql.mass.updateMsgAfterPosted(msg).then(function done(ret){
+                                console.log('is updateMsgAfterPosted ok:', ret);
+                                res.status(200).send(JSON.stringify({
+                                    ret: 0,
+                                    msg: ret
+                                }));
+                            }, function err(err){
+                                res.status(400).send(JSON.stringify({
+                                    ret: -1,
+                                    msg: err
+                                }));
+                            })
+                        }else if(_body.errcode == 40001){
+                            redis.del('access_token').then(function resolve(ret) {
+                                console.log('is del ok:', ret);
+                                return _send();
+                            }, function reject(err) {
+                                res.status(200).send(JSON.stringify({
+                                    ret: -1,
+                                    msg: err
+                                }));
+                            });
                         }
-                        //存库
-                        mysql.mass.updateMsgAfterPosted(msg).then(function done(ret){
-                            console.log('is updateMsgAfterPosted ok:', ret);
-                            res.status(200).send(JSON.stringify({
-                                ret: 0,
-                                msg: ret
-                            }));
-                        }, function err(err){
-                            res.status(400).send(JSON.stringify({
-                                ret: -1,
-                                msg: err
-                            }));
-                        })
-                    }
-                });
-            }
-        }, function err(err){
-            res.status(400).send(JSON.stringify({
-                ret: -1,
-                msg: err
-            }));
-        });
+                    });
+                }
+            }, function err(err){
+                res.status(400).send(JSON.stringify({
+                    ret: -1,
+                    msg: err
+                }));
+            });
+        }
+        _send();
 
     });
 

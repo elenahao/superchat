@@ -33,8 +33,8 @@ app.get('/admin/api/group/refresh', function(req, res) {
                     var data = JSON.parse(body);
                     var groups = [];
                     for(var i = 0; i< data.groups.length;i++){
-                        if(group[i]){
-                            var group = '(' + groups[i].id + ',' + groups[i].name + ',' + groups[i].count;
+                        if(data.groups[i]){
+                            var group = "(" + data.groups[i].id + ",'" + data.groups[i].name + "'," + data.groups[i].count + ")";
                             groups.push(group);
                         }
                     }
