@@ -49,4 +49,3 @@ app.get(['/admin/massMessage'],
             sitenavs: _nav
         });
     });
-
