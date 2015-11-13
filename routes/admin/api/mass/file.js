@@ -17,7 +17,7 @@ app.post('/admin/api/mass/fileInsert',
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
             if (err) {
-                res.status(500).send(JSON.stringify({
+                res.status(400).send(JSON.stringify({
                     ret: -1,
                     msg: err
                 }));
@@ -35,9 +35,9 @@ app.post('/admin/api/mass/fileInsert',
                         }
                         console.log(stat.size);
                         if(stat.size >= 2 * 1024 * 1024){//不能超过2M
-                            res.status(200).send(JSON.stringify({
+                            res.status(400).send(JSON.stringify({
                                 ret: -1,
-                                msg: err
+                                msg: '图片大小超过2M'
                             }));
                         }
                         //将图片发送给微信，获取url地址，存库
@@ -54,9 +54,6 @@ app.post('/admin/api/mass/fileInsert',
                                     console.log(body);
                                     var _body = JSON.parse(body);
                                     //存mysql,insert,字段为id,thumb_media_id,cover_pic_local_url,add_time,last_update_time
-                                    //var type = '';
-                                    //var media_id = '';
-                                    //var created_at = '';
                                     var msg = {
                                         thumb_media_id: _body.media_id,
                                         cover_pic_local_url: '/img/' + filename
@@ -71,14 +68,14 @@ app.post('/admin/api/mass/fileInsert',
                                         }));
                                     }, function err(err){
                                         res.status(400).send(JSON.stringify({
-                                            ret: 0,
+                                            ret: -1,
                                             msg: err
                                         }));
                                     })
                                 });
                             }else{
                                 console.log('access_token为空');
-                                res.status(200).send(JSON.stringify({
+                                res.status(400).send(JSON.stringify({
                                     ret: -1,
                                     msg: 'access_token为空'
                                 }));
@@ -102,7 +99,7 @@ app.post('/admin/api/mass/fileUpdate',
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
             if (err) {
-                res.status(500).send(JSON.stringify({
+                res.status(400).send(JSON.stringify({
                     ret: -1,
                     msg: err
                 }));
@@ -120,9 +117,9 @@ app.post('/admin/api/mass/fileUpdate',
                         }
                         console.log(stat.size);
                         if(stat.size >= 2 * 1024 * 1024){//不能超过2M
-                            res.status(200).send(JSON.stringify({
+                            res.status(400).send(JSON.stringify({
                                 ret: -1,
-                                msg: err
+                                msg: '图片大小超过2M'
                             }));
                         }
                         //将图片发送给微信，获取url地址，存库
@@ -142,26 +139,26 @@ app.post('/admin/api/mass/fileUpdate',
                                     var msg = {
                                         id: fields.msg_id,
                                         thumb_media_id: _body.media_id,
-                                        cover_pic_local_url: '/img/' + filename,
-                                        cover_pic_url: _body.url
+                                        cover_pic_local_url: '/img/' + filename
                                     }
                                     mysql.mass.updateMsg(msg).then(function done(ret){
                                         console.log('is mysql addMsg ok:', ret);
                                         res.status(200).send(JSON.stringify({
                                             ret: 0,
                                             msg: '/img/' + filename,
-                                            id: ret.insertId
+                                            id: ret.insertId,
+                                            thumb_media_id: _body.media_id
                                         }));
                                     }, function err(err){
                                         res.status(400).send(JSON.stringify({
-                                            ret: 0,
+                                            ret: -1,
                                             msg: err
                                         }));
                                     })
                                 });
                             }else{
                                 console.log('access_token为空');
-                                res.status(200).send(JSON.stringify({
+                                res.status(400).send(JSON.stringify({
                                     ret: -1,
                                     msg: 'access_token为空'
                                 }));

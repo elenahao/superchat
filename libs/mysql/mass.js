@@ -23,7 +23,7 @@ exports.addMsg = function (msg) {
 exports.updateMsg = function (msg) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
-        conn.query('replace into wx_mass_msg(id, thumb_media_id, cover_pic_local_url, cover_pic_url, last_update_time) values (?,?,?,?,now())', [msg.id, msg.thumb_media_id, msg.cover_pic_local_url, msg.cover_pic_url], function (err, ret) {
+        conn.query('update wx_mass_msg set thumb_media_id=?, cover_pic_local_url=?, last_update_time=now() where id=? ', [msg.thumb_media_id, msg.cover_pic_local_url, msg.id], function (err, ret) {
             if (err) {
                 console.error(err);
                 dfd.reject(err);
@@ -94,6 +94,23 @@ exports.updateMsgItem = function (items) {
     pool.getConnection(function (err, conn) {
         conn.query('insert into wx_mass_msg_item (id,mass_msg_id, title, content, show_cover_pic, author, content_source_url, last_update_time) values '+items.toString()+
             ' on duplicate key update id=values(id), mass_msg_id=values(mass_msg_id), title=values(title), content=values(content), show_cover_pic=values(show_cover_pic), author=values(author), content_source_url=values(content_source_url), last_update_time=values(last_update_time); ',  function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.reject(err);
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};
+
+exports.updatePreviewedMsg = function (id, msg_previewed_id, previewed_to) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('update wx_mass_msg set previewed_to=?, last_update_time=now() where id=? ', [previewed_to, id], function (err, ret) {
             if (err) {
                 console.error(err);
                 dfd.reject(err);
