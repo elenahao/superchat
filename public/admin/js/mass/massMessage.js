@@ -164,20 +164,19 @@
         showEditMask();
 
         //实时输入 显示
-        function showInfo( index ){
-            $('#main-' + index )
-            $('.main').delegate('.title-input','keydown',function(){
-                console.log('11');
-                // var index = $('.ui-input').length-1;
-                // console.log('index'+index);
-                // var title_value = $('.ui-input').eq(index).val();
-                // console.log('title_value'+title_value);
-                // $('.msgItem').eq(index).find('h4').text(title_value);
+        function showInfo( ){
+            // $('#main-' + index )
+            $('.matMsg').delegate('.title-input','keydown',function(){
+                var index = $('.title-input').length-1;
+                console.log('index'+index);
+                var title_value = $('.title-input').eq(index).val();
+                console.log('title_value'+$('.title-input'));
+                $('.msgItem').eq(index).find('h4').text(title_value);
 
             });
             
         }
-        showInfo( 0 );   
+        showInfo( );   
                 
 
         
