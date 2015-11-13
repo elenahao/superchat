@@ -161,10 +161,6 @@ app.use(bodyParser.urlencoded({
 //app.use(redisToken({
 //    protectUrlArr:['/api']}));
 
-
-app.use('/', function(req, res) {
-    res.render('ueditor');
-});
 //路由
 require('./routes');
 
@@ -181,10 +177,6 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
     res.status(500);
     res.send('500' + err);
-});
-
-app.use('/', function(req, res) {
-    res.render('ueditor');
 });
 
 var server = app.listen(80, function() {

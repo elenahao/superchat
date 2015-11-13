@@ -23,7 +23,7 @@ exports.findUsersByPage = function (pageNo, pageSize) {
                     offset = 0;
                 }
                 console.log('totalCount:',totalCount,';totalPage:',totalPage,'offset:',offset);
-                conn.query("select u.subscribe,u.openid,u.nickname,u.sex,u.language,u.city,u.province,u.country,u.headimgurl,u.subscribe_time,u.unionid,u.remark,u.groupid,u.flag from wx_user u limit ?,?", [offset, pageSize], function (err, rows) {
+                conn.query("select u.subscribe,u.openid,u.nickname,u.sex,u.language,u.city,u.province,u.country,u.headimgurl,FROM_UNIXTIME(u.subscribe_time,'%Y%m%d%H%i%S'),u.unionid,u.remark,u.groupid,u.flag from wx_user u limit ?,?", [offset, pageSize], function (err, rows) {
                     if(err){
                         dfd.reject(err);
                     }else{

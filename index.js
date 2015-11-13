@@ -6,6 +6,7 @@ var path = require('path');
 var snowflake = require('node-snowflake').Snowflake;
 var request = require('request');
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
+var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var ueditor = function(static_url, handel) {
   return function(req, res, next) {
     var _respond = respond(static_url, handel);
@@ -77,48 +78,59 @@ var respond = function(static_url, callback) {
           file.pipe(fs.createWriteStream(tmpdir));
           fse.move(tmpdir, dest, function(err) {
             if (err) throw err;
-            //console.log(req.body.pictitle);
             //调用微信接口获取微信远程链接
-            Token.getAccessToken().then(function done(ret){
-              if(ret.access_token){
-                request({
-                  url: 'https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token='+ret.access_token,
-                  formData: {
-                    media: fs.createReadStream(dest)
-                  },
-                  method: 'POST'
-                }, function(err, _res, body) {
-                  console.log(body);
-                  var _body = JSON.parse(body);
-                  if(_body.url){
-                    res.json({
-                      'url': path.join(img_url, name),
-                      //'title': req.body.pictitle,
-                      'original': filename,
-                      'wx_img_url': _body.url,
-                      'state': 'SUCCESS'
-                    });
-                  }else{
-                    console.log('调用微信接口出错');
-                    res.status(200).send(JSON.stringify({
-                      ret: -1,
-                      msg: body
-                    }));
-                  }
-                });
-              }else{
-                console.log('access_token为空');
-                res.status(200).send(JSON.stringify({
+            function _send(){
+              Token.getAccessToken().then(function done(ret){
+                if(ret.access_token){
+                  request({
+                    url: 'https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token='+ret.access_token,
+                    formData: {
+                      media: fs.createReadStream(dest)
+                    },
+                    method: 'POST'
+                  }, function(err, _res, body) {
+                    console.log(body);
+                    var _body = JSON.parse(body);
+                    if(_body.url){
+                      res.json({
+                        'url': path.join(img_url, name),
+                        'original': filename,
+                        'wx_img_url': _body.url,
+                        'state': 'SUCCESS'
+                      });
+                    }else if(_body.errcode && _body.errcode == 40001){
+                      redis.del('access_token').then(function resolve(ret) {
+                        console.log('is del ok:', ret);
+                        return _send();
+                      }, function reject(err) {
+                        res.status(400).send(JSON.stringify({
+                          ret: -1,
+                          msg: err
+                        }));
+                      });
+                    }else{
+                      console.log('调用微信接口出错');
+                      res.status(400).send(JSON.stringify({
+                        ret: -1,
+                        msg: body
+                      }));
+                    }
+                  });
+                }else{
+                  console.log('access_token为空');
+                  res.status(400).send(JSON.stringify({
+                    ret: -1,
+                    msg: 'access_token为空'
+                  }));
+                }
+              }, function err(err){
+                res.status(400).send(JSON.stringify({
                   ret: -1,
-                  msg: 'access_token为空'
+                  msg: err
                 }));
-              }
-            }, function err(err){
-              res.status(400).send(JSON.stringify({
-                ret: -1,
-                msg: err
-              }));
-            })
+              })
+            }
+            _send();
           });
         };
         callback(req, res, next);
