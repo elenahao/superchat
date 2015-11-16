@@ -75,16 +75,16 @@ var massMessage = {
         this.currentEditor().siblings(".main").hide();           
     },
     countChar:function(){
+
         for(var i=0;i<arguments.length;i++){        
             var name = arguments[i];
             var _this = this;
             var num = 0,title_num = 0,author_num = 0,summary_num = 0,maxCharNum =0;
-            console.log(name);
+            var title_nums=[8];
             (function(name){
-                var $name = $('.'+name).eq(_this.getIndex());
+                var $name = _this.currentEditor().find('.'+name);
                 $name.on('keyup',function(){
-                console.log(name);
-                var $char_num = $('.'+name+'+.item'+'>.char_number');
+                var $char_num = $name.siblings().find('.char_number');
                 var $item = $('.'+name+'+.item');
                 if(name == 'title-input'){
                     title_num++;
@@ -102,6 +102,7 @@ var massMessage = {
                     num = summary_num;
                 }
                 $char_num.text(num);
+
                 if(num >maxCharNum){
                     $item.css('color','#f87171');
                 };
@@ -112,23 +113,25 @@ var massMessage = {
     // 实时显示输入标题
     showInfo:function(){
         var _this = this; 
-        var title_value = this.currentTitleInput().val();
-        this.currentMsgItem().find('h4').text(title_value);
+        var title_value = _this.currentTitleInput().val();
+        _this.currentMsgItem().find('h4').text(title_value);
 
     }
 };
 
 $(function(){
     $('.matMsg').delegate('.title-input','keyup',function(){
-    massMessage.showInfo();
+        // console.log('title-input '+massMessage.getIndex())
+        massMessage.showInfo();
     });
     $('#addMsg').on('click',function(){
         massMessage.addMsgItem();
-        var item_len = this.getIndex();
+        var item_len = massMessage.getIndex();
         if(item_len >8){
             alert('最多只能添加8条！');
             $(this).off();
         };
+        massMessage.countChar('title-input','author-input','digest-input');
     });
     massMessage.countChar('title-input','author-input','digest-input');
 
