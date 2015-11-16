@@ -85,16 +85,16 @@ var massMessage = {
         var top = (this.getIndex()-1) * 100+150;
         this.currentEditor().show();
         this.currentEditor().find('.inner').css('margin-top',top);
-        this.currentEditor().siblings(".main").hide();   
+        this.currentEditor().siblings(".main").hide();  
+        console.log(this.getIndex()) 
             
     },
-   
+    //统计输入的个数
     countChar:function(){
         for(var i=0;i<arguments.length;i++){        
             var name = arguments[i];
             var _this = this;
             var num = 0,title_num = 0,author_num = 0,summary_num = 0,maxCharNum =0;
-            var title_nums=[8];
             (function(name){
                 var $name = _this.currentEditor().find('.'+name);
                 $name.on('keyup',function(){
@@ -115,7 +115,8 @@ var massMessage = {
                     maxCharNum = 120;
                     num = summary_num;
                 }
-                $char_num.text(num);
+
+                $char_num.text($.trim($name.val()).length);
 
                 if(num >maxCharNum){
                     $item.css('color','#f87171');
@@ -137,12 +138,16 @@ $(function(){
     $('.matMsg').delegate('.title-input','keyup',function(){
         massMessage.showInfo();
     });
+    //增加
     $('#addMsg').on('click',function(){
         massMessage.addMsgItem();
         massMessage.uploadImg();
         var item_len = massMessage.getIndex();
-        if(item_len >8){
-            alert('最多只能添加8条！');
+        if(item_len >=7){
+            $('.reminder').show();
+            var t = setTimeout(function(){
+                $('.reminder').hide();
+            },1000);
             $(this).off();
         };
         massMessage.countChar('title-input','author-input','digest-input');
@@ -151,10 +156,10 @@ $(function(){
 
     //编辑
     $('#msgPrivew').delegate('.editButn','click',function(){
-        var indx = $(this).parents(".msgItem").index()-1;
-        // console.log(indx);
-        $('.main:not(.templateEdit)').eq(indx).show();
-        $('.main:not(.templateEdit)').eq(indx).siblings('.main').hide();
+
+        var indx = $(this).parents(".msgItem").index();
+        $('.main').eq(indx).show();
+        $('.main').eq(indx).siblings('.main').hide();
 
     });
     //删除

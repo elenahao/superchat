@@ -11,17 +11,17 @@ div.content
                             div#msgPrivew
                                 div#msgItem0.msgItem.coverItem
                                     div.cover
-                                        h4 标题1
+                                        h4 标题
                                         div.img
                                             img.curAvatar(id="cover", src="")
                                         div.editMask#coverMask(style="display:none")
-                                            input.icon18_common.edit_gray.fixpng.fileInput(name="fileInput", type="file", accept="image/*", value="编辑", style="cursor:pointer")
+                                            a.editButn.icon18_common.edit_gray.fixpng(style="display:block")(href="javascript:;",data-id="1") 编辑
                                 div#msgItem1.templateItem.msgItem()
                                     div.line
                                         span
                                             img.curAvatar(width="60",height="45",src="#{adminStaticBase}/wx_film/images/source/60x45_1.jpg")
                                             i.defaultImg 缩略图
-                                        h4 标题2
+                                        h4 标题
                                         div.editMask()
                                             a.editButn.icon18_common.edit_gray.fixpng(href="javascript:;",data-id="1") 编辑
                                             a.deleteButn.icon18_common.del_gray.fixpng(href="javascript:;",data-id="1") 删除
@@ -136,3 +136,4 @@ div.content
             input.input_ui-btn(type="submit", value="保存")
             a.input_ui-btn(href="#") 预览
             a.input_ui-btn(href="#") 取消
+    div.reminder 你最多只可以添加8条图文消息

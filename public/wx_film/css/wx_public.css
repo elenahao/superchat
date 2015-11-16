@@ -505,3 +505,17 @@ a.menu{
 .matMsg .uploadImg label{
 	margin-left: 10px;
 }
+.reminder{
+	width: 400px;
+    height: 40px;
+    background-color: #F87171;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    display: none;
+}

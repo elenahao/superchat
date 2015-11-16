@@ -19,3 +19,17 @@ var indx = $(this).parents(".msgItem").index()-1; 这样indx的值显示正确�
 4.css('margin-top')返回的是带px单位的值 如果计算赋值需要用parseInt()先转化
 .css(parseInt(top)-100)
 
+## template类在删除和修改时总是影响其他
+
+可以将模板算入到dom中
+var indx = $(this).parents(".msgItem").index(); //这样选也是选不到他
+$('.main').eq(indx).show();
+
+？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+## 左侧列表增加 删除 第二项编辑有问题
+？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+
+## 如何输入框的输入只是输入字符 排除掉删除键 空格键等
+获取.val()的值 然后计算length
+
+##$.trim() //去掉字符串开头和结尾处的空格
