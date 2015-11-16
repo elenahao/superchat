@@ -12,63 +12,42 @@ var Group = require(path.resolve(global.gpath.app.model + '/common/group'));
 
 app.get('/admin/api/search/user/name/:uname',
     function(req, res) {
+        console.log('/admin/api/user/', req.query.start, req.query.count);
         var _uname = req.params.uname;
         var _start = !_.isNaN(parseInt(req.query.start)) ? parseInt(req.query.start) : 0;
         var _count = !_.isNaN(parseInt(req.query.count)) ? parseInt(req.query.count) : 20;
-        var _end = _start + _count;
-        var _groups = [];
-        Group.all().then(function resolve(res){
-            Lazy(res).each(function(_res){
-                _groups.push(_res);
-            });
-            return User.all();
-        }, function reject(err){
+        var _pages = 0;
+        var _now = 0;
+        var _us = [];
+
+        User.pagingQueryByName(_start, _count, _uname).then(function done(result) {
+            console.log('is pagingQuery ok:', result);
+            _pages = result.totalPage;
+            _now = _start;
+            _us = result.users;
+            return Group.all();
+        }, function err(err) {
             res.status(400).send(JSON.stringify({
                 ret: -1,
-                msg: 'no groups'
+                msg: err
             }));
-        })
-        .then(function done(users) {
-            var _users = [];
-            for(var j = 0; j < users.length; j++){
-                var user = users[j];
-                console.log('-----------user', user);
-                if(user.nickname === _uname){
-                    console.log('-----------user.nickname:', user.nickname);
-                    _users.push(user);
-                }else{
-                    continue;
-                }
-            }
-            console.log('length',_users.length);
-            var _pages = Math.ceil(_users.length / _count);
-            console.log('_pages',_pages);
-            var _now = Math.floor(_start / _count) + 1;
-            console.log('_now:',_now);
-            var _us = [];
-            for (var i = _start; i < _end; i++) {
-                if (_users[i]) {
-                    _us.push(_users[i]);
-                } else {
-                    break;
-                }
-            }
-
+        }).then(function done(groups) {
+            console.log('groups='+groups);
             res.status(200).send(JSON.stringify({
                 ret: 0,
                 data: {
                     users: _us,
-                    groups: _groups,
                     page: _pages,
                     now: _now,
+                    groups: groups,
                     start: _start,
                     count: _count
                 }
             }));
-        }, function none(err) {
+        }, function err(err) {
             res.status(400).send(JSON.stringify({
                 ret: -1,
-                msg: 'no resluts'
+                msg: err
             }));
-        });
+        })
     });

@@ -14,47 +14,38 @@ app.get('/admin/api/search/group/name/:gname',
         var _gname = req.params.gname;
         var _start = !_.isNaN(parseInt(req.query.start)) ? parseInt(req.query.start) : 0;
         var _count = !_.isNaN(parseInt(req.query.count)) ? parseInt(req.query.count) : 20;
-        var _end = _start + _count;
-        Group.all().then(function done(groups) {
-            var _groups = [];
-            for(var j = 0; j < groups.length; j++){
-                var group = groups[j];
-                console.log('-----------group', group);
-                if(group.name === _gname){
-                    console.log('-----------group.name:', group.name);
-                    _groups.push(group);
-                }else{
-                    continue;
-                }
-            }
-            console.log('length',_groups.length);
-            var _pages = Math.ceil(_groups.length / _count);
-            console.log('_pages',_pages);
-            var _now = Math.floor(_start / _count) + 1;
-            console.log('_now:',_now);
-            var _gs = [];
-            for (var i = _start; i < _end; i++) {
-                if (_groups[i]) {
-                    _gs.push(_groups[i]);
-                } else {
-                    break;
-                }
-            }
-
-            res.status(200).send(JSON.stringify({
-                ret: 0,
-                data: {
-                    groups: _gs,
-                    page: _pages,
-                    now: _now,
-                    start: _start,
-                    count: _count
-                }
-            }));
-        }, function none(err) {
+        console.log('_start', _start);
+        var countries = {};
+        mysql.area.findAllCountries().then(function done(result){
+            countries = result;
+            return Group.pagingQueryByName(_start, _count, _gname);
+        }, function err(err){
             res.status(400).send(JSON.stringify({
                 ret: -1,
-                msg: 'no resluts'
+                msg: err
             }));
-        });
+        })
+            .then(function done(result) {
+                var _pages = result.totalPage;
+                var _now = _start;
+                res.status(200).send(JSON.stringify({
+                    ret: 0,
+                    data: {
+                        countries: countries,
+                        groups: result.groups,
+                        page: _pages,
+                        now: _now,
+                        start: _start,
+                        count: _count
+                    }
+                }));
+
+            }, function err(err) {
+
+                res.status(400).send(JSON.stringify({
+                    ret: -1,
+                    msg: err
+                }));
+
+            });
     });
