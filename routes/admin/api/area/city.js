@@ -3,16 +3,16 @@
 var path = require('path');
 var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 
-//获取二级菜单省份，根据country
-app.post('/admin/api/area/findProvinceByCountry',
+//获取三级菜单城市，根据省份province
+app.post('/admin/api/area/findCityByProvince',
     function(req, res) {
-        console.log('/admin/api/area/findProvinceByCountry...');
-        var country = req.body.country;
-        mysql.area.findProvinceByCountry(country).then(function done(provinces) {
-            console.log(provinces);
+        console.log('/admin/api/area/findCityByProvince...');
+        var province = req.body.province;
+        mysql.area.findCityByProvince(province).then(function done(cities) {
+            console.log(cities);
             res.status(200).send(JSON.stringify({
                 ret: 0,
-                data: provinces
+                data: cities
             }));
         }, function err(err) {
             res.status(200).send(JSON.stringify({
