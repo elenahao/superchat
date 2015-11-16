@@ -19,8 +19,19 @@ var massMessage = {
     currentAuthorInput:function(){
         return this.currentEditor().find('.author-input');
     },
+    currentCurAvatar:function(){
+        return this.currentMsgItem().find('.curAvatar');
+    },
+    currentDefaultImg:function(){
+        return this.currentMsgItem().find('.defaultImg');
+    },
+
     uploadImg:function(){
-        rightForm.delegate('.fileInput', 'change', function(e) {
+        console.log('uploadImg');
+        var _this = this;
+        var $fileInput = _this.currentEditor().find('.fileInput');
+        $fileInput.on('change',function(e){
+            console.log($fileInput);
             e.preventDefault();
             var target = $(e.currentTarget);
             var formData = new FormData();
@@ -40,6 +51,7 @@ var massMessage = {
                 //insert
                 url = '/admin/api/mass/fileInsert';
             }
+
             $.ajax({
                 url: url,
                 data: formData,
@@ -52,8 +64,9 @@ var massMessage = {
                 processData: false,
                 success: function(res) {
                     if (res.ret == 0) {
-                        // alert(res.msg);
-                        $('#cover').attr('src', res.msg);
+                        _this.currentCurAvatar().attr('src', res.msg);
+                        _this.currentCurAvatar().show();
+                        _this.currentDefaultImg().hide();
                         $('#msg_id').val(res.id);
                         $('#coverMask').css('display', 'block');
                     } else {
@@ -72,10 +85,11 @@ var massMessage = {
         var top = (this.getIndex()-1) * 100+150;
         this.currentEditor().show();
         this.currentEditor().find('.inner').css('margin-top',top);
-        this.currentEditor().siblings(".main").hide();           
+        this.currentEditor().siblings(".main").hide();   
+            
     },
+   
     countChar:function(){
-
         for(var i=0;i<arguments.length;i++){        
             var name = arguments[i];
             var _this = this;
@@ -121,11 +135,11 @@ var massMessage = {
 
 $(function(){
     $('.matMsg').delegate('.title-input','keyup',function(){
-        // console.log('title-input '+massMessage.getIndex())
         massMessage.showInfo();
     });
     $('#addMsg').on('click',function(){
         massMessage.addMsgItem();
+        massMessage.uploadImg();
         var item_len = massMessage.getIndex();
         if(item_len >8){
             alert('最多只能添加8条！');
@@ -135,6 +149,14 @@ $(function(){
     });
     massMessage.countChar('title-input','author-input','digest-input');
 
+    //编辑
+    $('#msgPrivew').delegate('.editButn','click',function(){
+        var indx = $(this).parents(".msgItem").index()-1;
+        console.log(indx);
+        $('.main:not(.templateEdit)').eq(indx).show();
+        $('.main:not(.templateEdit)').eq(indx).siblings('.main').hide();
+
+    });
     // 鼠标滑过弹层显示
     $('#msgPrivew').delegate('.msgItem','mouseenter',function(){
         $(this).find('.editMask').show();
@@ -142,4 +164,7 @@ $(function(){
     $('#msgPrivew').delegate('.msgItem','mouseleave',function(){
         $(this).find('.editMask').hide();
     });
+
+    //编辑图片显示
+    massMessage.uploadImg();
 });

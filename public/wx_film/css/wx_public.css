@@ -450,6 +450,7 @@ a.menu{
 	float: right;
     width: 60px;
     height: 60px;
+    display: none;
 }
 
 .msgItem .line h4{
