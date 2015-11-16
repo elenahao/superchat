@@ -17,6 +17,7 @@
                 alert('(╯‵□′)╯︵┻━┻ 请至少选个图片啊......');
                 return;
             }
+            // 将这个作为标签的一个属性来调
             var msg_id = $('#msg_id').val();
             var url = '';
             if(msg_id && msg_id != ''){
@@ -38,6 +39,7 @@
                 processData: false,
                 success: function(res) {
                     if (res.ret == 0) {
+                        alert(res.msg);
                         $('#cover').attr('src', res.msg);
                         $('#msg_id').val(res.id);
                         $('#coverMask').css('display', 'block');
@@ -47,49 +49,7 @@
                 }
             });
         });
-        leftForm.delegate('.fileInput', 'change', function(e) {
-            e.preventDefault();
-            var target = $(e.currentTarget);
-            var formData = new FormData();
-            var files = $(this)[0].files;
-            if(files){
-                formData.append('fileInput', files[0]);
-            }
-            $.ajax({
-                url: '/admin/api/mass/fileUpload',
-                data: formData,
-                headers: {
-                    'X-CSRF-Token': csrfKey
-                },
-                type: 'POST',
-                dataType: 'json',
-                contentType: false,
-                processData: false,
-                success: function(res) {
-                    if (res.ret == 0) {
-                        $('#cover').attr('src', res.msg);
-                        $('#coverMask').css('display', 'block');
-                    } else {
-                        alert('(╯‵□′)╯︵┻━┻ 失败......');
-                    }
-                }
-            });
-        });
-
-        leftForm.delegate('#addMsg', 'click', function(e) {
-            e.preventDefault();
-            var target = $(e.currentTarget);
-            var msgPrivew = $('#msgPrivew');
-            var msgItem_last_id = msgPrivew.children().last().attr('id');
-            var _id = 'msgItem'+parseInt(msgItem_last_id.charAt(msgItem_last_id.length-1))+1;
-            //var node = document.createTextNode($('#msgItem_add').attr('id', _id));
-
-            var msgItem = $('#msgItem_add');
-            //msgItem.css('display', 'block');
-            //msgItem.attr('id', 'msgItem'+parseInt(msgItem_last_id.charAt(msgItem_last_id.length-1))+1);
-            msgPrivew.append(msgItem.attr('id', _id));
-            $('#'+_id).css('display', 'block');
-        });
+        
 
         //实时统计标题、作者表单输入字数 
         var char_num = 0,title_num = 0,author_num = 0;
@@ -124,6 +84,7 @@
 
         // 点击『+』增加图文副本列表项 增加编辑框
         function addItem(){
+            // return;
             var i = 0;
             $('#addMsg').on('click',function(){
                 i++;
@@ -183,4 +144,6 @@
         
     });
 })($);
+
+
 
