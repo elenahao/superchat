@@ -152,9 +152,29 @@ $(function(){
     //编辑
     $('#msgPrivew').delegate('.editButn','click',function(){
         var indx = $(this).parents(".msgItem").index()-1;
-        console.log(indx);
+        // console.log(indx);
         $('.main:not(.templateEdit)').eq(indx).show();
         $('.main:not(.templateEdit)').eq(indx).siblings('.main').hide();
+
+    });
+    //删除
+    $('#msgPrivew').delegate('.deleteButn','click',function(){
+        var indx = $(this).parents(".msgItem").index();
+        var index = $(".msgItem").length-1;
+        if(indx == index){
+            // console.log('删除是最后一项');
+            $('.main').eq(0).show();
+            $('.main').eq(0).siblings('.main').hide();
+        }
+        else{
+            var top = $('.main').eq(index).find('.inner').css('margin-top');
+            $('.main').eq(index).find('.inner').css('margin-top',parseInt(top)-100);
+            $('.main').eq(index).show();
+            $('.main').eq(index).siblings('.main').hide();
+        }
+        $('.main').eq(indx).remove();
+        $('.msgItem').eq(indx).remove();
+        
 
     });
     // 鼠标滑过弹层显示
