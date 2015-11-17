@@ -37,6 +37,41 @@ exports.updateMsg = function (msg) {
     return dfd.promise;
 };
 
+//update wx_mass_msg_item
+exports.addMsgItem = function (msg) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('insert into wx_mass_msg_item(thumb_media_id, cover_pic_local_url, add_time, last_update_time) values (?,?,now(),now())', [msg.thumb_media_id, msg.cover_pic_local_url], function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.reject(err);
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};
+
+exports.updateMsgItem = function (msg) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('update wx_mass_msg_item set thumb_media_id=?, cover_pic_local_url=?, last_update_time=now() where id=? ', [msg.thumb_media_id, msg.cover_pic_local_url, msg.id], function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.reject(err);
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};
+
 
 exports.queryThumbById = function (id) {
     var dfd = Q.defer();
@@ -75,7 +110,7 @@ exports.saveMsg = function (msg) {
 exports.updateMsgAfterPosted = function (msg) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
-        conn.query('update wx_mass_msg set msg_posted_id=?, msg_data_id=? where id=? ', [msg.msg_posted_id, msg.msg_data_id, msg.id], function (err, ret) {
+        conn.query('update wx_mass_msg set msg_posted_id=?, is_to_all=?, msg_data_id=? where id=? ', [msg.msg_posted_id, msg.is_to_all, msg.msg_data_id, msg.id], function (err, ret) {
             if (err) {
                 console.error(err);
                 dfd.reject(err);

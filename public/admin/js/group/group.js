@@ -123,7 +123,7 @@
             }
         });
 
-        //add at 2015-09-15
+        //add at 2015-09-15 //update at 2015-11-16
         questTable.delegate('.btn-warning', 'click', function(e) {
             e.preventDefault();
             var target = $(e.currentTarget);
@@ -134,18 +134,26 @@
                 width: 800,
                 content: document.getElementById('x_div'),
                 ok: function(){
-                    var group_nickname = $('#group_nickname').val();
-                    if(group_nickname == '') {
-                        alert('(╯‵□′)╯︵┻━┻ 检查别名为必填项！');
+                    //var group_nickname = $('#group_nickname').val();
+                    var country = $('.country-change').val();
+                    var province = $('.province-change').val();
+                    var city = $('.city-change').val();
+                    var sex = $('.col-xs-8 input[name="sexId"]:checked').val();
+                    var start = $('#start').val();
+                    var end = $('#end').val();
+                    if(country == '' && province == '' && city == '' && typeof(sex) === 'undefined'  && subscribe_start == '' && subscribe_end == '') {
+                        alert('(╯‵□′)╯︵┻━┻ 至少填一项啊，都不填咋玩？！');
                         return false;
                     }else{
-                        console.log('ddd'+group_nickname);
-                        console.log('sss'+questTable.find('#gnickname'));
-                        questTable.find('#gnickname').val(group_nickname);
                         questTable.find('#gid').val(groupid);
-                        questTable.attr('action', '/admin/api/group/addQuarz');
+                        questTable.find('#country').val(country);
+                        questTable.find('#province').val(province);
+                        questTable.find('#city').val(city);
+                        questTable.find('#sex').val(sex);
+                        questTable.find('#subscribe_start').val(start);
+                        questTable.find('#subscribe_end').val(end);
                         $.ajax({
-                            url: questTable.attr('action'),
+                            url: '/admin/api/group/addQuarz',
                             headers: {
                                 'X-CSRF-Token': csrfKey
                             },

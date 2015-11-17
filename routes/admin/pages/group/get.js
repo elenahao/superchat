@@ -91,6 +91,7 @@ app.get(['/admin/group/name/:gname'],
                 csrf: res.locals._csrf,
                 sitenavs: _nav,
                 groups: data.groups,
+                countries: data.countries,
                 pages: _pageLinks,
             });
         } // end of render

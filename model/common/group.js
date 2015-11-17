@@ -5,5 +5,6 @@ module.exports = {
     gets: require('./group/gets'),
     get: require('./group/get'),
     delAll: require('./group/delAll'),
-    pagingQuery: require('./group/pagingQuery')
+    pagingQuery: require('./group/pagingQuery'),
+    pagingQueryByName: require('./group/pagingQueryByName')
 };

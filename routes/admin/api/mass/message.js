@@ -42,6 +42,7 @@ app.post('/admin/api/mass/group',
                             var msg_data_id = _body.msg_data_id;
                             var msg = {
                                 msg_posted_id: msg_posted_id,
+                                is_to_all: 0,
                                 msg_data_id: msg_data_id,
                                 id: msg_id
                             }
