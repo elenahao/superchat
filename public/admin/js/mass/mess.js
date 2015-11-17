@@ -7,31 +7,18 @@ var massMessage = {
         var index = $(".msgItem:not(.templateItem)").length-1;
         return index;
     },
-    currentEditor:function(){    
+    lastEditor:function(){    
         return $('.main:not(.templateEdit)').eq(this.getIndex());
     },
-    currentMsgItem:function(){
+    lastMsgItem:function(){
         return $(".msgItem:not(.templateItem)").eq(this.getIndex());
-    },
-    currentTitleInput:function(){
-        return this.currentEditor().find('.title-input');
-    },
-    currentAuthorInput:function(){
-        return this.currentEditor().find('.author-input');
-    },
-    currentCurAvatar:function(){
-        return this.currentMsgItem().find('.curAvatar');
-    },
-    currentDefaultImg:function(){
-        return this.currentMsgItem().find('.defaultImg');
     },
 
     uploadImg:function(){
-        console.log('uploadImg');
-        var _this = this;
-        var $fileInput = _this.currentEditor().find('.fileInput');
-        $fileInput.on('change',function(e){
-            console.log($fileInput);
+        $('.fileInput').on('change',function(e){
+            var currentObj = $(this).parents(".main");
+            var index  = $(".main").index(currentObj);
+            console.log('当前的上传图片'+index);
             e.preventDefault();
             var target = $(e.currentTarget);
             var formData = new FormData();
@@ -64,9 +51,10 @@ var massMessage = {
                 processData: false,
                 success: function(res) {
                     if (res.ret == 0) {
-                        _this.currentCurAvatar().attr('src', res.msg);
-                        _this.currentCurAvatar().show();
-                        _this.currentDefaultImg().hide();
+                        $('.msgItem').eq(index).find('.curAvatar').attr('src', res.msg);
+                        // console.log($('.msgItem').eq(0).find('.curAvatar'));
+                        $('.msgItem').eq(index).find('.curAvatar').show();
+                        $('.msgItem').eq(index).find('.defaultImg').hide();
                         $('#msg_id').val(res.id);
                         $('#coverMask').css('display', 'block');
                     } else {
@@ -83,10 +71,9 @@ var massMessage = {
         $('#msgPrivew').append($item);
         $('.matMsg').append($edit);
         var top = (this.getIndex()-1) * 100+150;
-        this.currentEditor().show();
-        this.currentEditor().find('.inner').css('margin-top',top);
-        this.currentEditor().siblings(".main").hide();  
-        console.log(this.getIndex()) 
+        this.lastEditor().show();
+        this.lastEditor().find('.inner').css('margin-top',top);
+        this.lastEditor().siblings(".main").hide();  
             
     },
     //统计输入的个数
@@ -94,29 +81,23 @@ var massMessage = {
         for(var i=0;i<arguments.length;i++){        
             var name = arguments[i];
             var _this = this;
-            var num = 0,title_num = 0,author_num = 0,summary_num = 0,maxCharNum =0;
+            var num = 0,maxCharNum =0;
             (function(name){
-                var $name = _this.currentEditor().find('.'+name);
+                var $name = _this.lastEditor().find('.'+name);
                 $name.on('keyup',function(){
                 var $char_num = $name.siblings().find('.char_number');
                 var $item = $('.'+name+'+.item');
                 if(name == 'title-input'){
-                    title_num++;
                     maxCharNum = 64;
-                    num = title_num;
                 }
                 if(name == 'author-input'){
-                    author_num++;
                     maxCharNum = 8;
-                    num = author_num;
                 }
                 if(name == 'digest-input'){
-                    summary_num++;
                     maxCharNum = 120;
-                    num = summary_num;
                 }
-
-                $char_num.text($.trim($name.val()).length);
+                var num = $.trim($name.val()).length;
+                $char_num.text(num);
 
                 if(num >maxCharNum){
                     $item.css('color','#f87171');
@@ -124,32 +105,30 @@ var massMessage = {
             });
             })(name);
         };
-    },
-    // 实时显示输入标题
-    showInfo:function(){
-        var _this = this; 
-        var title_value = _this.currentTitleInput().val();
-        _this.currentMsgItem().find('h4').text(title_value);
-
     }
+
 };
 
 $(function(){
     $('.matMsg').delegate('.title-input','keyup',function(){
-        massMessage.showInfo();
+        var currentObj = $(this).parents(".main");
+        var index  = $(".main").index(currentObj);
+         var title_value = $(this).val();
+        $('.msgItem').eq(index).find('h4').text(title_value);
     });
     //增加
     $('#addMsg').on('click',function(){
-        massMessage.addMsgItem();
-        massMessage.uploadImg();
         var item_len = massMessage.getIndex();
-        if(item_len >=7){
+        if(item_len >7){
             $('.reminder').show();
             var t = setTimeout(function(){
                 $('.reminder').hide();
             },1000);
-            $(this).off();
+            return;
+            //$(this).off();
         };
+        massMessage.addMsgItem();
+        massMessage.uploadImg();
         massMessage.countChar('title-input','author-input','digest-input');
     });
     massMessage.countChar('title-input','author-input','digest-input');
@@ -158,6 +137,7 @@ $(function(){
     $('#msgPrivew').delegate('.editButn','click',function(){
 
         var indx = $(this).parents(".msgItem").index();
+        console.log("edit==="+indx);
         $('.main').eq(indx).show();
         $('.main').eq(indx).siblings('.main').hide();
 
@@ -172,14 +152,18 @@ $(function(){
             $('.main').eq(0).siblings('.main').hide();
         }
         else{
-            var top = $('.main').eq(index).find('.inner').css('margin-top');
-            $('.main').eq(index).find('.inner').css('margin-top',parseInt(top)-100);
+            var currentObj = $('.main').eq(indx);
+            var list = currentObj.nextAll();
+            list.each(function(i,v){
+                var obj = $(v);
+                var top = obj.find('.inner').css('margin-top');
+                    obj.find('.inner').css('margin-top',parseInt(top)-100);
+            });
             $('.main').eq(index).show();
             $('.main').eq(index).siblings('.main').hide();
         }
         $('.main').eq(indx).remove();
         $('.msgItem').eq(indx).remove();
-        
 
     });
     // 鼠标滑过弹层显示
