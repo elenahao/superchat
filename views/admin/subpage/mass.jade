@@ -1,0 +1,12 @@
+div.gm-user
+    - var formURL = '/admin/api/mass/group'
+    form#questTable(action=formURL,method="POST")
+        input(type="hidden",name="msg_id",id="msg_id",value="#{msg_id}")
+        input(type="hidden",name="media_id",id="media_id",value="#{media_id}")
+        div.gm-search-bar
+            div.col-xs-4
+                select.form-control.gname(name="groupid", required="required")
+                    each group in groups
+                        option(value="#{group.id}") #{group.name}
+            a.btn.btn-primary.btn-sm.active.gm-search(role="button") 群发
+            a.btn.btn-primary.btn-sm.active.gm-refresh-info(role="button" href="/admin/massMessage") 新建图文消息

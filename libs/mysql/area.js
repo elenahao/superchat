@@ -25,7 +25,7 @@ exports.findProvinceByCountry = function (country) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
         console.log('getConnection...');
-        conn.query("select distinct(province) as name from wx_area where country=?", [country], function (err, rows) {
+        conn.query("select distinct(province) as name from wx_area where country=?", country, function (err, rows) {
             if(err){
                 dfd.reject(err);
             }else{
@@ -37,3 +37,19 @@ exports.findProvinceByCountry = function (country) {
     return dfd.promise;
 };
 
+exports.findCityByProvince = function (province) {
+    console.log('in findCityByProvince...');
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        console.log('getConnection...');
+        conn.query("select distinct(city) as name from wx_area where province=?", province, function (err, rows) {
+            if(err){
+                dfd.reject(err);
+            }else{
+                dfd.resolve(rows);
+            }
+            conn.release();
+        });
+    });
+    return dfd.promise;
+};

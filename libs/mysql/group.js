@@ -38,6 +38,41 @@ exports.findGroupsByPage = function (pageNo, pageSize) {
     return dfd.promise;
 };
 
+exports.findGroupByName = function (pageNo, pageSize, gname) {
+    console.log('in findGroupsByName...');
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        console.log('getConnection...');
+        conn.query("select count(*) as g from wx_group where name=?", gname, function (err, ret) {
+            if (err) {
+                dfd.reject(err);
+            }
+            else {
+                var totalCount = ret[0].g;
+                var totalPage = Math.ceil(totalCount / pageSize);
+                if(pageNo > totalPage){
+                    pageNo = totalPage;
+                }
+                var offset = (pageNo - 1) * pageSize;
+                if(offset < 0){
+                    offset = 0;
+                }
+                console.log('totalCount:',totalCount,';totalPage:',totalPage,'offset:',offset);
+                conn.query("select g.id id, g.name name, g.count count, g.nickname nickname from wx_group g where name=? limit ?,?", [gname, offset, pageSize], function (err, rows) {
+                    if(err){
+                        dfd.reject(err);
+                    }else{
+                        console.log(JSON.stringify({totalCount:totalCount, totalPage:totalPage, groups:rows}));
+                        dfd.resolve({totalCount:totalCount, totalPage:totalPage, groups:rows});
+                    }
+                });
+            }
+            conn.release();
+        })
+    });
+    return dfd.promise;
+};
+
 exports.findAllGroups = function () {
     console.log('in findAllGroups...');
     var dfd = Q.defer();

@@ -102,13 +102,13 @@ function _upload(res, params){
                         console.log('is del ok:', ret);
                         return _upload(res, params);
                     }, function reject(err) {
-                        res.status(200).send(JSON.stringify({
+                        res.status(400).send(JSON.stringify({
                             ret: -1,
                             msg: err
                         }));
                     });
                 }else if(_body.errcode && _body.errcode == 45009){
-                    res.status(200).send(JSON.stringify({
+                    res.status(400).send(JSON.stringify({
                         ret: -1,
                         msg: JSON.stringify(_body)
                     }));
@@ -144,8 +144,10 @@ function _upload(res, params){
                             }).then(function done(ret){
                                 console.log('is updateMsgItem ok:', ret);
                                 res.status(200).send(JSON.stringify({
-                                    ret: -1,
-                                    msg: '保存成功'
+                                    ret: 0,
+                                    msg: '保存成功',
+                                    id: _params[0].msg_id,
+                                    media_id: _body.media_id
                                 }));
                             }, function err(err){
                                 res.status(400).send(JSON.stringify({

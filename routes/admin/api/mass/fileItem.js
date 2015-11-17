@@ -10,10 +10,10 @@ var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
-//页面图片传到生成项目内图片，首次生成，插入
-app.post('/admin/api/mass/fileInsert',
+//非首张图片，下面的item对应的图片，首次生成，插入
+app.post('/admin/api/mass/fileItemInsert',
     function(req, res) {
-        console.log('/admin/api/mass/fileInsert...');
+        console.log('/admin/api/mass/fileItemInsert...');
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
             if (err) {
@@ -58,7 +58,7 @@ app.post('/admin/api/mass/fileInsert',
                                         thumb_media_id: _body.media_id,
                                         cover_pic_local_url: '/img/' + filename
                                     }
-                                    mysql.mass.addMsg(msg).then(function done(ret){
+                                    mysql.mass.addMsgItem(msg).then(function done(ret){
                                         console.log('is mysql addMsg ok:', ret);
                                         res.status(200).send(JSON.stringify({
                                             ret: 0,
@@ -93,9 +93,9 @@ app.post('/admin/api/mass/fileInsert',
     });
 
 //非首次生成，更新
-app.post('/admin/api/mass/fileUpdate',
+app.post('/admin/api/mass/fileItemUpdate',
     function(req, res) {
-        console.log('/admin/api/mass/fileUpdate...');
+        console.log('/admin/api/mass/fileItemUpdate...');
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
             if (err) {
@@ -141,7 +141,7 @@ app.post('/admin/api/mass/fileUpdate',
                                         thumb_media_id: _body.media_id,
                                         cover_pic_local_url: '/img/' + filename
                                     }
-                                    mysql.mass.updateMsg(msg).then(function done(ret){
+                                    mysql.mass.updateMsgItem(msg).then(function done(ret){
                                         console.log('is mysql addMsg ok:', ret);
                                         res.status(200).send(JSON.stringify({
                                             ret: 0,

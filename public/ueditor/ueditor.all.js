@@ -15241,7 +15241,7 @@ UE.plugin.register('simpleupload', function (){
                             loader.setAttribute('src', link);
                             loader.setAttribute('_src', link);
                             loader.setAttribute('wx_img_url', json.wx_img_url);
-                            loader.setAttribute('title', json.title || '');
+                            //loader.setAttribute('title', json.title || '');
                             loader.setAttribute('alt', json.original || '');
                             loader.removeAttribute('id');
                             domUtils.removeClasses(loader, 'loadingclass');

@@ -219,7 +219,7 @@ a.menu{
 }
 .matMsg{
 	margin-top:10px;
-	width: 910px;
+	width: auto;
 }
 .matMsg .side{
 	float: left;
@@ -229,12 +229,21 @@ a.menu{
 .matMsg .main{
 	position: relative;
     padding: 10px;
-    border: 1px solid #e7e7eb;
-    background-color: #f4f5f9;
     display: table-cell;
     vertical-align: top;
     float: none;
     width: auto;
+}
+.matMsg .mainEdite{
+	border: 1px solid #e7e7eb;
+    background-color: #f4f5f9;
+}
+.matMsg .main .inner{
+	margin-top: 150px;
+    position: relative;
+    padding: 10px;
+    border: 1px solid #e7e7eb;
+    background-color: #f4f5f9;
 }
 .matMsg .main:after {
     content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
@@ -339,7 +348,7 @@ a.menu{
 	/*border:1px solid #ccc;*/
 	background: #fff;
 }
-.template{display: none;}
+.templateItem,.templateEdit{display: none !important;}
 .msgItem{
 	border: 1px solid #ccc;
 	border-top: 0;
@@ -441,6 +450,7 @@ a.menu{
 	float: right;
     width: 60px;
     height: 60px;
+    display: none;
 }
 
 .msgItem .line h4{
@@ -494,4 +504,18 @@ a.menu{
 }
 .matMsg .uploadImg label{
 	margin-left: 10px;
+}
+.reminder{
+	width: 400px;
+    height: 40px;
+    background-color: #F87171;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    display: none;
 }

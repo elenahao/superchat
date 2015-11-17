@@ -23,7 +23,7 @@ exports.findUsersByPage = function (pageNo, pageSize) {
                     offset = 0;
                 }
                 console.log('totalCount:',totalCount,';totalPage:',totalPage,'offset:',offset);
-                conn.query("select u.subscribe,u.openid,u.nickname,u.sex,u.language,u.city,u.province,u.country,u.headimgurl,u.subscribe_time,u.unionid,u.remark,u.groupid,u.flag from wx_user u limit ?,?", [offset, pageSize], function (err, rows) {
+                conn.query("select u.subscribe,u.openid,u.nickname,u.sex,u.language,u.city,u.province,u.country,u.headimgurl,FROM_UNIXTIME(u.subscribe_time,'%Y-%m-%d %H:%i:%S') subscribe_time,u.unionid,u.remark,u.groupid,u.flag from wx_user u limit ?,?", [offset, pageSize], function (err, rows) {
                     if(err){
                         dfd.reject(err);
                     }else{
@@ -159,3 +159,38 @@ exports.updateGroupId = function (groupid, openid) {
     })
     return dfd.promise;
 };
+
+exports.findUsersByName = function (pageNo, pageSize, uname) {
+    console.log('in findUsersByName...');
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        console.log('getConnection...');
+        conn.query(" select count(*) as u from wx_user where nickname =? ", uname, function (err, ret) {
+            if (err) {
+                dfd.reject(err);
+            }
+            else {
+                var totalCount = ret[0].u;
+                var totalPage = Math.ceil(totalCount / pageSize);
+                if(pageNo > totalPage){
+                    pageNo = totalPage;
+                }
+                var offset = (pageNo - 1) * pageSize;
+                if(offset < 0){
+                    offset = 0;
+                }
+                console.log('totalCount:',totalCount,';totalPage:',totalPage,'offset:',offset);
+                conn.query("select u.subscribe,u.openid,u.nickname,u.sex,u.language,u.city,u.province,u.country,u.headimgurl,FROM_UNIXTIME(u.subscribe_time,'%Y-%m-%d %H:%i:%S') subscribe_time,u.unionid,u.remark,u.groupid,u.flag from wx_user u where u.nickname=? limit ?,?", [uname, offset, pageSize], function (err, rows) {
+                    if(err){
+                        dfd.reject(err);
+                    }else{
+                        console.log(JSON.stringify({totalCount:totalCount, totalPage:totalPage, users:rows}));
+                        dfd.resolve({totalCount:totalCount, totalPage:totalPage, users:rows});
+                    }
+                });
+            }
+            conn.release();
+        })
+    });
+    return dfd.promise;
+}
