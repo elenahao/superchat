@@ -9,14 +9,16 @@ var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 app.post(['/admin/api/group/addQuarz'],
     function(req, res, next){
         console.log('admin api group addQuarz ... ');
-        console.log('su='+req.body.su);
         console.log('gid='+req.body.gid);
-        req.sanitize('su').trim();
-        req.sanitize('su').escape();
+        console.log('country='+req.body.country);
+        console.log('province='+req.body.province);
+        console.log('city='+req.body.city);
+        console.log('sex='+req.body.sex);
+        console.log('subscribe_start='+req.body.subscribe_start);
+        console.log('subscribe_end='+req.body.subscribe_end);
         req.sanitize('gid').trim();
         req.sanitize('gid').escape();
         //验证
-        req.checkBody('su', 'empty').notEmpty();
         req.checkBody('gid', 'empty').notEmpty().isInt();
         var errors = req.validationErrors();
         console.log('err:',errors);
@@ -27,57 +29,32 @@ app.post(['/admin/api/group/addQuarz'],
                 msg: errors
             }));
         } else {
-            var _su = req.body.su;
             var _gid = req.body.gid;
+            var _country = req.body.country;
+            var _province = req.body.province;
+            var _city = req.body.city;
+            var _sex = req.body.sex;
+            var _subscribe_start = req.body.subscribe_start == undefined ? '' : (new Date(req.body.subscribe_start)).getTime();
+            var _subscribe_end = req.body.subscribe_end == undefined ? '' : (new Date(req.body.subscribe_end)).getTime();
+
             var options = {
-                schedual_user: _su
+                groupid: _gid,
+                country: _country,
+                province: _province,
+                city: _city,
+                sex: _sex,
+                subscribe_start: _subscribe_start,
+                subscribe_end: _subscribe_end
             }
-            var dic = new Array('country', 'province', 'city', 'sex', 'subscribe');
-            var obj = {};
-            var array = new Array();
-            array = _gquarz.split(':')[1].split('#');
-            for(var i = 0; i < array.length; i++){
-                if(array[i] === '*'){
-                    continue;
-                }else{
-                    if(dic[i] === 'subscribe'){//如果是关注日期的选项，需要进行换算成毫秒再存储，便于后面比较计算
-                        var subscribe_start = array[i].split('~')[0];
-                        var subscribe_end = array[i].split('~')[1];
-                        subscribe_start = subscribe_start.replace(new RegExp('-','gm'),'/');
-                        subscribe_end = subscribe_end.replace(new RegExp('-','gm'),'/');
-                        var start = (new Date(subscribe_start)).getTime();
-                        var end = (new Date(subscribe_end)).getTime();
-                        obj['subscribe_start'] = subscribe_start;
-                        obj['subscribe_end'] = subscribe_end;
-                    }else{
-                        obj[dic[i]] = array[i];
-                    }
-                }
-            }
-            if (_su && _gid) {
-                redis.hmset('group:'+_gid, options)
-                    .then(function resolve(res){
-                        console.log('is hmset ok:', res);
-                        return redis.hmset('schedual_user:'+_gid, obj);
-                    }, function reject(err){
-                        res.status(400).send(JSON.stringify({
-                            ret: -1,
-                            msg: err
-                        }));
-                    })
-                    .then(function resolve(res){
-                        console.log('is hmset ok:', res);
-                    },function reject(err){
-                        res.status(400).send(JSON.stringify({
-                            ret: -1,
-                            msg: err
-                        }));
-                    })
-            } else {
-                res.status(400).send(JSON.stringify({
-                    ret: -1
-                }));
-            }
+            mysql.group.addQuartz(options)
+                .then(function resolve(ret){
+                    console.log('is addQuartz ok:', ret);
+                },function reject(err){
+                    res.status(400).send(JSON.stringify({
+                        ret: -1,
+                        msg: err
+                    }));
+                })
         }
         res.redirect('/admin/group');
     });

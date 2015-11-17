@@ -128,20 +128,18 @@
             e.preventDefault();
             var target = $(e.currentTarget);
             var groupid = $(this).attr("groupid");
-            //var groupnickname = $(this).attr("groupnickname") == undefined ? '' : $(this).attr("groupnickname");
             var dialog = art.dialog({
                 title: '自动添加用户',
                 width: 800,
                 content: document.getElementById('x_div'),
                 ok: function(){
-                    //var group_nickname = $('#group_nickname').val();
                     var country = $('.country-change').val();
                     var province = $('.province-change').val();
                     var city = $('.city-change').val();
-                    var sex = $('.col-xs-8 input[name="sexId"]:checked').val();
+                    var sex = $('.col-xs-8 input[name="sexId"]:checked').val() == undefined ? '' : $('.col-xs-8 input[name="sexId"]:checked').val();
                     var start = $('#start').val();
                     var end = $('#end').val();
-                    if(country == '' && province == '' && city == '' && typeof(sex) === 'undefined'  && subscribe_start == '' && subscribe_end == '') {
+                    if(country == '' && province == '' && city == '' && sex == '' && subscribe_start == '' && subscribe_end == '') {
                         alert('(╯‵□′)╯︵┻━┻ 至少填一项啊，都不填咋玩？！');
                         return false;
                     }else{
