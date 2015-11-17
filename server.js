@@ -161,13 +161,6 @@ app.use(bodyParser.urlencoded({
 //app.use(redisToken({
 //    protectUrlArr:['/api']}));
 
-<<<<<<< HEAD
-
-// app.use('/', function(req, res) {
-//     res.render('ueditor');
-// });
-=======
->>>>>>> 8ce38693a855acec38d94fc1ab633a1d87cae415
 //路由
 require('./routes');
 
@@ -186,13 +179,6 @@ app.use(function(err, req, res, next) {
     res.send('500' + err);
 });
 
-<<<<<<< HEAD
-// app.use('/', function(req, res) {
-//     res.render('ueditor');
-// });
-
-=======
->>>>>>> 8ce38693a855acec38d94fc1ab633a1d87cae415
 var server = app.listen(80, function() {
     console.log('Listening on port %d', server.address().port);
 });
