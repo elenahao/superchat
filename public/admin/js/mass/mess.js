@@ -55,8 +55,10 @@ var massMessage = {
                         // console.log($('.msgItem').eq(0).find('.curAvatar'));
                         $('.msgItem').eq(index).find('.curAvatar').show();
                         $('.msgItem').eq(index).find('.defaultImg').hide();
-                        $('#msg_id').val(res.id);
+                        $(".main").eq(index).find('.msg_id').val(res.id);
                         $('#coverMask').css('display', 'block');
+                        $(".main").eq(index).find('.thumb_media_id').val(res.thumb_media_id);
+                        
                     } else {
                         alert('(╯‵□′)╯︵┻━┻ 失败......');
                     }
@@ -73,7 +75,11 @@ var massMessage = {
         var top = (this.getIndex()-1) * 100+150;
         this.lastEditor().show();
         this.lastEditor().find('.inner').css('margin-top',top);
-        this.lastEditor().siblings(".main").hide();  
+        this.lastEditor().siblings(".main").hide(); 
+        var editor = this.lastEditor().find(".editor");
+        var id = "editor"+Math.random()*1000;
+        editor.attr("id",id); 
+        this.initEditor(id);
             
     },
     //统计输入的个数
@@ -105,7 +111,40 @@ var massMessage = {
             });
             })(name);
         };
+    },
+    initEditor:function(id){
+        UE.getEditor(id);
+    },
+    getEditorContent:function(editor){
+       
+        var content = editor.getContent();
+        if(content!=""||content!=null){
+            var $content = $(content);
+            var imgList = $content.find("img");
+            if(imgList.length>0){
+                imgList.each(function(i,v){
+                    var toUrl = $(v).attr("wx_img_url");
+                    if(toUrl!=undefined){
+                        $(v).attr("src",toUrl);
+                    }else{
+                        $(v).attr("src","http://www.baidu.com");
+                    } 
+                });
+            }
+            content=$content.html();
+        }
+        
+        return content;   
+    },
+    parseString:function(){
+        console.log(str);
+        str=str.replace(/\\/g,"\\\\");
+        str=str.replace(/\'/g,"\\'");
+        str=str.replace(/\"/g,"\\\"");
+        console.log(str);
+        return str;
     }
+
 
 };
 
@@ -176,4 +215,41 @@ $(function(){
 
     //编辑图片显示
     massMessage.uploadImg();
+    massMessage.initEditor("cover_editor");
+    $(".foot .sub").click(function(){
+        var msgArray = new Array(),
+            list = $(".msgItem:not(.templateItem)"),
+            $mainList = $(".main");
+            list.each(function(i,v){
+                var index = $(v).index();
+                var flag = $(v).hasClass("coverItem");
+                var show = 1;
+                var item = {};
+                console.log(index);
+                    item.msg_id = $mainList.eq(index).find(".msg_id").val();
+                    item.thumb_media_id=$mainList.eq(index).find(".thumb_media_id").val();
+                    item.title = $mainList.eq(index).find(".title-input").val();
+                    var id = $mainList.eq(index).find(".editor").attr("id");
+                    var editor = UE.getEditor(id);
+                    item.content = massMessage.getEditorContent(editor);
+                    var showObj = $mainList.eq(index).find(".label_check");
+                    if(showObj.hasClass("c_on")){
+                        show = 1;
+                    }else{
+                        show = 0;
+                    }
+                    item.show_cover_pic = show;
+                    console.log("flag"+flag);
+                    if(flag){
+                        console.log("comingl.....");
+                        item.digest = $mainList.eq(index).find(".digest-input").val();
+                    }
+                    item.author = $mainList.eq(index).find(".author-input").val();
+                    item.content_source_url = "";
+                msgArray.push(item);
+                
+            });
+            console.log(msgArray);
+    });
+
 });

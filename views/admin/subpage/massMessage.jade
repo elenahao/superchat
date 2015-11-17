@@ -32,7 +32,8 @@ div.content
                     i.arrow.arrow_out
                     i.arrow.arrow_in
                     form(id="rightForm", action="/admin/api/mass/uploadMsg", method="post")
-                        input#msg_id(type="hidden", name="msg_id", val="")
+                        input.msg_id(type="hidden", name="msg_id", val="")
+                        input.thumb_media_id(type="hidden", name="thumb_media_id", val="")
                         dl.formLR.cl
                             dt 标题
                                 em *
@@ -77,14 +78,15 @@ div.content
                             dt 正文
                                 em *
                             dd
-                                p
-                                    textarea#content(name="content")
+                                div.editorCon
+                                    div.editor(id="cover_editor")
                 section.main.templateEdit
                     div.inner
                         i.arrow.arrow_out
                         i.arrow.arrow_in
                         form(id="rightForm", action="/admin/api/mass/uploadMsg", method="post")
-                            input#msg_id(type="hidden", name="msg_id", val="")
+                            input.msg_id(type="hidden", name="msg_id", val="")
+                            input.thumb_media_id(type="hidden", name="thumb_media_id", val="")
                             dl.formLR.cl
                                 dt 标题
                                     em *
@@ -115,25 +117,14 @@ div.content
                                         label.label_check(for="checkbox-02", hidefocus="true") 封面图案显示在正文中
                                             input#checkbox-02(name="show_cover_pic", type="checkbox", value="1")
                             dl.formLR.cl
-                                dt 摘要
-                                    em (选填)
-                                dd
-                                    p
-                                        i.num 选填，该摘要只在发送图文信息为单条时显示
-                                    p
-                                        textarea#digest.digest-input(name="digest",maxlength="120")
-                                        span.item 
-                                            i.char_number 0 
-                                            /120
-                            dl.formLR.cl
                                 dt 正文
                                     em *
                                 dd
-                                    p
-                                        textarea#content(name="content")
+                                    div.editorCon
+                                        div.editor
     div.foot
         p
-            input.input_ui-btn(type="submit", value="保存")
+            input.input_ui-btn(class="sub" type="submit", value="保存")
             a.input_ui-btn(href="#") 预览
             a.input_ui-btn(href="#") 取消
     div.reminder 你最多只可以添加8条图文消息
