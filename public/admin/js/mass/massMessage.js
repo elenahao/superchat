@@ -1,5 +1,4 @@
 (function($) {
-    $(function() {
         var rightForm = $('#rightForm');
         var leftForm = $('#leftForm');
         var csrfKey = $('#csrfKey').val();
@@ -147,15 +146,69 @@
                 });
             }
         showEditMask();
-                
 
+        //编辑器
+        var ue = UE.getEditor('editor');
+
+        function getContent() {
+            var content = UE.getEditor('editor').getContent();
+            var $content = $(content);
+            var imgList = $content.find("img");
+            console.log(imgList);
+            imgList.each(function(i,v){
+                var toUrl = $(v).attr("wx_img_url");
+                if(toUrl!=undefined){
+                    $(v).attr("src",toUrl);
+                }else{
+                    $(v).attr("src","http://www.baidu.com");
+                } 
+            });
+            console.log($content.html());
+            return $content.html();        
+        }
+        function parseString(str){
+            //var str = $("#rightForm #title").val();//str;
+            console.log(str);
+            str=str.replace(/\\/g,"\\\\");
+            str=str.replace(/\'/g,"\\'");
+            str=str.replace(/\"/g,"\\\"");
+            console.log(str);
+            return str;
+           
+        }
+        $(".foot .sub").click(function(){
+            var content = getContent();
+            //console.log(content);
+            parseString("");
+            var msgArray = new Array();
+            var list = $(".msgItem:not(.template)");
+            list.each(function(i,v){
+                var item = {};
+                    item.msg_id = 1;
+                    item.thumb_media_id="";
+                    item.title = "";
+                    item.content = "";
+                    item.show_cover_pic = "";
+                    item.digest = "";
+                    item.author = "";
+                    item.content_source_url = "";
+                msgArray.push(item);
+
+            });
+            console.log(msgArray);
+
+            // {
+            //     "msg_id": 10,
+            //     "thumb_media_id": "BZ9DVu2UGJwQaEP4mPmacAVfsJ-Cq6_lmuIokKIQjD7kA0RIFdlX1RBawkI__tB9",
+            //     "title": "猫知识!一到冬天就变黑脸！很多人不晓得！",
+            //     "content": "一到冬天就变黑脸，暹罗猫毛色随体温变化",
+            //     "show_cover_pic": 1,
+            //     "digest": "",
+            //     "author": "白兔大白",
+            //     "content_source_url": "www.jd.com"
+            // },
             
+        });
 
-                
-                
-
-        
-        
-    });
 })($);
 

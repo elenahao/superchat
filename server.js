@@ -162,9 +162,9 @@ app.use(bodyParser.urlencoded({
 //    protectUrlArr:['/api']}));
 
 
-app.use('/', function(req, res) {
-    res.render('ueditor');
-});
+// app.use('/', function(req, res) {
+//     res.render('ueditor');
+// });
 //路由
 require('./routes');
 
@@ -183,9 +183,9 @@ app.use(function(err, req, res, next) {
     res.send('500' + err);
 });
 
-app.use('/', function(req, res) {
-    res.render('ueditor');
-});
+// app.use('/', function(req, res) {
+//     res.render('ueditor');
+// });
 
 var server = app.listen(80, function() {
     console.log('Listening on port %d', server.address().port);
