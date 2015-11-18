@@ -78,18 +78,43 @@ app.use(session({
     saveUninitialized: true
 }));
 
-//app.use(lusca({
-//    csrf: true,
-//    csp: { /* ... */ },
-//    xframe: 'SAMEORIGIN',
-//    p3p: 'ABCDEF',
-//    hsts: {
-//        maxAge: 31536000,
-//        includeSubDomains: true,
-//        preload: true
-//    },
-//    xssProtection: true
-//}));
+//ueditor 不走lusca 放在lusca前面了
+var ueditor = require("./index.js");
+app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function(req, res, next) {
+    // ueditor 客户发起上传图片请求
+    if (req.query.action === 'uploadimage') {
+        var foo = req.ueditor;
+        var date = new Date();
+        var imgname = req.ueditor.filename;
+
+        var img_url = '/img/ueditor/';
+        res.ue_up(img_url); //你只要输入要保存的地址 。保存操作交给ueditor来做
+    }
+    //  客户端发起图片列表请求
+    else if (req.query.action === 'listimage') {
+        var dir_url = '/images/ueditor/';
+        res.ue_list(dir_url); // 客户端会列出 dir_url 目录下的所有图片
+    }
+    // 客户端发起其它请求
+    else {
+        // console.log('config.json')
+        res.setHeader('Content-Type', 'application/json');
+        res.redirect('/ueditor/nodejs/config.json');
+    }
+}));
+
+app.use(lusca({
+    csrf: true,
+    csp: { /* ... */ },
+    xframe: 'SAMEORIGIN',
+    p3p: 'ABCDEF',
+    hsts: {
+        maxAge: 31536000,
+        includeSubDomains: true,
+        preload: true
+    },
+    xssProtection: true
+}));
 
 //开启 gzip 压缩
 var compression = require('compression');
@@ -119,31 +144,6 @@ app.use('/', express.static(gpath.dist.public));
 //palyground：http://jade-lang.com/
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
-//ueditor
-var ueditor = require("./index.js");
-app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function(req, res, next) {
-    // ueditor 客户发起上传图片请求
-    if (req.query.action === 'uploadimage') {
-        var foo = req.ueditor;
-        var date = new Date();
-        var imgname = req.ueditor.filename;
-
-        var img_url = '/img/ueditor/';
-        res.ue_up(img_url); //你只要输入要保存的地址 。保存操作交给ueditor来做
-    }
-    //  客户端发起图片列表请求
-    else if (req.query.action === 'listimage') {
-        var dir_url = '/images/ueditor/';
-        res.ue_list(dir_url); // 客户端会列出 dir_url 目录下的所有图片
-    }
-    // 客户端发起其它请求
-    else {
-        // console.log('config.json')
-        res.setHeader('Content-Type', 'application/json');
-        res.redirect('/ueditor/nodejs/config.json');
-    }
-}));
 
 //引用中间件，解析POST请求
 //http://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4

@@ -16,6 +16,7 @@ var massMessage = {
 
     uploadImg:function(){
         $('.fileInput').on('change',function(e){
+            var csrfKey = $('#csrfKey').val();
             var currentObj = $(this).parents(".main");
             var index  = $(".main").index(currentObj);
             console.log('当前的上传图片'+index);
@@ -250,6 +251,27 @@ $(function(){
                 
             });
             console.log(msgArray);
+            //调用ajax传参
+            var csrfKey = $('#csrfKey').val();
+            console.log('csrfKey='+csrfKey);
+            $.ajax({
+                url: '/admin/api/mass/uploadMsg',
+                headers: {
+                    'X-CSRF-Token': csrfKey
+                },
+                data: {params: msgArray},
+                type: 'POST',
+                dataType: 'json',
+                success: function(res) {
+                    if (res.ret == 0) {
+                        window.location.href = '/admin/mass?msg_id='+res.id+'&media_id='+res.media_id;
+                    } else {
+                        alert('(╯‵□′)╯︵┻━┻ 失败......');
+                    }
+                },error: function(err){
+                    alert('(╯‵□′)╯︵┻━┻ 失败......');
+                }
+            });
     });
 
 });

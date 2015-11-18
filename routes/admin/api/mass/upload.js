@@ -40,7 +40,7 @@ app.post('/admin/api/mass/uploadMsg',
         //}else{
             //验证通过
             //console.log('msg_id:',req.query.msg_id);
-        var params = req.query.params;
+        var params = req.body.params;
         _upload(res, params);
             //mysql.mass.queryThumbById(req.query.msg_id).then(function done(ret){
             //    console.log('is queryThumb ok:', ret);
@@ -59,10 +59,13 @@ app.post('/admin/api/mass/uploadMsg',
 
 function _upload(res, params){
     console.log('params', JSON.stringify(params));
-    var _params = JSON.parse(params);
+    var _params = params//JSON.parse(params);
+    console.log(_params);
     Token.getAccessToken().then(function done(ret) {
+        console.log(ret);
         if (ret.access_token) {
             var art = [];
+            console.log(_params.length);
             for(var i = 0 ; i < _params.length ; i ++){
                 var opt;
                 if(_params[i].digest){
@@ -126,35 +129,44 @@ function _upload(res, params){
                         }
                         mysql.mass.saveMsg(msg).then(function done(ret){
                             console.log('is mysql save msg ok:', ret);
-                            var items = [];
-                            for(var j = 1 ; j < _params.length; j ++){
-                                var item = "(" + _params[j].id + "," + _params[0].msg_id + ",'" +
+                            if(_params.length > 1){
+                                var items = [];
+                                for(var j = 1 ; j < _params.length; j ++){
+                                    var item = "(" + _params[j].id + "," + _params[0].msg_id + ",'" +
                                         _params[j].title + "','" + _params[j].content + "'," +
                                         _params[j].show_cover_pic + ",'" + _params[j].author + "','" +
                                         _params[j].content_source_url + "', now())";
-                                items.push(item);
-                            }
-                            Q.all(items).then(function done(ret){
-                                return mysql.mass.updateMsgItem(ret);
-                            }, function err(err){
-                                res.status(400).send(JSON.stringify({
-                                    ret: -1,
-                                    msg: err
-                                }));
-                            }).then(function done(ret){
-                                console.log('is updateMsgItem ok:', ret);
+                                    items.push(item);
+                                }
+                                Q.all(items).then(function done(ret){
+                                    return mysql.mass.updateMsgItem(ret);
+                                }, function err(err){
+                                    res.status(400).send(JSON.stringify({
+                                        ret: -1,
+                                        msg: err
+                                    }));
+                                }).then(function done(ret){
+                                    console.log('is updateMsgItem ok:', ret);
+                                    res.status(200).send(JSON.stringify({
+                                        ret: 0,
+                                        msg: '保存成功',
+                                        id: _params[0].msg_id,
+                                        media_id: _body.media_id
+                                    }));
+                                }, function err(err){
+                                    res.status(400).send(JSON.stringify({
+                                        ret: -1,
+                                        msg: err
+                                    }));
+                                })
+                            }else{
                                 res.status(200).send(JSON.stringify({
                                     ret: 0,
                                     msg: '保存成功',
                                     id: _params[0].msg_id,
                                     media_id: _body.media_id
                                 }));
-                            }, function err(err){
-                                res.status(400).send(JSON.stringify({
-                                    ret: -1,
-                                    msg: err
-                                }));
-                            })
+                            }
                         }, function err(err){
                             res.status(400).send(JSON.stringify({
                                 ret: -1,

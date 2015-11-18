@@ -4,7 +4,7 @@ var Q = require('q');
 var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
-var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
+var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
 
 app.post(['/admin/api/group/addQuarz'],
     function(req, res, next){
@@ -34,8 +34,8 @@ app.post(['/admin/api/group/addQuarz'],
             var _province = req.body.province;
             var _city = req.body.city;
             var _sex = req.body.sex;
-            var _subscribe_start = req.body.subscribe_start == undefined ? '' : (new Date(req.body.subscribe_start)).getTime();
-            var _subscribe_end = req.body.subscribe_end == undefined ? '' : (new Date(req.body.subscribe_end)).getTime();
+            var _subscribe_start = req.body.subscribe_start == undefined ? '' : (new Date(req.body.subscribe_start)).getTime()/1000;
+            var _subscribe_end = req.body.subscribe_end == undefined ? '' : (new Date(req.body.subscribe_end)).getTime()/1000;
 
             var options = {
                 groupid: _gid,
@@ -46,7 +46,9 @@ app.post(['/admin/api/group/addQuarz'],
                 subscribe_start: _subscribe_start,
                 subscribe_end: _subscribe_end
             }
-            mysql.group.addQuartz(options)
+            console.log(JSON.stringify(options));
+            //2015-11-17 暂时的需求只有精确到城市，没有性别和关注时间的选项，所以调用的这个SQL是没有插入性别和时间的
+            mysql.groupQuartz.addQuartz(options)
                 .then(function resolve(ret){
                     console.log('is addQuartz ok:', ret);
                 },function reject(err){

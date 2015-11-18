@@ -10,7 +10,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 //预览
 app.post('/admin/api/mass/preview',
-    function(req, res) {
+    function(req, res, body) {
         console.log('/admin/api/mass/preview...');
         //console.log(req.query.msg_id);
         //console.log(req.query.title);
@@ -40,7 +40,7 @@ app.post('/admin/api/mass/preview',
         //}else{
         //验证通过
         //console.log('msg_id:',req.query.msg_id);
-        var params = req.query.params;
+        var params = body;
         _preview(res, params);
         //mysql.mass.queryThumbById(req.query.msg_id).then(function done(ret){
         //    console.log('is queryThumb ok:', ret);

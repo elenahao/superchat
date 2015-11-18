@@ -5,7 +5,8 @@ var _mysql = {
     user: require('./mysql/user'),
     group: require('./mysql/group'),
     area: require('./mysql/area'),
-    mass: require('./mysql/mass')
+    mass: require('./mysql/mass'),
+    groupQuartz: require('./mysql/groupQuartz')
 }
 
 if (global.devMode) {
