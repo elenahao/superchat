@@ -14,13 +14,13 @@ var _app = {
 }
 
 //--自己的测试号
-var _apptest = {
-    APPID: 'wx0c7c93d636ff9769',
-    SECRET: 'd4a38c7b7804febf8c33045005713191',
-    token: 'haoxueying123',
-    URL: 'http://haoxueying.qiuxiansheng.com/wechat',
-    OPENID: 'gh_be215938378a'
-}
+//var _apptest = {
+//    APPID: 'wx0c7c93d636ff9769',
+//    SECRET: 'd4a38c7b7804febf8c33045005713191',
+//    token: 'haoxueying123',
+//    URL: 'http://haoxueying.qiuxiansheng.com/wechat',
+//    OPENID: 'gh_be215938378a'
+//}
 
 //var _apptest = {
 //    APPID: 'wx92f2c0782c597fd0',
@@ -33,10 +33,10 @@ var _apptest = {
 //}
 
 //--微影公众平台
-//var _apptest = {
-//    APPID: 'wxacb9ce1b1d812430',
-//    SECRET: 'bcd4b0fd8742414548bb66a16ff34a26'
-//}
+var _apptest = {
+    APPID: 'wxacb9ce1b1d812430',
+    SECRET: 'bcd4b0fd8742414548bb66a16ff34a26'
+}
 
 
 var wechatConf = {

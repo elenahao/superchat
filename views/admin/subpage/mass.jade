@@ -5,7 +5,7 @@ div.gm-user
         input(type="hidden",name="media_id",id="media_id",value="#{media_id}")
         div.gm-search-bar
             div.col-xs-4
-                select.form-control.gname(name="groupid", required="required")
+                select.form-control.gname(name="group_id", required="required")
                     each group in groups
                         option(value="#{group.id}") #{group.name}
             a.btn.btn-primary.btn-sm.active.gm-search(role="button") 群发

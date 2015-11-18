@@ -12,9 +12,9 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 app.post('/admin/api/mass/group',
     function(req, res) {
         console.log('/admin/api/mass/group...');
-        var msg_id = req.query.msg_id;
-        var media_id = req.query.media_id;
-        var group_id = req.query.group_id;
+        var msg_id = req.body.msg_id;
+        var media_id = req.body.media_id;
+        var group_id = req.body.group_id;
         var opt = {
             filter: {
                 is_to_all: false,
@@ -25,6 +25,7 @@ app.post('/admin/api/mass/group',
             },
             msgtype: 'mpnews'
         }
+        console.log(opt);
         function _send(){
             Token.getAccessToken().then(function done(ret) {
                 if (ret.access_token) {

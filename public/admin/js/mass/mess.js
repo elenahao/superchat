@@ -227,7 +227,11 @@ $(function(){
                 var show = 1;
                 var item = {};
                 console.log(index);
-                    item.msg_id = $mainList.eq(index).find(".msg_id").val();
+                    if(flag){
+                        item.msg_id = $mainList.eq(index).find(".msg_id").val();
+                    }else{
+                        item.id = $mainList.eq(index).find(".msg_id").val();
+                    }
                     item.thumb_media_id=$mainList.eq(index).find(".thumb_media_id").val();
                     item.title = $mainList.eq(index).find(".title-input").val();
                     var id = $mainList.eq(index).find(".editor").attr("id");

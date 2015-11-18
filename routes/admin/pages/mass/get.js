@@ -16,6 +16,8 @@ app.get(['/admin/mass'],
         console.log("admin mass...");
         var msg_id = req.query.msg_id;
         var media_id = req.query.media_id;
+        console.log('msg_id:', msg_id);
+        console.log('media_id:', media_id);
         Group.all().then(function done(ret){
             res.render('admin/mass', {
                 title: "Wechat管理后台",
