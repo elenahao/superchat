@@ -301,5 +301,7 @@ $(function(){
                 }
             });
     });
-
+    $(".foot .cancel").click(function(){
+        window.location.href="/admin/mass";
+    });
 });
