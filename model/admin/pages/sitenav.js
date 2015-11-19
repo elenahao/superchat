@@ -28,7 +28,7 @@ _nav.prototype = {
             mass: {
                 id: 4,
                 name: '群发图文信息',
-                href: '/admin/massMessage'
+                href: '/admin/mass'
             }
         }
     }

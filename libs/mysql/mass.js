@@ -110,7 +110,7 @@ exports.saveMsg = function (msg) {
 exports.updateMsgAfterPosted = function (msg) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
-        conn.query('update wx_mass_msg set msg_posted_id=?, is_to_all=?, msg_data_id=? where id=? ', [msg.msg_posted_id, msg.is_to_all, msg.msg_data_id, msg.id], function (err, ret) {
+        conn.query('update wx_mass_msg set is_posted=1, msg_posted_id=?, is_to_all=?, msg_data_id=?, posted_time=now(), last_update_time=now() where id=? ', [msg.msg_posted_id, msg.is_to_all, msg.msg_data_id, msg.id], function (err, ret) {
             if (err) {
                 console.error(err);
                 dfd.reject(err);
@@ -142,10 +142,10 @@ exports.updateMsgItem = function (items) {
     return dfd.promise;
 };
 
-exports.updatePreviewedMsg = function (id, msg_previewed_id, previewed_to) {
+exports.updatePreviewedMsg = function (id, previewed_to) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
-        conn.query('update wx_mass_msg set previewed_to=?, last_update_time=now() where id=? ', [previewed_to, id], function (err, ret) {
+        conn.query('update wx_mass_msg set is_previewed=1, previewed_to=?, last_update_time=now() where id=? ', [previewed_to, id], function (err, ret) {
             if (err) {
                 console.error(err);
                 dfd.reject(err);

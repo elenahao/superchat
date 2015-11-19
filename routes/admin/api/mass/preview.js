@@ -12,54 +12,12 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 app.post('/admin/api/mass/preview',
     function(req, res) {
         console.log('/admin/api/mass/preview...');
-        //console.log(req.query.msg_id);
-        //console.log(req.query.title);
-        //console.log(req.query.content);
-        //console.log(req.query.show_cover_pic);
-        //req.sanitize('msg_id').trim();
-        //req.sanitize('msg_id').escape();
-        //req.sanitize('title').trim();
-        //req.sanitize('title').escape();
-        //req.sanitize('content').trim();
-        //req.sanitize('content').escape();
-        //req.sanitize('show_cover_pic').trim();
-        //req.sanitize('show_cover_pic').escape();
-        ////验证
-        //req.checkBody('msg_id', 'empty').notEmpty().isInt();
-        //req.checkBody('title', 'empty').notEmpty();
-        //req.checkBody('content', 'empty').notEmpty();
-        //req.checkBody('show_cover_pic', 'empty').notEmpty().isInt();
-        //var errors = req.validationErrors();
-        //console.log('err:',errors);
-
-        //if (errors) {
-        //    res.status(400).send(JSON.stringify({
-        //        ret: -1,
-        //        msg: errors
-        //    }));
-        //}else{
-        //验证通过
-        //console.log('msg_id:',req.query.msg_id);
         var params = req.body.params;
         _preview(res, params);
-        //mysql.mass.queryThumbById(req.query.msg_id).then(function done(ret){
-        //    console.log('is queryThumb ok:', ret);
-        //    console.log(ret[0].thumb_media_id);
-        //    var thumb_media_id = ret[0].thumb_media_id;
-        //    console.log(thumb_media_id);
-        //    _upload(res, req.query, thumb_media_id)
-        //}, function err(err){
-        //    res.status(400).send(JSON.stringify({
-        //        ret: -1,
-        //        msg: err
-        //    }));
-        //});
-        //}
     });
 
 function _preview(res, _params){
-    console.log('params', JSON.stringify(_params));
-    //var _params = JSON.parse(params);
+    console.log('_params', JSON.stringify(_params));
     Token.getAccessToken().then(function done(ret) {
         if (ret.access_token) {
             var ACCESS_TOKEN = ret.access_token;

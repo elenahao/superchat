@@ -74,6 +74,8 @@ var massMessage = {
                     } else {
                         alert('(╯‵□′)╯︵┻━┻ 失败......');
                     }
+                },error: function(err){
+                    alert('(╯‵□′)╯︵┻━┻ 失败......');
                 }
             });
         });
