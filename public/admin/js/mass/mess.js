@@ -173,7 +173,7 @@ $(function(){
     //增加
     $('#addMsg').on('click',function(){
         var item_len = massMessage.getIndex();
-        if(item_len >7){
+        if(item_len >6){
             $('.reminder').show();
             var t = setTimeout(function(){
                 $('.reminder').hide();
@@ -262,9 +262,9 @@ $(function(){
                         alert("信息填写不完整，请检查填写，重新提交！");
                 }
                 if(showObj.hasClass("c_on")){
-                    show = 1;
-                }else{
                     show = 0;
+                }else{
+                    show = 1;
                 }
                 var digest = $mainList.eq(index).find(".digest-input").val();
                 var author = $mainList.eq(index).find(".author-input").val();
