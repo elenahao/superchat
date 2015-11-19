@@ -32,13 +32,24 @@ var massMessage = {
             }
             var msg_id = $('#msg_id').val();
             var url = '';
-            if(msg_id && msg_id != ''){
-                //update
-                url = '/admin/api/mass/fileUpdate';
+            if(currentObj.hasClass("mainEdite")){
+                if(msg_id && msg_id != ''){
+                    //update
+                    url = '/admin/api/mass/fileUpdate';
+                }else{
+                    //insert
+                    url = '/admin/api/mass/fileInsert';
+                }
             }else{
-                //insert
-                url = '/admin/api/mass/fileInsert';
+                if(msg_id && msg_id != ''){
+                    //update
+                    url = '/admin/api/mass/fileItemUpdate';
+                }else{
+                    //insert
+                    url = '/admin/api/mass/fileItemInsert';
+                }
             }
+            
 
             $.ajax({
                 url: url,
