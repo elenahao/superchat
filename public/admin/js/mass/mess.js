@@ -156,6 +156,7 @@ $(function(){
          var title_value = $(this).val();
         $('.msgItem').eq(index).find('h4').text(title_value);
     });
+
     //增加
     $('#addMsg').on('click',function(){
         var item_len = massMessage.getIndex();
@@ -170,6 +171,15 @@ $(function(){
         massMessage.addMsgItem();
         massMessage.uploadImg();
         massMessage.countChar('title-input','author-input','digest-input');
+        $(".label_check").click(function(){
+            if($(this).hasClass("c_on")){
+                $(this).removeClass("c_on");
+                $(this).addClass("c_off");
+            }else{
+                $(this).removeClass("c_off");
+                $(this).addClass("c_on");
+            }
+        });
     });
     massMessage.countChar('title-input','author-input','digest-input');
 
@@ -217,49 +227,63 @@ $(function(){
     //编辑图片显示
     massMessage.uploadImg();
     massMessage.initEditor("cover_editor");
-    $(".foot .sub").click(function(){
+    $(".foot .sub,.foot .preview").click(function(){
         var msgArray = new Array(),
             list = $(".msgItem:not(.templateItem)"),
             $mainList = $(".main");
+            var isNull = false;
             list.each(function(i,v){
                 var index = $(v).index();
                 var flag = $(v).hasClass("coverItem");
                 var show = 1;
                 var item = {};
-                console.log(index);
-                    if(flag){
-                        item.msg_id = $mainList.eq(index).find(".msg_id").val();
-                    }else{
-                        item.id = $mainList.eq(index).find(".msg_id").val();
-                    }
-                    item.thumb_media_id=$mainList.eq(index).find(".thumb_media_id").val();
-                    item.title = $mainList.eq(index).find(".title-input").val();
-                    var id = $mainList.eq(index).find(".editor").attr("id");
-                    var editor = UE.getEditor(id);
-                    item.content = massMessage.getEditorContent(editor);
-                    var showObj = $mainList.eq(index).find(".label_check");
-                    if(showObj.hasClass("c_on")){
-                        show = 1;
-                    }else{
-                        show = 0;
-                    }
-                    item.show_cover_pic = show;
-                    console.log("flag"+flag);
-                    if(flag){
-                        console.log("comingl.....");
-                        item.digest = $mainList.eq(index).find(".digest-input").val();
-                    }
-                    item.author = $mainList.eq(index).find(".author-input").val();
-                    item.content_source_url = "";
+                var id = $mainList.eq(index).find(".msg_id").val();
+                var thumb_media_id = $mainList.eq(index).find(".thumb_media_id").val();
+                var title = $mainList.eq(index).find(".title-input").val(); 
+                var editorId = $mainList.eq(index).find(".editor").attr("id");
+                var editor = UE.getEditor(editorId);
+                var content = massMessage.getEditorContent(editor);
+                var showObj = $mainList.eq(index).find(".label_check");
+                if(title==null||title==""||id==""||id==null||content==""||content==null){
+                        isNull = true;
+                        alert("信息填写不完整，请检查填写，重新提交！");
+                }
+                if(showObj.hasClass("c_on")){
+                    show = 1;
+                }else{
+                    show = 0;
+                }
+                var digest = $mainList.eq(index).find(".digest-input").val();
+                var author = $mainList.eq(index).find(".author-input").val();
+
+                if(flag){
+                    item.msg_id = id;
+                }else{
+                    item.id = id;
+                }
+                item.thumb_media_id= thumb_media_id;
+                item.title = title;
+                item.content = content;
+                item.show_cover_pic = show;
+                if(flag){
+                    item.digest = digest;
+                }
+                item.author = author;
+                item.content_source_url = "";
                 msgArray.push(item);
                 
             });
+            if(isNull)return;
             console.log(msgArray);
             //调用ajax传参
             var csrfKey = $('#csrfKey').val();
             console.log('csrfKey='+csrfKey);
+            var url = "/admin/api/mass/uploadMsg";
+            if($(this).hasClass("preview")){
+                url = "/admin/api/mass/preview";
+            }
             $.ajax({
-                url: '/admin/api/mass/uploadMsg',
+                url: url,
                 headers: {
                     'X-CSRF-Token': csrfKey
                 },
