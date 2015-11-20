@@ -21,13 +21,8 @@ app.get('/admin/api/user/',
         var _us = [];
 
         User.pagingQuery(_start, _count).then(function done(result) {
-            console.log(result);
-            console.log('user='+result.users);
             _pages = result.totalPage;
-            console.log(_pages);
-            //_now = Math.floor(_start / _count) + 1;
             _now = _start;
-            console.log(_now);
             _us = result.users;
             return Group.all();
         }, function err(err) {
@@ -36,7 +31,6 @@ app.get('/admin/api/user/',
                 msg: err
             }));
         }).then(function done(groups) {
-            console.log('groups='+groups);
             res.status(200).send(JSON.stringify({
                 ret: 0,
                 data: {

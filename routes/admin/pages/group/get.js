@@ -30,7 +30,7 @@ app.get(['/admin/group'],
                     if (value != '...') {
                         _pageLinks.push({
                             text: value,
-                            isCurrent: value == data.now ? true : false,
+                            isCurrent: value == (data.now == 0 ? 1 : data.now) ? true : false,
                             link: '/admin/group/?start=' + value + '&count=' + data.count
                         });
                     }

@@ -53,7 +53,7 @@ app.get('/admin/api/refresh/user', function(req, res) {
             msg: err
         }));
     })
-    //res.redirect('/admin/user');
+    res.redirect('/admin/user');
 });
 
 var getUser = function(ACCESS_TOKEN, next_openid) {

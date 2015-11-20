@@ -18,14 +18,13 @@ app.get(['/admin/user'],
         console.log("admin user...");
 
         function render(data) {
-            console.log('data='+JSON.stringify(data));
             var _pageLinks = [];
             if (data.page > 1) {
                 Lazy(calPage(data.now, data.page, 10)).each(function(value, index) {
                     if (value != '...') {
                         _pageLinks.push({
                             text: value,
-                            isCurrent: value == data.now ? true : false,
+                            isCurrent: value == (data.now == 0 ? 1 : data.now) ? true : false,
                             link: '/admin/user/?start=' + value + '&count=' + data.count
                         });
                     }

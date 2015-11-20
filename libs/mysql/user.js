@@ -27,7 +27,7 @@ exports.findUsersByPage = function (pageNo, pageSize) {
                     if(err){
                         dfd.reject(err);
                     }else{
-                        console.log(JSON.stringify({totalCount:totalCount, totalPage:totalPage, users:rows}));
+                        //console.log(JSON.stringify({totalCount:totalCount, totalPage:totalPage, users:rows}));
                         dfd.resolve({totalCount:totalCount, totalPage:totalPage, users:rows});
                     }
                 });

@@ -10,7 +10,6 @@ var _getPagingUser = function(pageNo, pageSize) {
     console.log('in getPagingQuery....');
     var dfd = Q.defer();
     mysql.user.findUsersByPage(pageNo, pageSize).then(function resolve(res){
-        console.log('res=',res);
         dfd.resolve(res);
     },function reject(err){
         console.log('findUsersByPage err:', err);
