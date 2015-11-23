@@ -160,6 +160,23 @@ exports.updateGroupId = function (groupid, openid) {
     return dfd.promise;
 };
 
+exports.batchUpdateGroupId = function (groupid, openids) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('update wx_user set groupid=? where openid in (?) ', [groupid, openids], function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.resolve('mysql update error');
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};
+
 exports.findUsersByName = function (pageNo, pageSize, uname) {
     console.log('in findUsersByName...');
     var dfd = Q.defer();

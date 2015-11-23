@@ -42,6 +42,7 @@ app.get('/admin/api/batchUpdate/user',
             }
             Q.all(quartz_array).then(function done(ret){
                 //更新group表将is_quartz改为1
+
             }, function err(err){
                 dfd.reject({err: err});
             })
@@ -66,9 +67,19 @@ function handle(quartz){
                 //根据quartz的条件，查询出50个，调用_request()
                 console.log('is queryUsersByCity ok:', ret);
                 if(ret && ret.length > 0){
-                    _request(cursor, 50, ret);
-                    cursor ++;
-                    _handle();
+                    _request(ret, quartz.group_id).then(function done(ret){
+                        console.log('is request ok:', ret);
+                        //将这个quartz的is_quartz字段置为1
+                        return mysql.groupQuartz.updateQuartz(quartz.id);
+                    }, function err(err){
+                        dfd.reject({err: err});
+                    }).then(function done(ret){
+                        console.log('is updateQuartz ok:', ret);
+                        cursor ++;
+                        _handle();
+                    }, function err(err){
+                        dfd.reject({err: err});
+                    });
                 }
             }, function err(err){
                 dfd.reject({err: err});
@@ -91,28 +102,40 @@ function handle(quartz){
     _handle();
 }
 
-var _request = function(options){
+var _request = function(options, group_id){
+    console.log(options);
     var dfd = Q.defer();
-    var ACCESS_TOKEN = '';
-    Token.getAccessToken().then(function resolve(res) {
-        if (res.access_token) {
-            for (var i = 0; i < options.length; i++) {
+    var openid_list = [];
+    for(var i = 0; i< options.length; i++){
+        openid_list.push(options[i].openid);
+    }
+    Q.all(openid_list).then(function resolve(ret){
+        Token.getAccessToken().then(function resolve(res) {
+            console.log(res);
+            if (res.access_token) {
                 //{"openid_list":["oDF3iYx0ro3_7jD4HFRDfrjdCM58","oDF3iY9FGSSRHom3B-0w5j4jlEyY"],"to_groupid":108}
                 //先获取ACCESS_TOKEN
-                var opt = options[i];
                 console.log(res.access_token);
-                console.log('options=', JSON.stringify(opt));
-                ACCESS_TOKEN = res.access_token;
+                console.log(JSON.stringify({openid_list:openid_list, to_groupid:group_id}));
                 request({
-                    url: 'https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate?access_token=' + ACCESS_TOKEN,
+                    url: 'https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate?access_token=' + res.access_token,
                     method: 'POST',
-                    body: JSON.stringify(opt)
+                    body: JSON.stringify({openid_list:openid_list, to_groupid:group_id})
                 }, function (err, res, body) {
                     console.log('is request get ok:', body);
+                    mysql.user.batchUpdateGroupId(group_id, openid_list).then(function done(ret){
+                        console.log('is batchUpdateGroupId ok:', ret);
+                        dfd.resolve(ret);
+                    }, function err(err){
+                        dfd.reject(err);
+                    })
                 });
             }
-        }
-    }, function reject(err) {
+        }, function reject(err) {
+            dfd.reject({err: err});
+        })
+    }, function reject(err){
         dfd.reject({err: err});
     })
+
 }

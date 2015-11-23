@@ -74,7 +74,7 @@ exports.queryUsersByCity = function (pageNo, pageSize, opt) {
                     offset = 0;
                 }
                 console.log('totalCount:',totalCount,';totalPage:',totalPage,'offset:',offset);
-                conn.query("select openid from wx_user where groupid!=? and country=? and province=? and city=? limit ?,?", [opt.group_id, opt.country, opt.province, opt.city, offset, pageSize], function (err, rows) {
+                conn.query("select t.openid from wx_user t where t.groupid!=? and t.country=? and t.province=? and t.city=? limit ?,?", [opt.group_id, opt.country, opt.province, opt.city, offset, pageSize], function (err, rows) {
                     if(err){
                         dfd.reject(err);
                     }else{
@@ -121,3 +121,21 @@ exports.queryUsersByProvince = function (pageNo, pageSize, opt) {
     });
     return dfd.promise;
 }
+
+exports.updateQuartz = function (id) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('update wx_group_quartz set is_quartz=1 where id=? ', id, function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.resolve('mysql update error');
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};
+
