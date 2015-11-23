@@ -42,12 +42,22 @@ app.get('/admin/api/batchUpdate/user',
             }
             Q.all(quartz_array).then(function done(ret){
                 //更新group表将is_quartz改为1
-
+                return mysql.groupQuartz.updateGroup(groupId);
+            }, function err(err){
+                dfd.reject({err: err});
+            }).then(function done(ret){
+                console.log('is updateGroup ok', ret);
             }, function err(err){
                 dfd.reject({err: err});
             })
         }else{
             //更新group表将is_quartz改为1
+            mysql.groupQuartz.updateGroup(groupId)
+                .then(function done(ret){
+                    console.log('is updateGroup ok', ret);
+                }, function err(err){
+                    dfd.reject({err: err});
+                })
         }
     }, function err(err){
         dfd.reject({err: err});
@@ -69,14 +79,15 @@ function handle(quartz){
                 if(ret && ret.length > 0){
                     _request(ret, quartz.group_id).then(function done(ret){
                         console.log('is request ok:', ret);
-                        //将这个quartz的is_quartz字段置为1
-                        return mysql.groupQuartz.updateQuartz(quartz.id);
-                    }, function err(err){
-                        dfd.reject({err: err});
-                    }).then(function done(ret){
-                        console.log('is updateQuartz ok:', ret);
                         cursor ++;
                         _handle();
+                    }, function err(err){
+                        dfd.reject({err: err});
+                    })
+                }else{
+                    //将这个quartz的is_quartz字段置为1
+                    mysql.groupQuartz.updateQuartz(quartz.id).then(function done(ret){
+                        console.log('is updateQuartz ok:', ret);
                     }, function err(err){
                         dfd.reject({err: err});
                     });

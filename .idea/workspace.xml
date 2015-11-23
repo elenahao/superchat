@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a60e7fb8-fd8d-4839-bb43-613dfcbd870b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/api/user/batchUpdate.js" afterPath="$PROJECT_DIR$/routes/admin/api/user/batchUpdate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/mysql/client.js" afterPath="$PROJECT_DIR$/libs/mysql/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.js" afterPath="$PROJECT_DIR$/config/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/mysql/groupQuartz.js" afterPath="$PROJECT_DIR$/libs/mysql/groupQuartz.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/mysql/user.js" afterPath="$PROJECT_DIR$/libs/mysql/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/weconfig.js" afterPath="$PROJECT_DIR$/config/weconfig.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="superchat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +38,18 @@
       <file leaf-file-name="batchUpdate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/admin/api/user/batchUpdate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40554592">
-              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            <state vertical-scroll-proportion="1.7175044">
+              <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupQuartz.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/mysql/groupQuartz.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,9 +138,9 @@
         <option value="$PROJECT_DIR$/config/weconfig.js" />
         <option value="$PROJECT_DIR$/libs/mysql/user.js" />
         <option value="$PROJECT_DIR$/libs/mysql/groupQuartz.js" />
-        <option value="$PROJECT_DIR$/routes/admin/api/user/batchUpdate.js" />
         <option value="$PROJECT_DIR$/config/config.js" />
         <option value="$PROJECT_DIR$/libs/mysql/client.js" />
+        <option value="$PROJECT_DIR$/routes/admin/api/user/batchUpdate.js" />
       </list>
     </option>
   </component>
@@ -790,14 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/mysql/groupQuartz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.1802425">
-          <caret line="134" column="13" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/common/group/pagingQuery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -918,10 +914,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libs/mysql/groupQuartz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/api/user/batchUpdate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40554592">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        <state vertical-scroll-proportion="1.7175044">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
           <folding />
         </state>
       </provider>
