@@ -52,7 +52,7 @@ app.get(['/admin/group'],
         var _count = !_.isNaN(parseInt(req.query.count)) ? req.query.count : 20;
         console.log('_start'+_start);
         request({
-            url: 'http://127.0.0.1/admin/api/group/?start=' + _start + '&count=' + _count,
+            url: 'http://127.0.0.1:8080/admin/api/group/?start=' + _start + '&count=' + _count,
             method: 'GET'
         }, function(err, res, body) {
             console.log(body);
@@ -101,7 +101,7 @@ app.get(['/admin/group/name/:gname'],
         var _count = !_.isNaN(parseInt(req.query.count)) ? req.query.count : 20;
 
         request({
-            url: 'http://127.0.0.1/admin/api/search/group/name/' + _gname + '?start=' + _start + '&count=' + _count ,
+            url: 'http://127.0.0.1:8080/admin/api/search/group/name/' + _gname + '?start=' + _start + '&count=' + _count ,
             method: 'GET'
         }, function(err, _res, body) {
             if (!err && _res.statusCode === 200) {
