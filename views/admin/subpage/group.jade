@@ -41,8 +41,8 @@ div.gm-user
                             td
                                 if group.nickname
                                     |#{group.nickname}
-                                    //a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}" groupsu="#{group.schedual_user}")
-                                    //    | 编辑
+                                    a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}")
+                                        | 添加
                                 else
                                     a.btn.btn-sm.btn-warning(groupid="#{group.id}" groupname="#{group.name}")
                                         | 添加
@@ -79,28 +79,28 @@ div.col-xs-12.m-hide#x_div
             div.col-xs-4
                 select.form-control.city-change
                     option(value="",selected="selected") -请选择-
-    div.col-xs-12
-        div.col-xs-3
-            | 按照性别
-        div.col-xs-9
-            div.col-xs-8
-                div.col-xs-4
-                    input(type="radio",name="sexId",value="0")
-                    | 男
-                div.col-xs-4
-                    input(type="radio",name="sexId",value="1")
-                    | 女
-                div.col-xs-4
-                    input(type="radio",name="sexId",value="2")
-                    | 不限
-            div.col-xs-4
-    div.col-xs-12
-        div.col-xs-3
-            | 按照关注时间
-        div.col-xs-9
-                div.col-xs-5
-                    input(id="start", typt="text",onClick="WdatePicker()")
-                div.col-xs-2
-                    |-至-
-                div.col-xs-5
-                    input(id="end", typt="text",onClick="WdatePicker()")
+    //div.col-xs-12
+    //    div.col-xs-3
+    //        | 按照性别
+    //    div.col-xs-9
+    //        div.col-xs-8
+    //            div.col-xs-4
+    //                input(type="radio",name="sexId",value="0")
+    //                | 男
+    //            div.col-xs-4
+    //                input(type="radio",name="sexId",value="1")
+    //                | 女
+    //            div.col-xs-4
+    //                input(type="radio",name="sexId",value="2")
+    //                | 不限
+    //        div.col-xs-4
+    //div.col-xs-12
+    //    div.col-xs-3
+    //        | 按照关注时间
+    //    div.col-xs-9
+    //            div.col-xs-5
+    //                input(id="start", typt="text",onClick="WdatePicker()")
+    //            div.col-xs-2
+    //                |-至-
+    //            div.col-xs-5
+    //                input(id="end", typt="text",onClick="WdatePicker()")

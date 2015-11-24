@@ -139,7 +139,8 @@
                     var sex = $('.col-xs-8 input[name="sexId"]:checked').val() == undefined ? '' : $('.col-xs-8 input[name="sexId"]:checked').val();
                     var start = $('#start').val();
                     var end = $('#end').val();
-                    if(country == '' && province == '' && city == '' && sex == '' && subscribe_start == '' && subscribe_end == '') {
+                    //以后可能会用到的校验，现在只有国家省份城市if(country == '' && province == '' && city == '' && sex == '' && subscribe_start == '' && subscribe_end == '') {
+                    if(country == '' && province == '' && city == '') {
                         alert('(╯‵□′)╯︵┻━┻ 至少填一项啊，都不填咋玩？！');
                         return false;
                     }else{

@@ -139,3 +139,20 @@ exports.updateQuartz = function (id) {
     return dfd.promise;
 };
 
+exports.updateGroup = function (id) {
+    var dfd = Q.defer();
+    pool.getConnection(function (err, conn) {
+        conn.query('update wx_group set is_quartz=1 where id=? ', id, function (err, ret) {
+            if (err) {
+                console.error(err);
+                dfd.resolve('mysql update error');
+            }
+            else {
+                dfd.resolve(ret);
+            }
+            conn.release();
+        })
+    })
+    return dfd.promise;
+};
+

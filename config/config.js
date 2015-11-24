@@ -17,10 +17,10 @@ if (global.isRemoteDev && global.devMode) {
     //本地开发
     _appConf = {
         redis: {
-            //server: '172.16.39.13',
-            server: '10.104.27.136',
-            //port: 6379,
-            port: 23033,
+            server: '127.0.0.1',
+            //server: '10.104.27.136',
+            port: 6379,
+            //port: 23033,
             options: {
 
             }

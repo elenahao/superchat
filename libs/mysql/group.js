@@ -23,7 +23,7 @@ exports.findGroupsByPage = function (pageNo, pageSize) {
                     offset = 0;
                 }
                 console.log('totalCount:',totalCount,';totalPage:',totalPage,'offset:',offset);
-                conn.query("select g.id id, g.name name, g.count count, CONCAT_WS('#', q.country, q.province, q.city, q.sex, FROM_UNIXTIME(q.subscribe_start), FROM_UNIXTIME(q.subscribe_end)) nickname from wx_group g left join wx_group_quartz q on g.id = q.group_id limit ?,?", [offset, pageSize], function (err, rows) {
+                conn.query("select g.id id, g.name name, g.count count, group_concat(CONCAT_WS('#',q.country,q.province,q.city,q.sex,FROM_UNIXTIME(q.subscribe_start),FROM_UNIXTIME(q.subscribe_end)) SEPARATOR ' ') nickname from wx_group g left join wx_group_quartz q on g.id = q.group_id group by g.id limit ?,?", [offset, pageSize], function (err, rows) {
                     if(err){
                         dfd.reject(err);
                     }else{
