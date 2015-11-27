@@ -5,6 +5,7 @@ var Lazy = require('lazy.js');
 var _ = require('lodash');
 var request = require('request');
 var mysql = require(path.resolve(global.gpath.app.libs + '/mysql'));
+var redis = require(path.resolve(global.gpath.app.libs + '/redis'));
 var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 
 app.get('/admin/api/batchUpdate/user',
@@ -140,30 +141,46 @@ var _request = function(options, group_id){
         openid_list.push(options[i].openid);
     }
     Q.all(openid_list).then(function resolve(ret){
-        Token.getAccessToken().then(function resolve(res) {
-            console.log(res);
-            if (res.access_token) {
-                //{"openid_list":["oDF3iYx0ro3_7jD4HFRDfrjdCM58","oDF3iY9FGSSRHom3B-0w5j4jlEyY"],"to_groupid":108}
-                //先获取ACCESS_TOKEN
-                console.log(res.access_token);
-                console.log(JSON.stringify({openid_list:openid_list, to_groupid:group_id}));
-                request({
-                    url: 'https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate?access_token=' + res.access_token,
-                    method: 'POST',
-                    body: JSON.stringify({openid_list:openid_list, to_groupid:group_id})
-                }, function (err, res, body) {
-                    console.log('is request get ok:', body);
-                    mysql.user.batchUpdateGroupId(group_id, openid_list).then(function done(ret){
-                        console.log('is batchUpdateGroupId ok:', ret);
-                        dfd.resolve(ret);
-                    }, function err(err){
-                        dfd.reject(err);
-                    })
-                });
-            }
-        }, function reject(err) {
-            dfd.reject({err: err});
-        })
+        function _send(){
+            Token.getAccessToken().then(function resolve(res) {
+                console.log(res);
+                if (res.access_token) {
+                    //{"openid_list":["oDF3iYx0ro3_7jD4HFRDfrjdCM58","oDF3iY9FGSSRHom3B-0w5j4jlEyY"],"to_groupid":108}
+                    //先获取ACCESS_TOKEN
+                    console.log(res.access_token);
+                    console.log(JSON.stringify({openid_list:openid_list, to_groupid:group_id}));
+                    request({
+                        url: 'https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate?access_token=' + res.access_token,
+                        method: 'POST',
+                        body: JSON.stringify({openid_list:openid_list, to_groupid:group_id})
+                    }, function (err, res, body) {
+                        console.log('is request get ok:', body);
+                        var _body = JSON.parse(body);
+                        if(_body.errcode == 40001){
+                            redis.del('access_token').then(function resolve(ret) {
+                                console.log('is del ok:', ret);
+                                return _send();
+                            }, function reject(err) {
+                                res.status(400).send(JSON.stringify({
+                                    ret: -1,
+                                    msg: err
+                                }));
+                            });
+                        }else{
+                            mysql.user.batchUpdateGroupId(group_id, openid_list).then(function done(ret){
+                                console.log('is batchUpdateGroupId ok:', ret);
+                                dfd.resolve(ret);
+                            }, function err(err){
+                                dfd.reject(err);
+                            })
+                        }
+                    });
+                }
+            }, function reject(err) {
+                dfd.reject({err: err});
+            })
+        }
+        _send();
     }, function reject(err){
         dfd.reject({err: err});
     })

@@ -59,12 +59,13 @@ exports.queryUsersByCity = function (pageNo, pageSize, opt) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
         console.log('getConnection...');
-        conn.query("select count(*) as u from wx_user where groupid!=? and country=? and province=? and city=?", [opt.group_id, opt.country, opt.province, opt.city], function (err, ret) {
-            if (err) {
-                dfd.reject(err);
-            }
-            else {
-                var totalCount = ret[0].u;
+        //conn.query("select count(*) as u from wx_user where groupid!=? and country=? and province=? and city=?", [opt.group_id, opt.country, opt.province, opt.city], function (err, ret) {
+        //    if (err) {
+        //        dfd.reject(err);
+        //    }
+        //    else {
+        //        var totalCount = ret[0].u;
+                var totalCount = 200000;
                 var totalPage = Math.ceil(totalCount / pageSize);
                 if(pageNo > totalPage){
                     pageNo = totalPage;
@@ -80,10 +81,11 @@ exports.queryUsersByCity = function (pageNo, pageSize, opt) {
                     }else{
                         dfd.resolve(rows);
                     }
+                    conn.release();
                 });
-            }
-            conn.release();
-        })
+            //}
+            //conn.release();
+        //})
     });
     return dfd.promise;
 }
@@ -93,12 +95,13 @@ exports.queryUsersByProvince = function (pageNo, pageSize, opt) {
     var dfd = Q.defer();
     pool.getConnection(function (err, conn) {
         console.log('getConnection...');
-        conn.query("select count(*) as u from wx_user where groupid!=? and country=? and province=? ", [opt.group_id, opt.country, opt.province], function (err, ret) {
-            if (err) {
-                dfd.reject(err);
-            }
-            else {
-                var totalCount = ret[0].u;
+        //conn.query("select count(*) as u from wx_user where groupid!=? and country=? and province=? ", [opt.group_id, opt.country, opt.province], function (err, ret) {
+        //    if (err) {
+        //        dfd.reject(err);
+        //    }
+        //    else {
+        //        var totalCount = ret[0].u;
+                var totalCount = 700000;
                 var totalPage = Math.ceil(totalCount / pageSize);
                 if(pageNo > totalPage){
                     pageNo = totalPage;
@@ -114,10 +117,11 @@ exports.queryUsersByProvince = function (pageNo, pageSize, opt) {
                     }else{
                         dfd.resolve(rows);
                     }
+                    conn.release();
                 });
-            }
-            conn.release();
-        })
+            //}
+            //conn.release();
+        //})
     });
     return dfd.promise;
 }

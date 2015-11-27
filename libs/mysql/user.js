@@ -96,7 +96,7 @@ exports.updateUser = function (users) {
     pool.getConnection(function (err, conn) {
         var _flag = users.flag;
         if(_flag === 0){
-            conn.query('replace into wx_user (subscribe,openid,nickname,sex,language,city,province,country,headimgurl,subscribe_time,unionid,remark,groupid) values '+users.users, function (err, ret) {
+            conn.query('insert into wx_user (subscribe,openid,nickname,sex,language,city,province,country,headimgurl,subscribe_time,unionid,remark,groupid) values '+users.users + ' on duplicate key update subscribe=values(subscribe), openid=values(openid), nickname=values(nickname),sex=values(sex),language=values(language),city=values(city),province=values(province),country=values(country),headimgurl=values(headimgurl),subscribe_time=values(subscribe_time),unionid=values(unionid),remark=values(remark),groupid=values(groupid)', function (err, ret) {
                 if (err) {
                     console.error(err);
                     dfd.resolve('mysql update error');
@@ -108,7 +108,7 @@ exports.updateUser = function (users) {
             })
         }else{
             console.log(users);
-            conn.query('replace into wx_user (subscribe, openid, unionid, flag) values '+users.users, function (err, ret) {
+            conn.query('insert into wx_user (subscribe, openid, unionid, flag) values '+users.users+' on duplicate key update subscribe=values(subscribe), openid=values(openid), unionid=values(unionid), flag=values(flag) ', function (err, ret) {
                 if (err) {
                     console.error(err);
                     dfd.resolve('mysql update error');
@@ -128,7 +128,7 @@ exports.updateFlag = function (users) {
     pool.getConnection(function (err, conn) {
         var _flag = users.flag;
         if(_flag == 2){
-            conn.query('replace into wx_user (openid, flag) values ('+users.openid + ',' + users.flag + ')', function (err, ret) {
+            conn.query('insert into wx_user (openid, flag) values ('+users.openid + ',' + users.flag + ') on duplicate key update openid=values(openid), flag=values(flag)', function (err, ret) {
                 if (err) {
                     console.error(err);
                     dfd.resolve('mysql update error');

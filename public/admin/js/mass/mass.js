@@ -3,6 +3,14 @@
         var questTable = $('#questTable');
         var csrfKey = $('#csrfKey').val();
         console.log(csrfKey);
+        var _msg_id = $('#msg_id').val();
+        var _media_id = $('#media_id').val();
+        console.log(_msg_id);
+        console.log(_media_id);
+        if(_msg_id != 'undefined' && _media_id != 'undefined'){
+            console.log('send ok');
+            $('.tips').text('您的图文信息已生成，编号为：'+_media_id+'，请进行分组');
+        }
 
         questTable.delegate('.gm-search', 'click', function(e) {
             e.preventDefault();

@@ -16,48 +16,63 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 app.get('/admin/api/group/refresh', function(req, res) {
     var dfd = Q.defer();
     console.log("admin group refresh ...");
-    Token.getAccessToken().then(function resolve(res) {
-        var ACCESS_TOKEN = '';
-        if(res.access_token){
-            console.log(res.access_token);
-            ACCESS_TOKEN = res.access_token;
-            request({
-                url: 'https://api.weixin.qq.com/cgi-bin/groups/get?access_token='+ACCESS_TOKEN,
-                method: 'GET'
-            }, function(err, res, body) {
-                if(err) console.log(err);
-                console.log('======'+body);
-                if (res.statusCode === 200) {
-                    console.log('success');
-                    //存入redis
-                    var data = JSON.parse(body);
-                    var groups = [];
-                    for(var i = 0; i< data.groups.length;i++){
-                        if(data.groups[i]){
-                            var group = "(" + data.groups[i].id + ",'" + data.groups[i].name + "'," + data.groups[i].count + ")";
-                            groups.push(group);
+    function _send(){
+        Token.getAccessToken().then(function resolve(res) {
+            var ACCESS_TOKEN = '';
+            if(res.access_token){
+                console.log(res.access_token);
+                ACCESS_TOKEN = res.access_token;
+                request({
+                    url: 'https://api.weixin.qq.com/cgi-bin/groups/get?access_token='+ACCESS_TOKEN,
+                    method: 'GET'
+                }, function(err, res, body) {
+                    if(err) console.log(err);
+                    console.log('======'+body);
+                    if (res.statusCode === 200) {
+                        console.log('success');
+                        var data = JSON.parse(body);
+                        if(data.errcode == 40001){
+                            redis.del('access_token').then(function resolve(ret) {
+                                console.log('is del ok:', ret);
+                                return _send();
+                            }, function reject(err) {
+                                res.status(400).send(JSON.stringify({
+                                    ret: -1,
+                                    msg: err
+                                }));
+                            });
+                        }else{
+                            //存入mysql
+                            var groups = [];
+                            for(var i = 0; i< data.groups.length;i++){
+                                if(data.groups[i]){
+                                    var group = "(" + data.groups[i].id + ",'" + data.groups[i].name + "'," + data.groups[i].count + ")";
+                                    groups.push(group);
+                                }
+                            }
+                            Q.all(
+                                groups
+                            ).then(function resolve(res) {
+                                    return mysql.group.updateGroup(res.toString());
+                                }, function reject(err) {
+                                    dfd.reject(err);
+                                }).then(function resolve(ret) {
+                                    console.log('is update ok:', ret);
+                                    dfd.resolve(ret);
+                                }, function reject(err) {
+                                    dfd.reject(err);
+                                })
                         }
                     }
-                    Q.all(
-                        groups
-                    ).then(function resolve(res) {
-                            return mysql.group.updateGroup(res.toString());
-                        }, function reject(err) {
-                            dfd.reject(err);
-                        }).then(function resolve(ret) {
-                            console.log('is update ok:', ret);
-                            dfd.resolve(ret);
-                        }, function reject(err) {
-                            dfd.reject(err);
-                        })
-                }
-            });
-        }
-    },function reject(err){
-        res.status(400).send(JSON.stringify({
-            ret: -4,
-            msg: err
-        }));
-    })
+                });
+            }
+        },function reject(err){
+            res.status(400).send(JSON.stringify({
+                ret: -4,
+                msg: err
+            }));
+        })
+    }
+    _send();
     res.redirect('/admin/group');
 });
