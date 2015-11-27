@@ -32,7 +32,16 @@ var _apptest = {
 //    SECRET: 'd4624c36b6795d1d99dcf0547af5443d'
 //}
 
-//--微影公众平台
+//--movie公众平台
+//var _apptest = {
+//    APPID: 'wx92cf60f7577e2d48',
+//    SECRET: '6347543223aa409d36108565b51edd9a',
+//    token: 'XPlatform_Client_GaoPeng20131104',
+//    URL: 'http://callback.wxmovie.com/weixin/callback',
+//    OPENID: 'gh_be215938378a'
+//}
+
+//--微影云公众平台
 //var _apptest = {
 //    APPID: 'wxacb9ce1b1d812430',
 //    SECRET: 'bcd4b0fd8742414548bb66a16ff34a26'
