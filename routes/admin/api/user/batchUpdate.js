@@ -166,6 +166,12 @@ var _request = function(options, group_id){
                                     msg: err
                                 }));
                             });
+                        }else if(_body.errcode == 49003){
+                            console.log('openid为删除公众号用户');
+                            dfd.resolve('openid为删除公众号用户');
+                        }else if(_body.errcode == -1){
+                            console.log('系统异常');
+                            dfd.resolve('系统异常');
                         }else{
                             mysql.user.batchUpdateGroupId(group_id, openid_list).then(function done(ret){
                                 console.log('is batchUpdateGroupId ok:', ret);

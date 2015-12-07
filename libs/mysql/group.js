@@ -113,7 +113,7 @@ exports.updateGroup = function (groups) {
     pool.getConnection(function (err, conn) {
         console.log('--'+groups+'--');
         if(groups && groups != ''){
-            conn.query('insert into wx_group (id,name,count) values '+groups +'on duplicate key update id=values(id), name=values(name), count=values(count)', function (err, ret) {
+            conn.query('insert into wx_group (id,name,count) values '+groups +' on duplicate key update id=values(id), name=values(name), count=values(count)', function (err, ret) {
                 if (err) {
                     console.error(err);
                     dfd.reject(err);
