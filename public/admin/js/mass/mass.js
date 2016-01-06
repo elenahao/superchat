@@ -29,7 +29,8 @@
                 alert('(╯‵□′)╯︵┻━┻ 先创建一个图文消息才能群发啊！...');
             }
         });
-
+        var totalNum = 0;
+        var flag = true;
         function renderList(pageNum){
           $.ajax({
           		type:"get",
@@ -58,32 +59,32 @@
                       msgItem +='</div>';
                       $(".msgList .con").append(msgItem);
                 }
-
-                var page = '';
-                var length = total_count/20+1;
-                for(var i=1;i<=length;i++){
-                    if(i==pageNum){
-                      page += '<i class="pageNum active">'+i+'</i>';
-                    }else{
-                      page += '<i class="pageNum">'+i+'</i>';
-                    }
+                totalNum = total_count;
+                if(pageNum==1){
+                  pageRender(pageNum);
+                  flag = false;
                 }
-                $(".page .con").empty();
-                $(".page .con").append(page);
-
-
               },
               error:function(){}
           });
         }
         renderList(1);
+        function pageRender(pageNum){
+          var result = [];
+          for(var i = 1; i <= totalNum; i++){
+            result.push(i);
+          }
+          $('.page .con').pagination({
+              dataSource: result,
+              pageSize:20,
+              callback: function(data, pagination){
+                if(!flag){
+                  renderList(pagination.pageNumber);
+                }
 
-        $(".page").delegate(".pageNum","click",function(){
-            $(this).addClass("active");
-            $(this).siblings().removeClass("active");
-            var num = Number($(this).text());
-            renderList(num);
-        });
+              }
+          });
+        }
         $(".msgList").delegate(".mItem","click",function(){
             $(this).addClass("select");
             $(this).siblings().removeClass("select");
