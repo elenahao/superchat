@@ -12,7 +12,7 @@ var Token = require(path.resolve(global.gpath.app.model + '/common/token'));
 app.post('/admin/api/mass/group',
     function(req, res) {
         console.log('/admin/api/mass/group...');
-        var msg_id = req.body.msg_id;
+        //var msg_id = req.body.msg_id;
         var media_id = req.body.media_id;
         var group_id = req.body.group_id;
         var opt = {
@@ -39,27 +39,10 @@ app.post('/admin/api/mass/group',
                         var _body = JSON.parse(body);
                         if(_body.errcode == 0){
                             //成功
-                            var msg_posted_id = _body.msg_id;
-                            var msg_data_id = _body.msg_data_id;
-                            var msg = {
-                                msg_posted_id: msg_posted_id,
-                                is_to_all: 0,
-                                msg_data_id: msg_data_id,
-                                id: msg_id
-                            }
-                            //存库
-                            mysql.mass.updateMsgAfterPosted(msg).then(function done(ret){
-                                console.log('is updateMsgAfterPosted ok:', ret);
-                                res.status(200).send(JSON.stringify({
-                                    ret: 0,
-                                    msg: '发送成功'
-                                }));
-                            }, function err(err){
-                                res.status(400).send(JSON.stringify({
-                                    ret: -1,
-                                    msg: err
-                                }));
-                            })
+                            res.status(200).send(JSON.stringify({
+                                ret: 0,
+                                msg: '发送成功'
+                            }));
                         }else if(_body.errcode == 40001){
                             redis.del('access_token').then(function resolve(ret) {
                                 console.log('is del ok:', ret);

@@ -9,5 +9,19 @@ div.gm-user
                     each group in groups
                         option(value="#{group.id}") #{group.name}
             a.btn.btn-primary.btn-sm.active.gm-search(role="button") 群发
-    a.btn.btn-primary.btn-sm.active(role="button" href="/admin/massMessage" style="margin-top:10px;display:inline-block;vertical-align:middle;") 新建图文消息
-    span.active.tips(style="display:inline-block;padding-top:10px;vertical-align:middle;margin-left:10px;color:green;font-size:12px;")
+    div.msgList
+        div.con
+            //- div.mItem
+            //-     span.title
+            //-         很好的注意哦
+            //-     span.date
+            //-         2015年11月09日
+            //-     span.operation
+            //-         a.toMore
+            //-           查看更多
+            //- div.mItem
+            //-     span.title
+            //-     span.date
+            //-     span.operation
+    div.page
+        div.con
