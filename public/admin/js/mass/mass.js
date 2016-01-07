@@ -29,7 +29,8 @@
                 alert('(╯‵□′)╯︵┻━┻ 先创建一个图文消息才能群发啊！...');
             }
         });
-
+        var totalNum = 0;
+        var flag = true;
         function renderList(pageNum){
           $.ajax({
           		type:"get",
@@ -42,48 +43,67 @@
                 var total_count = data.total_count;
                 var data = data.item;
                 $(".msgList .con").empty();
+                if(data==undefined)return;
                 for(var i=0;i<data.length;i++){
                   var time = data[i].update_time*1000;
                   var date = new Date(time);
+                      var newsItem = data[i].content.news_item;
+                      if(newsItem.length>0){
+                          for(var k=0;k<newsItem.length;k++){
+                            var msgItem = '';
+                            if(i==0){
+                              if(k==0){
+                                msgItem +='<div class="mItem select" data-mediaid="'+data[i].media_id+'">';
+                                msgItem +='   <span class="title">'+data[i].content.news_item[k].title+'</span>';
+                              }else{
+                                msgItem +='<div class="mItem select itemchildren" data-mediaid="'+data[i].media_id+'">';
+                                msgItem +='   <span class="title"><i></i>'+data[i].content.news_item[k].title+'</span>';
+                              }
+                            }else{
+                              if(k==0){
+                                msgItem +='<div class="mItem" data-mediaid="'+data[i].media_id+'">';
+                                msgItem +='   <span class="title">'+data[i].content.news_item[k].title+'</span>';
+                              }else{
+                                msgItem +='<div class="mItem itemchildren" data-mediaid="'+data[i].media_id+'">';
+                                msgItem +='   <span class="title"><i></i>'+data[i].content.news_item[k].title+'</span>';
+                              }
 
-                  var msgItem = '';
-                      if(i==0){
-                        msgItem +='<div class="mItem select" data-mediaid="'+data[i].media_id+'">';
-                      }else{
-                        msgItem +='<div class="mItem" data-mediaid="'+data[i].media_id+'">';
+                            }
+
+                            msgItem +='   <span class="date">'+date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+'日'+'</span>';
+                            msgItem +='   <span class="operation"><a href="'+data[i].content.news_item[k].url+'">查看详情</a></span>';
+                            msgItem +='</div>';
+                            $(".msgList .con").append(msgItem);
+                          }
                       }
-                      msgItem +='   <span class="title">'+data[i].content.news_item[0].title+'</span>';
-                      msgItem +='   <span class="date">'+date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+'日'+'</span>';
-                      msgItem +='   <span class="operation"><a href="'+data[i].content.news_item[0].url+'">查看详情</a></span>';
-                      msgItem +='</div>';
-                      $(".msgList .con").append(msgItem);
+
                 }
-
-                var page = '';
-                var length = total_count/20+1;
-                for(var i=1;i<=length;i++){
-                    if(i==pageNum){
-                      page += '<i class="pageNum active">'+i+'</i>';
-                    }else{
-                      page += '<i class="pageNum">'+i+'</i>';
-                    }
+                totalNum = total_count;
+                if(pageNum==1){
+                  pageRender(pageNum);
+                  flag = false;
                 }
-                $(".page .con").empty();
-                $(".page .con").append(page);
-
-
               },
               error:function(){}
           });
         }
         renderList(1);
+        function pageRender(pageNum){
+          var result = [];
+          for(var i = 1; i <= totalNum; i++){
+            result.push(i);
+          }
+          $('.page .con').pagination({
+              dataSource: result,
+              pageSize:20,
+              callback: function(data, pagination){
+                if(!flag){
+                  renderList(pagination.pageNumber);
+                }
 
-        $(".page").delegate(".pageNum","click",function(){
-            $(this).addClass("active");
-            $(this).siblings().removeClass("active");
-            var num = Number($(this).text());
-            renderList(num);
-        });
+              }
+          });
+        }
         $(".msgList").delegate(".mItem","click",function(){
             $(this).addClass("select");
             $(this).siblings().removeClass("select");
