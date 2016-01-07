@@ -589,3 +589,16 @@ a.menu{
 .page .active{
 	color: #459ae9;
 }
+.msgList .con .itemchildren .title{
+	padding-left:10%;
+	box-sizing: border-box;
+	vertical-align: baseline;
+}
+.msgList .con .itemchildren .title i{
+	display: inline-block;
+	width:5px;
+	background-color: #e7e7eb;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: 10px;
+}
